@@ -33,7 +33,12 @@ We are a group of teacher from the nearby elementary school who would like to gi
 * In case of picture inclusion the format should be jpeg or npg.
  
 ## List of Requirements
-    //Csabi
+* R01 - Easy to operate
+* R02 - Child-friendly display
+* R03 - Save scores to database (MySQL)
+* R04 - Retrieve data from database
+* R05 - Contains 4 games - 2048, Snake, Tic-Tac-Toe, Mastermind
+* R06 - Tic-Tac-Toe has an AI or a 2 people version
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
