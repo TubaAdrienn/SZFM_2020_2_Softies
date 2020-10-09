@@ -35,7 +35,45 @@ We are a group of teacher from the nearby elementary school who would like to gi
     //Csabi
 
 ## Scenarios
-    //Anna
+
+ Opening the game portal should result in the greeting page displaying. This page should contain 4 games' images that the user could choose from.
+* By clicking on Snake:
+	* The user is redirected to a new page, which contains a description of the game's rules.
+	* By clicking on the "Back" button, the user is able to go back to the greeting page to choose from another game.
+	* By clicking on the "Play" button:
+		* The user is able to start playing the game.
+		* The actual score of the game should be displayed while playing.
+		* The highest score should be diplayed while playing the game and saved at the end of the round.
+		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
+
+* By clicking on 2048:
+	* The user is redirected to a new page, which contains a description of the game's rules.
+	* By clicking on the "Back" button, the user is able to go back to the greeting page to choose from another game.
+	* By clicking on the "Play" button:
+		* The user is able to start playing the game.
+		* The actual score of the game should be displayed while playing.
+		* The highest score should be diplayed while playing the game and saved at the end of the round.
+		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
+
+* By clicking on Mastermind:
+	* The user is redirected to a new page, which contains a description of the game's rules.
+	* By clicking on the "Back" button, the user is able to go back to the greeting page to choose from another game.
+	* By clicking on the "Play" button:
+		* The user is able to start playing the game.
+		* The actual score of the game should be displayed while playing.
+		* The highest score should be diplayed while playing the game and saved at the end of the round.
+		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
+
+* By clicking on Tic-Tac-Toe:
+	* The user is redirected to a new page, which contains a description of the game's rules.
+	* By clicking on the "Back" button, the user is able to go back to the greeting page to choose from another game.
+	* By clicking on the "Play" button:
+		* The user is able to choose wether it wants to play against AI or another player.
+			* After the mode is chosen, the user is able to start playing the game.
+		* The score of the player should be displayed while playing the rounds.
+		* The winner should be displayed at the end of the rounds.
+		* The winner should be displayed after the overall match has ended.
+		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
     //Matyi
