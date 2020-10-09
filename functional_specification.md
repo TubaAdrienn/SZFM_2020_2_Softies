@@ -1,7 +1,14 @@
 # Functional Specification
 
 ## System Goals
-    //Csabi
+* Desktop application for kids between the ages of 6-10 that contains 4 mini games:
+    * First game: 2048 game
+    * Second game: Classic Snake
+    * Third game: Tic-Tac-Toe
+    * Fourth game: Mastermind
+* Saving and querying high scores for each game.
+* Showing game rules.
+* Tic-Tac-Toe: Two player on one with AI options.
 
 ## Not System Goals
     //Adrienn
