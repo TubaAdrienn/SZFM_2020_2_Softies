@@ -7,9 +7,6 @@ We are a group of teacher from the nearby elementary school who would like to gi
     //Matyi
 
 ## Current Business Processes
-    //Matyi
-
-## Current Business Processes
 * Currently there is no business process for playing 2048 game since it has a website based origin.
 * Currently there is no business process for playing snake since it has a mobile phone application based origin.
 * Business process for Mastermind:
