@@ -24,7 +24,16 @@ We are a group of teacher from the nearby elementary school who would like to gi
     * The one who puts 3 in a row wins.
 
 ## Business Process Model
-    //Csabi
+* Desktop application
+* 2048 game
+* Snake game
+* Tic-Tac-Toe game
+* Mastermind game
+* Saving students scores, querying by highscore
+* Child-friendly display
+* Tic-Tac-Toe with AI
+* Low system requirements
+* Showing rules for the game
 
 ## Rules For The System
 * The application should fall under the GNU General Public Licence which is a free, copyleft license for software and other kinds of works. It guarantees end users the freedom to run, study, share, and modify the software.
