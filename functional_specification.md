@@ -26,7 +26,7 @@ We want to give our children modern games they can play with on any computer. We
     //Csabi
 
 ## List of Requirements
-    //Matyi
+
 
 ## Usage Instances
    <img src="img/Usage Instances.png"
