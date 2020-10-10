@@ -104,4 +104,15 @@ We want to give our children modern games they can play with on any computer. We
     //Matyi
 
 ## Glossary
-    //Anna
+* Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
+* Website based origin: The video game is played via the World Wibe Web using a web browser.
+* Application based origin: The game is played on mobile phone, tablet, smartwatch or any portable media player.
+* Java: A general purpose programming language developed by Sun Microsystems.
+* Java JDK 11: An update of Java released on September 25, 2018.
+* Maven: A software that helps in managing software projects and automatization of processes.
+* GUI: Stands for graphical user interface that allows interaction between users and electronic devices by clicking on icons or through text navigation.
+* JavaFx: A software platform for creating desktop applications' GUI.
+* RDBMS: Relational Database Management System is a software that allows users to define, create, maintain, or control access to the database.
+* AI: Artificial intelligence is "intelligence" demonstrated by machines. Any device that observes its environment and takes actions that maximize the chance of achieving its goals successfully.
+* jpeg: A compression used in image file formats. Compression is lossy.
+* png: Stands for Portable Network Graphics. Image file format that supports lossless data compression.
