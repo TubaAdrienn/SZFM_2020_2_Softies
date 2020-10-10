@@ -29,7 +29,13 @@ We want to give our children modern games they can play with on any computer. We
     //Matyi
 
 ## Usage Instances
-    //Adrienn
+   <img src="img/Usage Instances.png"
+     alt="Usage Instances UML"
+     style="float: left; margin-right: 10px;" />
+     
+   <img src="img/Usage Instances2.png"
+     alt="Usage Instances UML"
+     style="float: left; margin-right: 10px;" />     
 
 ## Compliance - How the usage instances satisfy the requirements
 * Home Page: The main page will contain the option to choose between the games. Also it will be displayed in a way that a child might find it entertaining, vibrant and lively colors will be used with no unsettling images. It will be quite easy to operate between games as they will be displayed in a fashion that they can be distinguished from each other.
