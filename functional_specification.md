@@ -119,7 +119,7 @@ We want to give our children modern games they can play with on any computer. We
 		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
-    //Matyi
+
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
