@@ -61,6 +61,10 @@ We want to give our children modern games they can play with on any computer. We
    <img src="img/tic-tac-toe.png"
      alt="Tic-Tac-Toe visual design"
      style="float: left; margin-right: 10px;" />
+* Visual design for Mastermind:
+   <img src="img/mastermind.png"
+     alt="Mastermind visual design"
+     style="float: left; margin-right: 10px;" />     
 
 ## Scenarios
 
