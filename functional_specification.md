@@ -119,7 +119,7 @@ We want to give our children modern games they can play with on any computer. We
 		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
-
+The desire for responsive window design that is drawn up in the requirements specification. We strive for simple, well-designed and clear games that anyone can easily play.
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
