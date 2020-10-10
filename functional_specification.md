@@ -23,7 +23,16 @@ We are a group of teacher from the nearby elementary school who would like to gi
 We want to give our children modern games they can play with on any computer. We want to develop their logic skills and also their social interacions. For example, with Tic-Tac-Toe they can play with new classmates, they have never played or never talked before. Nevertheless if they are playing alone because no classmates are nearby, they can play with our latest Artificial Intelligence technology. With the classic Snake game, children can experience what the first computer games were like. 2048 helps them to make friends with numbers and get closer to math. However, we can mention these games are color blind friendly, so everyone can play. With these four wonderful games we want our children to enjoy the boring everyday of school. With these simple games we want to help them cope with the problems of everyday adult life. In the future we want to expand our game set with more classic games, and help more children.
 
 ## Requested Business Process Model
-    //Csabi
+* Desktop Application ⟶ MVN, Java, JavaFX.
+* 2048 game ⟶ Button to chose the game, game implementation.
+* Snake game ⟶ Button to chose the game, game implementation.
+* Tic-Tac-Toe game ⟶ Button to chose the game, game implementation.
+* Mastermind game ⟶ Button to chose the game, game implementation.
+* Showing rules for the game ⟶ Display the rules after chosing a game but before starting it.
+* Displaying High Score ⟶ Saving and querying highscores to MySQL Database.
+* Tic-Tac-Toe AI ⟶ Option to chose between versus AI or 2 player mode.
+* Child friendly display ⟶ Happy, warm colors, no scary pictures and no harmful content.
+* Low system requirements ⟶ Should run fast on a microwave too.
 
 ## List of Requirements
 
