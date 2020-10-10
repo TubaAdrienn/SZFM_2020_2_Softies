@@ -37,6 +37,7 @@ We are a group of teacher from the nearby elementary school who would like to gi
 	* Scores will also be displayed on this page so later it can be tracked down who have been the best players so far.
 	* Pressing Play on either game should result in the actual gameplay. Each game will have a separate page and unique design so the user entertainment would he maximal. 
 * Playing With The Game: Four games should be implemented in a way that they satisfy their rules. These games are: 2048, Tic-tac-toe, Mastermind and Snake.
+	* Tic-Tac-Toe implementation will also contain buttons to choose from 1v1 mode or 1vAI mode.
 * Saving Score: After each game the score should be saved in an external database if the game ended in success. Mostly name of the winner should be stored in the database and a timestamp that displays the time spent on playing with the game. Only the best 5 should be displayed later.
 * After saving the score there is an option to exit the game entirely or to go back to home page and start playing with another game.
 
