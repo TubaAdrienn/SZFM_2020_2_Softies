@@ -36,9 +36,11 @@ We want to give our children modern games they can play with on any computer. We
 
 ## List of Requirements
 * Colorful design
+* Simple design
 * Responsive window
 * Smooth, fast respond
 * No lagging
+* Works on any computer system(Windows, Linux, Mac)
 
 ## Usage Instances
    <img src="img/Usage Instances.png"
