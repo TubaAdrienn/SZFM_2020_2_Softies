@@ -32,7 +32,13 @@ We are a group of teacher from the nearby elementary school who would like to gi
     //Adrienn
 
 ## Compliance - How the usage instances satisfy the requirements
-    //Adrienn
+* Home Page: The main page will contain the option to choose between the games. Also it will be displayed in a way that a child might find it entertaining, vibrant and lively colors will be used with no unsettling images. It will be quite easy to operate between games as they will be displayed in a fashion that they can be distinguished from each other.
+* Rules Page: By choosing the one of games the player will automatically be redirected to another page where the game rules will be displayed. Depending on the game the option to add one or two player name will generate one or two places to add player names.
+	* Scores will also be displayed on this page so later it can be tracked down who have been the best players so far.
+	* Pressing Play on either game should result in the actual gameplay. Each game will have a separate page and unique design so the user entertainment would he maximal. 
+* Playing With The Game: Four games should be implemented in a way that they satisfy their rules. These games are: 2048, Tic-tac-toe, Mastermind and Snake.
+* Saving Score: After each game the score should be saved in an external database if the game ended in success. Mostly name of the winner should be stored in the database and a timestamp that displays the time spent on playing with the game. Only the best 5 should be displayed later.
+* After saving the score there is an option to exit the game entirely or to go back to home page and start playing with another game.
 
 ## Visual Design
     //Csabi
