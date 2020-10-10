@@ -35,7 +35,10 @@ We want to give our children modern games they can play with on any computer. We
 * Low system requirements ⟶ Should run fast on a microwave too.
 
 ## List of Requirements
-
+* Colorful design
+* Responsive window
+* Smooth, fast respond
+* No lagging
 
 ## Usage Instances
    <img src="img/Usage Instances.png"
