@@ -35,7 +35,12 @@ We want to give our children modern games they can play with on any computer. We
 * Low system requirements ⟶ Should run fast on a microwave too.
 
 ## List of Requirements
-
+* Colorful design
+* Simple design
+* Responsive window
+* Smooth, fast respond
+* No lagging
+* Works on any computer system(Windows, Linux, Mac)
 
 ## Usage Instances
    <img src="img/Usage Instances.png"
@@ -120,7 +125,7 @@ We want to give our children modern games they can play with on any computer. We
 		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
-    //Matyi
+The desire for responsive window design that is drawn up in the requirements specification. We strive for simple, well-designed and clear games that anyone can easily play. Java will be responsible for smooth operation and JavaFX for amazing display. We strive to create the games in an Operating System independent way, so despite the usage of different systems the games will work the same.
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
