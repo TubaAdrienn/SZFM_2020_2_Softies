@@ -57,6 +57,17 @@ We want to give our children modern games they can play with on any computer. We
 * After saving the score there is an option to exit the game entirely or to go back to home page and start playing with another game.
 
 ## Visual Design
+          
+* Visual design for 2048:
+   <img src="img/2048.png"
+     alt="2048 visual design"
+     style="float: left; margin-right: 10px;" />
+     
+* Visual design for Snake:
+   <img src="img/snake.png"
+     alt="Snake visual design"
+     style="float: left; margin-right: 10px;" />
+     
 * Visual design for Tic-Tac-Toe:
    <img src="img/tic-tac-toe.png"
      alt="Tic-Tac-Toe visual design"
@@ -65,12 +76,7 @@ We want to give our children modern games they can play with on any computer. We
 * Visual design for Mastermind:
    <img src="img/mastermind.png"
      alt="Mastermind visual design"
-     style="float: left; margin-right: 10px;" /> 
-     
-* Visual design for Snake:
-   <img src="img/snake.png"
-     alt="Snake visual design"
-     style="float: left; margin-right: 10px;" />       
+     style="float: left; margin-right: 10px;" />        
 
 ## Scenarios
 
