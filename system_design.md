@@ -1,6 +1,7 @@
 # System Design
 
 ## System Goals
+One of our goals regarding the system is to keep it 7/24 available. Regarding the display we will use friendly and bright design to make it appealing to the children. One purpose is to inform users about their current score, highest score and the possibilities they have with the buttons, so in order to make an easy to use and understand application we seek clear design too. One of the basic features of the system is the ability to react to users' activity, like clicking on the fields or using direction keys while playing with the chosen game. Other desired ability is to switch between games in case the user changed its mind by having the opportunity to go back to the page where all games are listed. Among other features the user has the chance to go back to the previous page to check the game's description and its rules in case something is not clear while playing, and the opportunity to choose the type of the player the user wants to play with. Regarding the rules of the games we plan to use MySQL to retrieve each game's rules from a database and load it into the chosen game's description page. High scores will be stored in a database too and displayed on the game's page during playing to inform players about the highest score reached so far. 
 
 ## Not System Goals
 
