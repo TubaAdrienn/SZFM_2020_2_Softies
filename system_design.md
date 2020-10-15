@@ -146,6 +146,12 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 ## Business Process Model
 
 ## Requirements
+* R01 - Easy to operate
+* R02 - Child-friendly display
+* R03 - Save scores to database (MySQL)
+* R04 - Retrieve data from database
+* R05 - Contains 4 games - 2048, Snake, Tic-Tac-Toe, Mastermind
+* R06 - Tic-Tac-Toe has an AI or a 2 people version
 
 ## Functional Design
 
