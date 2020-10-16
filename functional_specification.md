@@ -35,12 +35,12 @@ We want to give our children modern games they can play with on any computer. We
 * Low system requirements ⟶ Should run fast on a microwave too.
 
 ## List of Requirements
-* Colorful design
-* Simple design
-* Responsive window
-* Smooth, fast respond
-* No lagging
-* Works on any computer system(Windows, Linux, Mac)
+* R01 - Easy to operate
+* R02 - Child-friendly display
+* R03 - Save scores to database (MySQL)
+* R04 - Retrieve data from database
+* R05 - Contains 4 games - 2048, Snake, Tic-Tac-Toe, Mastermind
+* R06 - Tic-Tac-Toe has an AI or a 2 people version
 
 ## Usage Instances
    <img src="img/Usage Instances.png"
