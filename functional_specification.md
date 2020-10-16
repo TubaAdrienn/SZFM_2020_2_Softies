@@ -125,7 +125,7 @@ We want to give our children modern games they can play with on any computer. We
 		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
-The desire for responsive window design that is drawn up in the requirements specification. We strive for simple, well-designed and clear games that anyone can easily play. Java will be responsible for smooth operation and JavaFX for amazing display. We strive to create the games in an Operating System independent way, so despite the usage of different systems the games will work the same.
+The requirements are written in the Requirement Specification. The games should work properly with no lags, no crashing. Every children should easy to operate with the games with the child-friendly display. The scores should save to the database.
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
