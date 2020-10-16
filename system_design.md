@@ -154,6 +154,12 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 * R06 - Tic-Tac-Toe has an AI or a 2 people version
 
 ## Functional Design
+* Main page: 4 games, Game Arcade Caption, Exit.
+* Rules page: Add name option, Rules about the games, Little pictures.
+* 2048: 4x4 display place; Best score; Current score; New game button; Back to menu.
+* Snake: Snakey display; Best score; Current score; Back to menu button.
+* Tic-Tac-Toe: Vs AI, 1v1 option buttons; 3x3 display place; Back to menu button.
+* Mastermind: Color buttons; Back to menu button; Back, Submit, Finish function buttons; Display of guessed colors; High score; Current score.
 
 ## Physical Environment
 
