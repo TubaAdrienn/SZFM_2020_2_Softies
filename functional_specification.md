@@ -125,7 +125,7 @@ We want to give our children modern games they can play with on any computer. We
 		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
-The requirements are written in the Requirement Specification. The games should work properly with no lags, no crashing. Every children should easy to operate with the games with the child-friendly display. The scores should save to the database.
+The requirements are written in the Requirement Specification. The games should work properly with no lags, no crashing. Every children should easy to operate with the games with the child-friendly display. The scores should save to the database. The platform should contain four games: 2048, Snake, Tic-Tac-Toe, Mastermind. The Tic-Tac-Toe should contain a two-player version and an AI version. All four games should show the rules for the games.
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
