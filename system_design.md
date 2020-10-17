@@ -164,8 +164,6 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 ## Physical Environment
 
 ## Abstract Domain Model
-
-## Architectural Design
 ### Main components of the design
 The application will follow the MVC pattern which is a software design pattern that is very commonly used to create application where the related program logic is diveded into three categories.
 #### Model 
@@ -184,6 +182,8 @@ The application will follow the MVC pattern which is a software design pattern t
 #### Util
 * Util classes are usually classes that implement some kind of business logic that can be reused in more than one application such as DAO classes for example.
 * In our application these will be the DAO classes, the AI classes and other independent reusable classes.
+
+## Architectural Design
 
 ## Database Design
 
