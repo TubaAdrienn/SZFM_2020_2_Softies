@@ -202,6 +202,9 @@ The second table will contain four attributes: an ID, a Game attribute, a Name a
 
 ![alt text](img/db1.png "Games")
 ## Implementation design
+* Persistence classes - DAO.java - using JDBC (probably), Highscore.java, Rules.java
+* Business logic classes - Controller classes, one for each game, one for the main page and one for the rules page, also any other util or game managing classes, also AI classes
+* Client-side classes - FXML files, one for each game, one for main page and one for rules page
 
 ## Test Design
 
