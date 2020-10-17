@@ -210,3 +210,6 @@ The second table will contain four attributes: an ID, a Game attribute, a Name a
 ## Installation Design
 
 ## Maintenance Design
+* Bug fixes
+* Improving game experience based on feedback
+* Add more games if needed
