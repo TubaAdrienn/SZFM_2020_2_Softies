@@ -180,6 +180,8 @@ The application will follow the MVC pattern which is a software design pattern t
 * Util classes are usually classes that implement some kind of business logic that can be reused in more than one application such as DAO classes for example.
 * In our application these will be the DAO classes, the AI classes and other independent reusable classes.
 
+![alt text](img/adm.jpg "Abstract Domain Model")
+
 ## Architectural Design
 * As mentioned in the Abstract Domain Model the application will implement the MVC pattern and its elements which means that it is going to be a three level application. These levels:
   * Model - Data structures, business logic
