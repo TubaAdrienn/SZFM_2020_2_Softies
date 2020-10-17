@@ -190,7 +190,9 @@ The application will follow the MVC pattern which is a software design pattern t
   * Controller - Connecting element of the model and the view that hangles user inputs and requests
 * Since the model's main goal is to separate these elements from each other for greater extensibility it is easier to add new components to these applications if the need arises. If there's a request to add more games to the application or change one it can be easily done by adding new model, view and controller elements to the project without deeply changing any other.
 ## Database Design
+![alt text](img/rules.png "Rules")
 
+![alt text](img/db1.png "Games")
 ## Implementation design
 
 ## Test Design
