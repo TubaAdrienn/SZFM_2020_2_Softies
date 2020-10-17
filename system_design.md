@@ -7,14 +7,11 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 * Administration of users
 * Enable registration
 * Enable log in
-* Network dependence
 * Enable user to delete or modify data
 * Need of high system requirements
 * Displaying videos and musics
 * Displaying advertisements
-* Storing users' data
 * Logging activities
-* User authentication
 * Responsive design
 
 ## Project Plan
