@@ -208,6 +208,10 @@ The second table will contain four attributes: an ID, a Game attribute, a Name a
 ## Test Design
 
 ## Installation Design
+* Have an electrical device (Pc, Laptop) that is capable of accessing the Internet.
+* If don't have an operating system, then need to install any of them. (Windows, Ubuntu, etc..)
+* Access to Internet
+* Purchase the project
 
 ## Maintenance Design
 * Bug fixes
