@@ -166,6 +166,24 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 ## Abstract Domain Model
 
 ## Architectural Design
+### Main components of the design
+The application will follow the MVC pattern which is a software design pattern that is very commonly used to create application where the related program logic is diveded into three categories.
+#### Model 
+* The model part is the central part of the application. This is the part where the main logic business logic happens and it is the dynamic data structure. It should be independent of the user interface.
+* The models data will be managed by a database handling class (DAO - Data Accessing Object)
+* In our the model part will represent the:
+	* Highscores of the games
+	* The rules of the games
+	* Business logics of the games
+#### View
+* The view is representation of the application. This is the user interface, the part where the visual design is the most important to create the most satisfying user experience. It should be independent of the model part.
+* Each game will have its own view as well as the rules page and the main page.
+#### Controller
+* The controller is the connecting element. It accepts user input and creates a response fit for that input by asking for data trough the model and displaying it on the view.
+* In our application each view will have its own controller.
+#### Util
+* Util classes are usually classes that implement some kind of business logic that can be reused in more than one application such as DAO classes for example.
+* In our application these will be the DAO classes, the AI classes and other independent reusable classes.
 
 ## Database Design
 
