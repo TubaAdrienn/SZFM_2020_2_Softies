@@ -190,7 +190,15 @@ The application will follow the MVC pattern which is a software design pattern t
   * Controller - Connecting element of the model and the view that hangles user inputs and requests
 * Since the model's main goal is to separate these elements from each other for greater extensibility it is easier to add new components to these applications if the need arises. If there's a request to add more games to the application or change one it can be easily done by adding new model, view and controller elements to the project without deeply changing any other.
 ## Database Design
+Our database system will be implemented using MySQL which is an open-source relational database management system that can be easily used in different kind of Java applications. To use MySQL databases from Java projects a MySQL server is needed so we can create a connection to that and there it is possible to create new tables. It can be achieved by using JDBC.
+
+Our application will require two of these tables, since we are using a HighScore and a Rules class which will represent and manage the queried data from these tables.
+
+As one can see the Rules table will have three attributes: an ID, a Game and a Rule attribute. The ID will be the primary key, the Game attribute will display which game the rule belongs to and then the rule itself that describes the game.
+
 ![alt text](img/rules.png "Rules")
+
+The second table will contain four attributes: an ID, a Game attribute, a Name attribute and a Score. The ID is obviously the primary key, the Game attribute represents what game the score belongs to, the name will be the name of the player who created that score and then the score itself is also stored.
 
 ![alt text](img/db1.png "Games")
 ## Implementation design
