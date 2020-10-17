@@ -184,7 +184,11 @@ The application will follow the MVC pattern which is a software design pattern t
 * In our application these will be the DAO classes, the AI classes and other independent reusable classes.
 
 ## Architectural Design
-
+* As mentioned in the Abstract Domain Model the application will implement the MVC pattern and its elements which means that it is going to be a three level application. These levels:
+  * Model - Data structures, business logic
+  * View - FXML files, visual design implementations
+  * Controller - Connecting element of the model and the view that hangles user inputs and requests
+* Since the model's main goal is to separate these elements from each other for greater extensibility it is easier to add new components to these applications if the need arises. If there's a request to add more games to the application or change one it can be easily done by adding new model, view and controller elements to the project without deeply changing any other.
 ## Database Design
 
 ## Implementation design
