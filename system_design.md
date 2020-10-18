@@ -284,11 +284,14 @@ The second table will contain four attributes: an ID, a Game attribute, a Name a
 		* One for rules page
 
 ## Test Design
-The reason we need test design is noone can write perfect programs, so we need to test for the bugs and correct it. There are several ways we can test a program:
+The reason we need test design is noone can write perfect programs, so we need to test for the bugs and correct it. We are testing the following feature:
+* Every button works well
+* The Game won't get infinite loop
+* Testing on Windows
+* Testing on Ubuntu
+* Unit tests for functions
 
-* Black-box(Tests are based on specification)
-* White-box(Tests are based on source code)
-* Grey-box(Test are based on part of the source code)
+After these tests we should give it to friends / acquaintances to test the page because we would be biased about the result and thus the final result of the test would not be appropriate.
 
 ## Installation Design
 Easy to install this application and use it. But child need parents/teachers help for installation.
