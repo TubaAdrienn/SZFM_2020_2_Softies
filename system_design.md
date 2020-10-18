@@ -264,12 +264,15 @@ The second table will contain four attributes: an ID, a Game attribute, a Name a
 ## Test Design
 
 ## Installation Design
+Easy to install this application and use it. But child need parents/teachers help for installation.
 * Have an electrical device (Pc, Laptop) that is capable of accessing the Internet.
 * If don't have an operating system, then need to install any of them. (Windows, Ubuntu, etc..)
 * Access to Internet
 * Purchase the project
 
 ## Maintenance Design
-* Bug fixes
-* Improving game experience based on feedback
-* Add more games if needed
+With the constant development of informatics, we want to keep ourselves up-to-date with technologies, and thus we consider it important to maintain our application.
+* List of maintance tasks:
+    * Bug fixes
+    * Improving game experience based on feedback
+    * Add more games if needed
