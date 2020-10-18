@@ -217,8 +217,7 @@ Opening the Game in the Main page you can see the four games(Tic-Tac-Toe, Snake,
 ## Physical Environment
 * Operating System:
 	* Windows 10
-	* Linux
-	* MacOS
+	* Ubuntu
 * Development environment:
 	* Visual Studio Code
 	* IntelliJ IDEA
