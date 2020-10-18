@@ -68,7 +68,13 @@ We want to give our children modern games they can play with on any computer. We
    <img src="img/main_page.png"
      alt="Main page visual design"
      style="float: left; margin-right: 10px;" />
-         
+     
+* Visual design for Rule page:
+
+   <img src="img/rule_page.png"
+     alt="Rule page visual design"
+     style="float: left; margin-right: 10px;" />     
+          
 * Visual design for 2048:
 
    <img src="img/2048.png"
