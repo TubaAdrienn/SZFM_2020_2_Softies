@@ -142,6 +142,7 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 
 ## Business Process Model
 
+
 ## Requirements
 * R01 - Easy to operate
 * R02 - Child-friendly display
