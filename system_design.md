@@ -139,7 +139,6 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 * **2020.11.23.**
 	* Meeting with the customer and hand over the system.
 
-
 ## Business Process Model
 Opening the Game in the Main page you can see the four games(Tic-Tac-Toe, Snake, Master Mind, 2048) with a wonderful background. By opening a game, you will be navigated to the Game Rule page, where you can see a short description for how to play the game. You can find here the Play button and you can write your name for the Scoreboard. With the Play button, you can start the game. If you bored the game, just press Back button and play another one.
 
@@ -216,6 +215,7 @@ Opening the Game in the Main page you can see the four games(Tic-Tac-Toe, Snake,
     * Info box: Display warnings, infos for player.
 
 ## Physical Environment
+
 
 ## Abstract Domain Model
 ### Main components of the design
