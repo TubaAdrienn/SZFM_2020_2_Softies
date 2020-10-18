@@ -265,10 +265,24 @@ As one can see the Rules table will have three attributes: an ID, a Game and a R
 The second table will contain four attributes: an ID, a Game attribute, a Name attribute and a Score. The ID is obviously the primary key, the Game attribute represents what game the score belongs to, the name will be the name of the player who created that score and then the score itself is also stored.
 
 ![alt text](img/db1.png "Games")
+
 ## Implementation design
-* Persistence classes - DAO.java - using JDBC (probably), Highscore.java, Rules.java
-* Business logic classes - Controller classes, one for each game, one for the main page and one for the rules page, also any other util or game managing classes, also AI classes
-* Client-side classes - FXML files, one for each game, one for main page and one for rules page
+* Persistence classes:
+	* DAO.java - using JDBC (probably)
+	* Highscore.java
+	* Rules.java
+* Business logic classes:
+	* Controller classes:
+		* One for each game
+		* One for the main page
+		* One for the rules page
+	* Other util or game managing classes
+	* AI classes
+* Client-side classes:
+	* FXML files:
+		* One for each game
+		* One for main page
+		* One for rules page
 
 ## Test Design
 
