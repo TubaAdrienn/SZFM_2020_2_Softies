@@ -215,7 +215,13 @@ Opening the Game in the Main page you can see the four games(Tic-Tac-Toe, Snake,
     * Info box: Display warnings, infos for player.
 
 ## Physical Environment
-
+* Operating System:
+	* Windows 10
+* Development environment:
+	* Visual Studio Code
+	* IntelliJ IDEA
+* Software platform:
+	* JavaFx
 
 ## Abstract Domain Model
 ### Main components of the design
