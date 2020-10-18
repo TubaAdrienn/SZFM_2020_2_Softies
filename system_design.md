@@ -290,7 +290,10 @@ The reason we need test design is noone can write perfect programs, so we need t
 * Testing on Windows
 * Testing on Ubuntu
 * Unit tests for functions
-
+* Exiting the Game all resources will be freed
+* Game window resize the correct way
+* Score shows the real data
+* Players name and score are saved in database
 After these tests we should give it to friends / acquaintances to test the page because we would be biased about the result and thus the final result of the test would not be appropriate.
 
 ## Installation Design
