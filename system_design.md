@@ -141,7 +141,7 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 
 
 ## Business Process Model
-
+Opening the Game in the Main page you can see the four games(Tic-Tac-Toe, Snake, Master Mind, 2048) with a wonderful background. By opening a game, you will be navigated to the Game Rule page, where you can see a short description for how to play the game.
 
 ## Requirements
 * R01 - Easy to operate
