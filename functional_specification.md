@@ -35,12 +35,12 @@ We want to give our children modern games they can play with on any computer. We
 * Low system requirements ⟶ Should run fast on a microwave too.
 
 ## List of Requirements
-* Colorful design
-* Simple design
-* Responsive window
-* Smooth, fast respond
-* No lagging
-* Works on any computer system(Windows, Linux, Mac)
+* R01 - Easy to operate
+* R02 - Child-friendly display
+* R03 - Save scores to database (MySQL)
+* R04 - Retrieve data from database
+* R05 - Contains 4 games - 2048, Snake, Tic-Tac-Toe, Mastermind
+* R06 - Tic-Tac-Toe has an AI or a 2 people version
 
 ## Usage Instances
    <img src="img/Usage Instances.png"
@@ -125,7 +125,7 @@ We want to give our children modern games they can play with on any computer. We
 		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
-The desire for responsive window design that is drawn up in the requirements specification. We strive for simple, well-designed and clear games that anyone can easily play. Java will be responsible for smooth operation and JavaFX for amazing display. We strive to create the games in an Operating System independent way, so despite the usage of different systems the games will work the same.
+The requirements are written in the Requirement Specification. The games should work properly with no lags, no crashing. Every children should easy to operate with the games with the child-friendly display. The scores should save to the database. The platform should contain four games: 2048, Snake, Tic-Tac-Toe, Mastermind. The Tic-Tac-Toe should contain a two-player version and an AI version. All four games should show the rules for the games.
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
