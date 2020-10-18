@@ -151,12 +151,68 @@ One of our goals regarding the system is to keep it 7/24 available. Regarding th
 * R06 - Tic-Tac-Toe has an AI or a 2 people version
 
 ## Functional Design
-* Main page: 4 games, Game Arcade Caption, Exit.
-* Rules page: Add name option, Rules about the games, Little pictures.
-* 2048: 4x4 display place; Best score; Current score; New game button; Back to menu.
-* Snake: Snakey display; Best score; Current score; Back to menu button.
-* Tic-Tac-Toe: Vs AI, 1v1 option buttons; 3x3 display place; Back to menu button.
-* Mastermind: Color buttons; Back to menu button; Back, Submit, Finish function buttons; Display of guessed colors; High score; Current score.
+
+* Main page:
+    * Title: Games Arcade Caption as a title.
+
+    * Games: 4 games with little clickable child friendly picture.
+
+    * Exit button: Clicking this button, the user will exits the application.
+
+* Rules page:
+    * Name bar: Add name option, where users are able to type their playername.
+
+    * Rules display place: Rules about the games.
+
+    * Little pictures: Literally little pictures.
+
+* 2048: 
+    * 4x4 place: Display the current gameplay.
+
+    * Best score: Display the score from data base, which is the best score in all time.
+
+    * Current score: Display the score from currently on going game.
+
+    * New game button: Clicking this button, the user start a new game.
+    
+    * Back to menu button: Clicking this button, the user will direct back to main page.
+
+* Snake:
+    * Snake display palce: Display the snake and the apple, as well the snake moving space.
+
+    * Best score: Display the score from data base, which is the best score in all time.
+
+    * Current score: Display the score from currently on going game.
+
+    * Back to menu button: Clicking this button, the user will direct back to main page.
+
+* Tic-Tac-Toe:
+    * Vs AI button: Clicking this button, the user will play against Artificial Intelligence.
+    
+    * 1v1 button: Clicking this button, the user will play against an another player.
+
+    * 3x3 display place: Display the current gameplay.
+
+    * Back to menu button: Clicking this button, the user will direct back to main page. 
+
+* Mastermind:
+    * Color buttons: Clicking these buttons, add given color which is on the button.
+
+    * Back to menu button: Clicking this button, the user will direct back to main page.
+
+    * Back button: Function button, delete last guessed color (if we don't click on submit yet in this line).
+     
+    * Submit button: Function button, which is submitted the player guess.
+    
+    * New game button: Clicking this button, the user start a new game.
+
+    * Guessed colors: Display of guessed colors.
+
+    * High score: Display the score from data base, which is the best score in all time.
+
+    * Current score: Display the score from currently on going game.
+    
+    * Info box: Display warnings, infos for player.
 
 ## Physical Environment
 
