@@ -291,10 +291,12 @@ The reason we need test design is that noone can write perfect programs, so we n
 * Player names and scores are saved to database
 * Player names and scores are retrieved from database
 * Game content appears as it should be
+
 The tests should be run on both Windows Operating System and Ubuntu since we thrive to create platfrom independent applications. 
 Test should both be:
 * Manual
 * Automated - JUnit in this case
+
 After these tests we should give it to friends or acquaintances to test the application because we would be biased about the result and thus the final result of the test would not be appropriate.
 After the tests are executed the results should be written down on a report and bugs should be reported to the senior project leader so they can decide what steps should take place in case of fixing the arising bug.
 
