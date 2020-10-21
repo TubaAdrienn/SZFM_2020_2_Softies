@@ -284,29 +284,30 @@ The second table will contain four attributes: an ID, a Game attribute, a Name a
 		* One for rules page
 
 ## Test Design
-The reason we need test design is noone can write perfect programs, so we need to test for the bugs and correct it. We are testing the following feature:
-* Every button works well
-* The Game won't get infinite loop
-* Testing on Windows
-* Testing on Ubuntu
-* Unit tests for functions
-* Exiting the Game all resources will be freed
-* Game window resize the correct way
-* Score shows the real data
-* Players name and score are saved in database
-* Game Rule content appears well
-* Background loaded well
-After these tests we should give it to friends / acquaintances to test the page because we would be biased about the result and thus the final result of the test would not be appropriate.
+The reason we need test design is that noone can write perfect programs, so we need automated and manual tests both to make sure no bugs find their way into our programs. We are testing the followings:
+* If every button and controller element work well
+* If the game gets into an infinite loop or throws some unexpected exception
+* Calculations and business logic work perfectly
+* Player names and scores are saved to database
+* Player names and scores are retrieved from database
+* Game content appears as it should be
+The tests should be run on both Windows Operating System and Ubuntu since we thrive to create platfrom independent applications. 
+Test should both be:
+* Manual
+* Automated - JUnit in this case
+After these tests we should give it to friends or acquaintances to test the application because we would be biased about the result and thus the final result of the test would not be appropriate.
+After the tests are executed the results should be written down on a report and bugs should be reported to the senior project leader so they can decide what steps should take place in case of fixing the arising bug.
 
 ## Installation Design
-Easy to install this application and use it. But child need parents/teachers help for installation.
-* Have an electrical device (Pc, Laptop) that is capable of accessing the Internet.
-* If don't have an operating system, then need to install any of them. (Windows, Ubuntu, etc..)
+The application should be easy to install and to use. But a child needs parent's or teacher's support to execute installation.
+Requirements:
+* Have an electrical device (PC, Laptop) that is capable of accessing the Internet as it should be required to access the database server.
+* Purchase the application
 * Access to Internet
-* Purchase the project
+* Run the application
 
 ## Maintenance Design
-With the constant development of informatics, we want to keep ourselves up-to-date with technologies, and thus we consider it important to maintain our application.
+With the constant development of IT, we want to keep ourselves up-to-date with technologies, and thus we consider it important to maintain our application.
 * List of maintance tasks:
     * Bug fixes
     * Improving game experience based on feedback
