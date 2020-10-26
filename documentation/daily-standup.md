@@ -16,7 +16,9 @@
   3. So far, there has not been major problem with the task.
    
 * Matyi
-
+  1. Install IntelliJ IDEA and download Java and JavaFX
+  2. Setup Java and JavaFX
+  3. There were no problems
 
 * Adrienn
   1. I have created the wrapping Maven project
