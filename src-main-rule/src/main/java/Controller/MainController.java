@@ -10,10 +10,19 @@ public class MainController extends Controller{
     private String game;
 
     public void gameChosing(MouseEvent mouseEvent) throws Exception{
-       // Chose game business logic
+        try{
+            image=(ImageView)mouseEvent.getTarget();
+            getGameFromID();
+            PageLoader.loadRules(mouseEvent,this.game);
+            System.out.println(game);
+        } catch (Exception e){
+            throw e;
+        }
     }
 
     private void getGameFromID(){
-     //Get game by picture ID
+        game=image.getId();
+        game=game.substring(5);
+        System.out.println(game);
     }
 }
