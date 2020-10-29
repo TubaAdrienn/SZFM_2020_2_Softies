@@ -1,5 +1,6 @@
 package Controller;
 
+import AI.GameState;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,14 +14,22 @@ public class TTTController {
 
     private Button button;
 
+    private GameState gameState = new GameState();
+
+    private boolean AImode = false;
+
     public void setTo1v1() {
-        //Set to 1v1 code
-        System.out.println("1v1 button pressed.");
+        gameState = null;
+        gameState = new GameState();
+        AImode = false;
+        clearCells();
     }
 
     public void setTo1vAI() {
-        //Set to 1vAI code
-        System.out.println("1vAI button pressed.");
+        gameState = null;
+        gameState = new GameState();
+        AImode = true;
+        clearCells();
     }
 
     public void clearCells() {
