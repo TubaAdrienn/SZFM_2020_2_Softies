@@ -1,6 +1,7 @@
 package Controller;
 
 import AI.GameState;
+import AI.Operator;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,6 +27,9 @@ public class TTTController {
     private boolean AImode = false;
 
     private int currentPlayer = 1;
+
+    private String id;
+    private int row, column;
 
     public void setTo1v1() {
         gameState = null;
@@ -83,6 +87,10 @@ public class TTTController {
 
     private void manageGameState() {
         setButton();
+        getRowAndColumn();
+        Operator op = new Operator(row, column);
+        gameState = op.applyMove(gameState);
+        stateChecker();
     }
 
     private void AIMove() {
@@ -94,10 +102,25 @@ public class TTTController {
     }
 
     private void getRowAndColumn() {
-        //Gets clicked row and column by ID
+        id = button.getId();
+        row = Character.getNumericValue(id.charAt(1)) - 1;
+        column = Character.getNumericValue(id.charAt(2)) - 1;
     }
 
     private void stateChecker() {
-        //Checks if state is winning, or over
+        if (gameState.isWinningState()) {
+            switch (this.currentPlayer) {
+                case -1:
+                    winner_label.setText("Winner is X.");
+                    break;
+                case 1:
+                    winner_label.setText("Winner is O.");
+                    break;
+            }
+            isOver = true;
+        } else if (gameState.isOver()) {
+            winner_label.setText("Game Over.");
+            isOver = true;
+        }
     }
 }
