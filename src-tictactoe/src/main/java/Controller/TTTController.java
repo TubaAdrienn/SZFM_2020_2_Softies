@@ -12,11 +12,20 @@ public class TTTController {
     @FXML
     private Label winner_label;
 
+    @FXML
+    private Button b11, b12, b13,
+            b21, b22, b23,
+            b31, b32, b33;
+
+    private boolean isOver = false;
+
     private Button button;
 
     private GameState gameState = new GameState();
 
     private boolean AImode = false;
+    
+    private int currentPlayer = 1;
 
     public void setTo1v1() {
         gameState = null;
@@ -33,8 +42,18 @@ public class TTTController {
     }
 
     public void clearCells() {
-        //Clear cells code
-        //Runs when new game starts
+        b11.setText("");
+        b12.setText("");
+        b13.setText("");
+        b21.setText("");
+        b22.setText("");
+        b23.setText("");
+        b31.setText("");
+        b32.setText("");
+        b33.setText("");
+        winner_label.setText("");
+        isOver = false;
+        currentPlayer = 1;
     }
 
     public void choseCell(MouseEvent clickEvent) {
