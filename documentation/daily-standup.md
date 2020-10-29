@@ -45,3 +45,24 @@
   1. I created the base files and structures of the tic tac toe game.
   2. I plan on creating the same for the rules and main page.
   3. No obstacles so far
+  
+### 2020.10.27.
+* Anna
+  1. Finalized snake design.
+  2. Write the rules of snake.
+  3. No obstacles yet.
+  
+* Csabi
+  1. Add dependencies and main file.
+  2. Fix bugs, that prevent it application launchable.
+  3. Some dependencies can't work it well, so my next task will be fix this.
+
+* Matyi
+  1. Finishing 2048 Design
+  2. Bug fixing for make the program runable
+  3. Setup Dependencies
+
+* Adrienn
+  1. Created main and rule page.
+  2. Finish the controller to main and rule page.
+  3. No problems.
