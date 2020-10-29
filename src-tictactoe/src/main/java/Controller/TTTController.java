@@ -24,7 +24,7 @@ public class TTTController {
     private GameState gameState = new GameState();
 
     private boolean AImode = false;
-    
+
     private int currentPlayer = 1;
 
     public void setTo1v1() {
@@ -57,24 +57,40 @@ public class TTTController {
     }
 
     public void choseCell(MouseEvent clickEvent) {
-        // Chosing cells on the view
-        System.out.println("Chose cell.");
+        try {
+            button = (Button) clickEvent.getTarget();
+            if (button.getText().isEmpty() && !isOver) {
+                manageGameState();
+                this.currentPlayer = this.currentPlayer * (-1);
+            }
+        } catch (Exception exc) {
+            throw exc;
+        }
     }
 
     private void setButton() {
-       //Sets button's label based on player
+        switch (this.currentPlayer) {
+            case 1:
+                button.setText("O");
+                System.out.println("Set Button O");
+                break;
+            case -1:
+                button.setText("X");
+                System.out.println("Set Button X");
+                break;
+        }
     }
 
     private void manageGameState() {
-        // Manages game state, checks if over, if winning state
+        setButton();
     }
 
     private void AIMove() {
-      // AI move manager
+        // AI move manager
     }
 
     public void displayAIMove() {
-      // Displays AI move on the view
+        // Displays AI move on the view
     }
 
     private void getRowAndColumn() {
