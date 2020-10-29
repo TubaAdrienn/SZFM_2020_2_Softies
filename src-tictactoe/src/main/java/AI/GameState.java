@@ -15,6 +15,11 @@ public class GameState {
         this.currentPlayer = 1;
     }
 
+    public GameState(char[][] gameState, int current) {
+        this.gameState = gameState;
+        this.currentPlayer = current;
+    }
+
     public int getCurrent() {
         return this.currentPlayer;
     }
