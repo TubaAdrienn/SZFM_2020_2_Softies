@@ -68,4 +68,13 @@ public class GameController {
             lastStep++;
         }
     }
+
+    public void processBack(ActionEvent event) {
+        if (lastStep > 0 && mastermind.getGameState() == 1) {
+            errorLabel.setText("");
+            ImageView view = (ImageView) leftPane.getChildren().get(lastStep - 1);
+            view.setImage(null);
+            lastStep--;
+        }
+    }
 }
