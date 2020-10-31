@@ -254,7 +254,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <GridPane gridLinesVisible="true" layoutX="54.0" layoutY="51.0" prefHeight="50.0" prefWidth="200.0">
+      <GridPane fx:id="secretPane"  gridLinesVisible="true" layoutX="54.0" layoutY="51.0" prefHeight="50.0" prefWidth="200.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

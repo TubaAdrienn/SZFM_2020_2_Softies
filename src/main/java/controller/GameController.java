@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -26,12 +27,18 @@ public class GameController {
     @FXML
     private Pane mainPane;
 
+    @FXML
+    private GridPane secretPane;
+
     private Mastermind mastermind;
 
     @FXML
     public void initialize() {
         mainPane.setStyle("-fx-background-color: #A09586");
         mastermind = new Mastermind();
+        for (int i = 0; i < 4; i++){
+            setColor(i, Color.get(Color.getByValue(mastermind.getGuessColors()[i])));
+        }
     }
     @FXML
     public void processColor(ActionEvent event) {
@@ -76,5 +83,9 @@ public class GameController {
             view.setImage(null);
             lastStep--;
         }
+    }
+
+    public void setColor(int i, Image color) {
+        ((ImageView)secretPane.getChildren().get(i)).setImage(color);
     }
 }
