@@ -46,7 +46,7 @@
   2. I plan on creating the same for the rules and main page.
   3. No obstacles so far
   
-### 2020.10.27.
+### 2020.10.28.
 * Anna
   1. Finalized snake design.
   2. Write the rules of snake.
@@ -66,3 +66,24 @@
   1. Created main and rule page.
   2. Finish the controller to main and rule page.
   3. No problems.
+
+### 2020.10.29.
+* Anna
+  1. Rules of snake is written.
+  2. Start game logci.
+  3. No problems.
+  
+* Csabi
+  1. Fix previous bugs, so we have launchable "only visual" edition.
+  2. Add colors and make color buttons enable to work.
+  3. No problem right now.
+
+* Matyi
+  1. Setup Dependencies
+  2. Make the Game logic
+  3. No problem found
+
+* Adrienn
+  1. Created basic controllers to main and rule page
+  2. Create game logic to tic-tac-toe
+  3. No probs
