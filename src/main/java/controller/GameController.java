@@ -10,10 +10,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import mastermind.Color;
 import mastermind.Mastermind;
+import mastermind.PinStruct;
 
 public class GameController {
 
     private int lastStep;
+    private int rowHelper;
 
     @FXML
     private GridPane leftPane;
@@ -42,7 +44,7 @@ public class GameController {
     }
     @FXML
     public void processColor(ActionEvent event) {
-        if (mastermind.getGameState() == 1) {
+        if (mastermind.getGameState() == 1 && rowHelper != 4) {
             String colorPressed = ((Button) event.getSource()).getText();
             errorLabel.setText("");
             ImageView view = (ImageView) leftPane.getChildren().get(lastStep);
@@ -73,19 +75,57 @@ public class GameController {
                     break;
             }
             lastStep++;
+            rowHelper++;
+        } else if (mastermind.getGameState() == 1) {
+            errorLabel.setText("You need to check that you guessed " + "\n" + "correctly or not!" + "\n" +
+                    "Use Submit button!" + "\n" +
+                    "Or change your selected colors with " + "\n" +"Back button!");
         }
     }
 
     public void processBack(ActionEvent event) {
-        if (lastStep > 0 && mastermind.getGameState() == 1) {
+        if (lastStep > 0 && mastermind.getGameState() == 1 && rowHelper > 0) {
             errorLabel.setText("");
             ImageView view = (ImageView) leftPane.getChildren().get(lastStep - 1);
             view.setImage(null);
             lastStep--;
+            rowHelper--;
         }
     }
 
     public void setColor(int i, Image color) {
         ((ImageView)secretPane.getChildren().get(i)).setImage(color);
+    }
+
+    public void processSubmit(ActionEvent event) {
+        errorLabel.setText("");
+        if (lastStep % 4 == 0 && lastStep != 0 && lastStep != 40) {
+            PinStruct pins = mastermind.process(leftPane, lastStep);
+
+            for (int i = 0; i < pins.getBlack() + pins.getWhite(); i++) {
+                ImageView rightView = (ImageView) rightPane.getChildren().get(((int) Math.floor(lastStep / 4) - 1) * 4 + i);
+                if (i < pins.getBlack()) {
+                    rightView.setImage(Color.get(Color.BLACK));
+                } else
+                    rightView.setImage(Color.get(Color.WHITE));
+            }
+            rowHelper = 0;
+
+            if (pins.getBlack() + pins.getWhite() == 0) {
+                errorLabel.setText("All of your guesses are wrong!");
+            } else if (pins.getBlack() == 4) {
+                mastermind.setGameState(2);
+                errorLabel.setText("Congratulations, you win!" + "\n" + "You guessed all the colors!" + "\n" + "If you want to play another match " +
+                        "\n" + "press new game button!" + "\n" + "Or if you want to play another with " + "\n" + "another mini game, press " +
+                        "\n" + "Back to menu button!");
+            }
+        } else if(lastStep < 40 ){
+            errorLabel.setText("You must select 4 colors to check!" + "\n" +
+                    "Use Color buttons");
+        }else {
+            mastermind.setGameState(3);
+            errorLabel.setText("Unfortunately you failed this time");
+        }
+
     }
 }
