@@ -221,7 +221,7 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Button layoutX="481.0" layoutY="600.0" maxHeight="50.0" maxWidth="181.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="181.0" text="New Game">
+      <Button layoutX="481.0" layoutY="600.0" maxHeight="50.0" maxWidth="181.0" mnemonicParsing="false" onAction="#processNewGame" prefHeight="50.0" prefWidth="181.0" text="New Game">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
