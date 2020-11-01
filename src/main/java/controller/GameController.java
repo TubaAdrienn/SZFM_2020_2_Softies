@@ -142,4 +142,11 @@ public class GameController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    public void processBackToMenu(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }

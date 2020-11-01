@@ -226,7 +226,7 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="684.0" layoutY="600.0" maxHeight="50.0" maxWidth="181.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="181.0" text="Back to menu">
+      <Button layoutX="684.0" layoutY="600.0" maxHeight="50.0" maxWidth="181.0" mnemonicParsing="false" onAction="#processBackToMenu" prefHeight="50.0" prefWidth="181.0" text="Back to menu">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
