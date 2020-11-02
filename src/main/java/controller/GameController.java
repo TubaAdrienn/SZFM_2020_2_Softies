@@ -45,10 +45,8 @@ public class GameController {
     public void initialize() {
         mainPane.setStyle("-fx-background-color: #A09586");
         mastermind = new Mastermind();
-        for (int i = 0; i < 4; i++){
-            setColor(i, Color.get(Color.getByValue(mastermind.getGuessColors()[i])));
-        }
     }
+
     @FXML
     public void processColor(ActionEvent event) {
         if (mastermind.getGameState() == 1 && rowHelper != 4) {
@@ -125,6 +123,9 @@ public class GameController {
                 errorLabel.setText("Congratulations, you win!" + "\n" + "You guessed all the colors!" + "\n" + "If you want to play another match " +
                         "\n" + "press new game button!" + "\n" + "Or if you want to play another with " + "\n" + "another mini game, press " +
                         "\n" + "Back to menu button!");
+                for (int i = 0; i < 4; i++) {
+                    setColor(i, Color.get(Color.getByValue(mastermind.getGuessColors()[i])));
+                }
             }
         } else if(lastStep < 40 ){
             errorLabel.setText("You must select 4 colors to check!" + "\n" +
@@ -132,6 +133,9 @@ public class GameController {
         }else {
             mastermind.setGameState(3);
             errorLabel.setText("Unfortunately you failed this time");
+            for (int i = 0; i < 4; i++) {
+                setColor(i, Color.get(Color.getByValue(mastermind.getGuessColors()[i])));
+            }
         }
 
     }
