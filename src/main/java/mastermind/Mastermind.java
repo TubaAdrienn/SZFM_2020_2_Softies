@@ -19,6 +19,13 @@ public class Mastermind {
     @Getter
     private int[] guessColors;
 
+    private ImageView view;
+    private Color color;
+    private int whitePin = 0;
+    private int blackPin = 0;
+    private List<Integer> whiteExt = new ArrayList<Integer>();
+    private List<Integer> whiteMyExt = new ArrayList<Integer>();
+
     public Mastermind(){
         this.gameState = 1;
         this.rand = new Random();
@@ -28,41 +35,48 @@ public class Mastermind {
             this.guessColors[i] = this.rand.nextInt(8);
     }
 
-    public PinStruct process(GridPane leftPane, int lastStep) {
-        int whitePin = 0;
-        int blackPin = 0;
-        List<Integer> whiteExt = new ArrayList<Integer>();
-        List<Integer> whiteMyExt = new ArrayList<Integer>();
+    private void getImage(int gridNumber, GridPane leftPane, int lastStep){
+        view = (ImageView) leftPane.getChildren().get(((int) Math.floor(lastStep / 4) - 1) * 4 + gridNumber);
+        color = Color.findByImage(view.getImage());
+    }
 
+    private void addPin(String pin, int whiteExtInt, int whiteMyExtInt){
+        switch (pin){
+            case "white":
+                this.whitePin++;
+                break;
+            case "black":
+                this. blackPin++;
+                break;
+        }
+        whiteExt.add(whiteExtInt);
+        whiteMyExt.add(whiteMyExtInt);
+    }
+
+    public PinStruct process(GridPane leftPane, int lastStep) {
         for (int i = 0; i < 4; i++) {
-            ImageView view = (ImageView) leftPane.getChildren().get(((int) Math.floor(lastStep / 4) - 1) * 4 + i);
-            Color color = Color.findByImage(view.getImage());
+            getImage(i, leftPane, lastStep);
             if (color != null)
                 if (color.equals(Color.getByValue(guessColors[i]))) {
-                    blackPin++;
-                    whiteExt.add(i);
-                    whiteMyExt.add(i);
+                   addPin("black", i, i);
                 }
         }
 
         for (int i = 0; i < 4; i++) {
-            ImageView view = (ImageView) leftPane.getChildren().get(((int) Math.floor(lastStep / 4) - 1) * 4 + i);
-            Color color = Color.findByImage(view.getImage());
-            if (color != null)
+            getImage(i, leftPane, lastStep);
+            if (color != null) {
                 if (!color.equals(Color.getByValue(guessColors[i])) && !whiteMyExt.contains(i)) {
                     for (int j = 0; j < 4; j++) {
                         Color guess = Color.getByValue(guessColors[j]);
                         if (!whiteExt.contains(j) && !whiteMyExt.contains(i)) {
                             if (color.equals(guess)) {
-                                whiteExt.add(j);
-                                whiteMyExt.add(i);
-                                whitePin++;
+                                addPin("white", j, i);
                             }
                         }
                     }
                 }
+            }
         }
-
         return new PinStruct(whitePin, blackPin);
     }
 }
