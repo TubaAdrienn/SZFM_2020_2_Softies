@@ -21,10 +21,6 @@ public class Mastermind {
 
     private ImageView view;
     private Color color;
-    private int whitePin = 0;
-    private int blackPin = 0;
-    private List<Integer> whiteExt = new ArrayList<Integer>();
-    private List<Integer> whiteMyExt = new ArrayList<Integer>();
 
     public Mastermind(){
         this.gameState = 1;
@@ -40,25 +36,18 @@ public class Mastermind {
         color = Color.findByImage(view.getImage());
     }
 
-    private void addPin(String pin, int whiteExtInt, int whiteMyExtInt){
-        switch (pin){
-            case "white":
-                this.whitePin++;
-                break;
-            case "black":
-                this. blackPin++;
-                break;
-        }
-        whiteExt.add(whiteExtInt);
-        whiteMyExt.add(whiteMyExtInt);
-    }
-
     public PinStruct process(GridPane leftPane, int lastStep) {
+        int whitePin = 0;
+        int blackPin = 0;
+        List<Integer> whiteExt = new ArrayList<Integer>();
+        List<Integer> whiteMyExt = new ArrayList<Integer>();
         for (int i = 0; i < 4; i++) {
             getImage(i, leftPane, lastStep);
             if (color != null)
                 if (color.equals(Color.getByValue(guessColors[i]))) {
-                   addPin("black", i, i);
+                    blackPin++;
+                    whiteExt.add(i);
+                    whiteMyExt.add(i);
                 }
         }
 
@@ -70,7 +59,9 @@ public class Mastermind {
                         Color guess = Color.getByValue(guessColors[j]);
                         if (!whiteExt.contains(j) && !whiteMyExt.contains(i)) {
                             if (color.equals(guess)) {
-                                addPin("white", j, i);
+                                whitePin++;
+                                whiteExt.add(j);
+                                whiteMyExt.add(i);
                             }
                         }
                     }
