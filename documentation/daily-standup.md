@@ -87,3 +87,24 @@
   1. Created basic controllers to main and rule page
   2. Create game logic to tic-tac-toe
   3. No probs
+
+  ### 2020.11.06.
+  * Anna
+  1. 
+  2. 
+  3. 
+  
+* Csabi
+  1. 
+  2. 
+  3. 
+
+* Matyi
+  1. 
+  2. 
+  3. 
+
+* Adrienn
+  1. 
+  2. 
+  3. 
