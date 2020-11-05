@@ -4,7 +4,7 @@
 2. What are you going to work on until the next meeting?
 3. What obstacles have you encoutered?
 
-### 2020.10.26.
+### 2020.11.02.
 * Anna
   1. I have looked for better styling design for Snake.
   2. Building base design to Snake.
@@ -25,7 +25,7 @@
   2. I want to create a basic view and connect to a controller
   3. So far, there has not been any problem.
 
-### 2020.10.27.
+### 2020.11.03.
 * Anna
   1. Base files for design created.
   2. Update the design.
@@ -46,7 +46,7 @@
   2. I plan on creating the same for the rules and main page.
   3. No obstacles so far
   
-### 2020.10.28.
+### 2020.11.04.
 * Anna
   1. Finalized snake design.
   2. Write the rules of snake.
@@ -67,7 +67,7 @@
   2. Finish the controller to main and rule page.
   3. No problems.
 
-### 2020.10.29.
+### 2020.11.05.
 * Anna
   1. Rules of snake is written.
   2. Start game logci.
