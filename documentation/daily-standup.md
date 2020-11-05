@@ -100,9 +100,9 @@
   3. 
 
 * Matyi
-  1. 
-  2. 
-  3. 
+1. Make Game logic
+2. Created basic controllers to main and rule page
+3. Some poblems found with .gitignore
 
 * Adrienn
   1. 
