@@ -95,16 +95,16 @@
   3. 
   
 * Csabi
-  1. 
-  2. 
-  3. 
+1. Fixed game mechanic.
+2. Make comments in Mastermind source.
+3. Problems were identified only during the review (Those will be fixed).
 
 * Matyi
 1. Make Game logic
-2. Created basic controllers to main and rule page
+2. Created basic controller to main and rule page
 3. Some poblems found with .gitignore
 
 * Adrienn
-  1. 
-  2. 
-  3. 
+1. Created basic game logic to tic-tac-toe
+2. Implement fixes with AI
+3. No problem
