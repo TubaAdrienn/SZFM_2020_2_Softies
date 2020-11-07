@@ -89,10 +89,10 @@
   3. No probs
 
   ### 2020.11.06.
-  * Anna
-  1. 
-  2. 
-  3. 
+* Anna
+  1. Started game logic
+  2. Add fixes to the code according to code review advice.
+  3. No problem
   
 * Csabi
   1. Fixed game mechanic.
