@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.image.Image?>
-<Pane fx:id="mainPane" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
+<Pane fx:id="mainPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('/img/background.png')" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
    <children>
       <GridPane fx:id="leftPane" gridLinesVisible="true" layoutX="54.0" layoutY="151.0" prefHeight="500.0" prefWidth="200.0">
          <columnConstraints>

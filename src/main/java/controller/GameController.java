@@ -43,7 +43,6 @@ public class GameController {
 
     @FXML
     public void initialize() {
-        mainPane.setStyle("-fx-background-color: #A09586");
         mastermind = new Mastermind();
     }
 
