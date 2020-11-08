@@ -114,7 +114,7 @@
                   </Label>
                </children>
             </GridPane>
-            <Button layoutX="732.0" layoutY="43.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="102.0" text="New Game" />
+            <Button layoutX="752.0" layoutY="43.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="102.0" text="New Game" />
             <Label layoutX="41.0" layoutY="21.0" prefHeight="46.0" prefWidth="198.0" style="&#10;" text="Score: 0" textAlignment="CENTER" textFill="#9f9f9f" textOverrun="CLIP" wrapText="false">
                <font>
                   <Font name="Arial" size="25.0" />
@@ -125,6 +125,7 @@
                   <Font name="Arial" size="25.0" />
                </font>
             </Label>
+            <Button layoutX="752.0" layoutY="118.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="102.0" text="Back to Menu" />
       </children>
     </AnchorPane>
   </children>
