@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: transparent; -fx-background-image: url('/images/backg.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TTTController">
+   <children>
+      <GridPane alignment="CENTER" layoutX="59.0" layoutY="195.0" prefHeight="413.0" prefWidth="466.0" style="-fx-border-color: black; -fx-border-width: 1px;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="b11" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b12" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.columnIndex="1">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b13" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.columnIndex="2">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b21" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.rowIndex="1">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b22" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b23" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b31" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.rowIndex="2">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b32" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+            <Button fx:id="b33" mnemonicParsing="false" onMouseClicked="#choseCell" prefHeight="190.0" prefWidth="155.0" style="-fx-background-color: antiquewhite; -fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="44.0" />
+               </font></Button>
+         </children>
+      </GridPane>
+      <Label layoutX="237.0" layoutY="14.0" prefHeight="105.0" prefWidth="427.0" style="-fx-alignment: center;" text="TIC-TAC-TOE" textAlignment="CENTER" textFill="#433c3c">
+         <font>
+            <Font size="72.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_ai" layoutX="649.0" layoutY="195.0" mnemonicParsing="false" onMouseClicked="#setTo1vAI" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: antiquewhite; -fx-border-color: black; -fx-border-width: 3px;" text="1 v TicTacToe">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_1v1" layoutX="649.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#setTo1v1" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: antiquewhite; -fx-border-color: black; -fx-border-width: 3px;" text="1 v 1">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Button>
+      <Label fx:id="winner_label" layoutX="289.0" layoutY="119.0" prefHeight="46.0" prefWidth="324.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="#252121">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

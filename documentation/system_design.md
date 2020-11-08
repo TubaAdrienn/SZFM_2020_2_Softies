@@ -148,7 +148,7 @@ Opening the Game in the Main page you can see the four games(Tic-Tac-Toe, Snake,
 * R03 - Save scores to database (MySQL)
 * R04 - Retrieve data from database
 * R05 - Contains 4 games - 2048, Snake, Tic-Tac-Toe, Mastermind
-* R06 - Tic-Tac-Toe has an AI or a 2 people version
+* R06 - Tic-Tac-Toe has an TicTacToe or a 2 people version
 
 ## Functional Design
 
@@ -187,7 +187,7 @@ Opening the Game in the Main page you can see the four games(Tic-Tac-Toe, Snake,
     * Back to menu button: Clicking this button, the user will direct back to main page.
 
 * Tic-Tac-Toe:
-    * Vs AI button: Clicking this button, the user will play against Artificial Intelligence.
+    * Vs TicTacToe button: Clicking this button, the user will play against Artificial Intelligence.
     
     * 1v1 button: Clicking this button, the user will play against an another player.
 
@@ -242,7 +242,7 @@ The application will follow the MVC pattern which is a software design pattern t
 * In our application each view will have its own controller.
 #### Util
 * Util classes are usually classes that implement some kind of business logic that can be reused in more than one application such as DAO classes for example.
-* In our application these will be the DAO classes, the AI classes and other independent reusable classes.
+* In our application these will be the DAO classes, the TicTacToe classes and other independent reusable classes.
 
 ![alt text](img/adm.jpg "Abstract Domain Model")
 
@@ -276,7 +276,7 @@ The second table will contain four attributes: an ID, a Game attribute, a Name a
 		* One for the main page
 		* One for the rules page
 	* Other util or game managing classes
-	* AI classes
+	* TicTacToe classes
 * Client-side classes:
 	* FXML files:
 		* One for each game
