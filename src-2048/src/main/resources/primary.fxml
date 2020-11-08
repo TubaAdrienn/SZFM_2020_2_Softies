@@ -11,7 +11,7 @@
 
 <VBox prefHeight="653.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefWidth="920.0" VBox.vgrow="ALWAYS">
       <children>
         <Label alignment="CENTER" layoutX="403.0" layoutY="32.0" prefHeight="68.0" prefWidth="102.0" style="&#10;" text="2048" textAlignment="CENTER" textFill="#9f9f9f" textOverrun="CLIP" wrapText="false">
           <font>
@@ -115,6 +115,11 @@
                </children>
             </GridPane>
             <Button layoutX="732.0" layoutY="43.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="102.0" text="New Game" />
+            <Label alignment="CENTER" layoutX="41.0" layoutY="21.0" prefHeight="46.0" prefWidth="102.0" style="&#10;" text="Score: 0" textAlignment="CENTER" textFill="#9f9f9f" textOverrun="CLIP" wrapText="false">
+               <font>
+                  <Font name="Arial" size="25.0" />
+               </font>
+            </Label>
       </children>
     </AnchorPane>
   </children>
