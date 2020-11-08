@@ -120,7 +120,7 @@ public class GameController {
             } else if (pins.getBlack() == 4) {
                 mastermind.setGameState(2);
                 errorLabel.setText("Congratulations, you win!" + "\n" + "You guessed all the colors!" + "\n" + "If you want to play another match " +
-                        "\n" + "press new game button!" + "\n" + "Or if you want to play another with " + "\n" + "another mini game, press " +
+                        "\n" + "press new game button!" + "\n" + "Or if you want to play with " + "\n" + "another mini game, press " +
                         "\n" + "Back to menu button!");
                 for (int i = 0; i < 4; i++) {
                     setColor(i, Color.get(Color.getByValue(mastermind.getGuessColors()[i])));

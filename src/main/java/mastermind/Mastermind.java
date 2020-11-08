@@ -22,6 +22,9 @@ public class Mastermind {
     private ImageView view;
     private Color color;
 
+    /**
+     * Make 4 random secret color. And set active(1) status for game state.
+     */
     public Mastermind(){
         this.gameState = 1;
         this.rand = new Random();
@@ -31,11 +34,24 @@ public class Mastermind {
             this.guessColors[i] = this.rand.nextInt(8);
     }
 
+    /**
+     * Get the image which we need
+     * @param gridNumber Index of image which we need.
+     * @param leftPane A grid pane where we want to search the right image with a right index.
+     * @param lastStep An integer which contain how many steps we did.
+     */
     private void getImage(int gridNumber, GridPane leftPane, int lastStep){
         view = (ImageView) leftPane.getChildren().get(((int) Math.floor(lastStep / 4) - 1) * 4 + gridNumber);
         color = Color.findByImage(view.getImage());
     }
 
+    /**
+     * Return how many correct colors in good place we guessed well (black pins),
+     * and how many correct colors in bad place we guessed well (white pins).
+     * @param leftPane A grid pane, where we want to check answers.
+     * @param lastStep An integer which contain how many steps we did.
+     * @return Return values of black pins and white pins.
+     */
     public PinStruct process(GridPane leftPane, int lastStep) {
         int whitePin = 0;
         int blackPin = 0;
