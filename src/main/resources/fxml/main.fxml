@@ -6,9 +6,9 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('main.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('/images/main.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
     <children>
-        <Label contentDisplay="CENTER" layoutX="203.0" layoutY="60.0" prefHeight="61.0" prefWidth="495.0" style="-fx-alignment: center;" text="Game Rule" textAlignment="CENTER">
+        <Label contentDisplay="CENTER" layoutX="203.0" layoutY="60.0" prefHeight="61.0" prefWidth="495.0" style="-fx-alignment: center;" text="Game Arcade" textAlignment="CENTER">
             <font>
                 <Font size="83.0" />
             </font>
@@ -69,27 +69,25 @@
                 </LinearGradient>
             </textFill>
         </Label>
-        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="103.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="game_mastermind" fitHeight="150.0" fitWidth="200.0" layoutX="240.0" layoutY="460.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@placeholder2.png" />
+                <Image url="@../images/placeholder.png" />
             </image>
         </ImageView>
-        <TextField layoutX="129.0" layoutY="523.0" promptText="Player 2" style="-fx-background-color: antiquewhite;" />
-        <TextField layoutX="129.0" layoutY="483.0" promptText="Player 1" style="-fx-background-color: antiquewhite;" />
-        <Button layoutX="154.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#playClick" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: crimson; -fx-border-color: black; -fx-border-width: 2px;" text="PLAY" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Button>
-        <Label fx:id="rulesLabel" alignment="TOP_LEFT" layoutX="367.0" layoutY="201.0" prefHeight="465.0" prefWidth="437.0" style="-fx-background-color: antiquewhite; -fx-border-color: darksalmon; -fx-border-width: 3px;" text="Rule Rule rule Rule">
-            <font>
-                <Font size="19.0" />
-            </font>
-        </Label>
-      <Button layoutX="31.0" layoutY="629.0" mnemonicParsing="false" onMouseClicked="#backClick" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: crimson; -fx-border-color: black; -fx-border-width: 2px;" text="BACK" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+        <ImageView fx:id="game_2048" fitHeight="150.0" fitWidth="200.0" layoutX="240.0" layoutY="267.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/placeholder.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="game_tictactoe" fitHeight="150.0" fitWidth="200.0" layoutX="473.0" layoutY="460.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/placeholder.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="game_snake" fitHeight="150.0" fitWidth="200.0" layoutX="473.0" layoutY="267.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/placeholder.png" />
+            </image>
+        </ImageView>
     </children>
 </Pane>

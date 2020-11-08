@@ -1,4 +1,4 @@
-package mastermind;
+package Mastermind;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;

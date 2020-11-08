@@ -6,7 +6,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<Pane prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('/fxml/background.jpg');" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('/images/background.jpg');" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SnakeController">
     <children>
       <Label fx:id="scoreLabel" layoutX="237.0" layoutY="74.0" prefHeight="35.0" prefWidth="215.0" style=" -fx-text-fill: black;">
          <font>

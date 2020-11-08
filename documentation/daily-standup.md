@@ -106,5 +106,5 @@
 
 * Adrienn
   1. Created basic game logic to tic-tac-toe
-  2. Implement fixes with AI
+  2. Implement fixes with TicTacToe
   3. No problem

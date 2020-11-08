@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: transparent; -fx-background-image: url('backg.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TTTController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: transparent; -fx-background-image: url('/images/backg.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TTTController">
    <children>
       <GridPane alignment="CENTER" layoutX="59.0" layoutY="195.0" prefHeight="413.0" prefWidth="466.0" style="-fx-border-color: black; -fx-border-width: 1px;">
         <columnConstraints>
@@ -61,7 +61,7 @@
             <Font size="72.0" />
          </font>
       </Label>
-      <Button fx:id="button_ai" layoutX="649.0" layoutY="195.0" mnemonicParsing="false" onMouseClicked="#setTo1vAI" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: antiquewhite; -fx-border-color: black; -fx-border-width: 3px;" text="1 v AI">
+      <Button fx:id="button_ai" layoutX="649.0" layoutY="195.0" mnemonicParsing="false" onMouseClicked="#setTo1vAI" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: antiquewhite; -fx-border-color: black; -fx-border-width: 3px;" text="1 v TicTacToe">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>

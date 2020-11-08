@@ -1,4 +1,4 @@
-package AI;
+package TicTacToe;
 
 public class StepAdvisor {
 

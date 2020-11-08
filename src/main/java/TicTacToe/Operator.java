@@ -1,4 +1,4 @@
-package AI;
+package TicTacToe;
 import java.util.ArrayList;
 import java.util.List;
 

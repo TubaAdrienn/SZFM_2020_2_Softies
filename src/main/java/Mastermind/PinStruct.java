@@ -1,4 +1,4 @@
-package mastermind;
+package Mastermind;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

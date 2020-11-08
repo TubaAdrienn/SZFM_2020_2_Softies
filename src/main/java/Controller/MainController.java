@@ -1,5 +1,6 @@
 package Controller;
 
+import Helpers.PageLoader;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 

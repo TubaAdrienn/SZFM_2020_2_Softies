@@ -9,7 +9,7 @@
 * Saving and querying high scores for each game.
 * Saving highscores by adding name at the end of the game
 * Showing game rules.
-* Tic-Tac-Toe: Two player on one with AI options.
+* Tic-Tac-Toe: Two player on one with TicTacToe options.
 
 ## Not System Goals
 * User registration
@@ -30,7 +30,7 @@ We want to give our children modern games they can play with on any computer. We
 * Mastermind game ⟶ Button to chose the game, game implementation.
 * Showing rules for the game ⟶ Display the rules after chosing a game but before starting it.
 * Displaying High Score ⟶ Saving and querying highscores to MySQL Database.
-* Tic-Tac-Toe AI ⟶ Option to chose between versus AI or 2 player mode.
+* Tic-Tac-Toe TicTacToe ⟶ Option to chose between versus TicTacToe or 2 player mode.
 * Child friendly display ⟶ Happy, warm colors, no scary pictures and no harmful content.
 * Low system requirements ⟶ Should run fast on a microwave too.
 
@@ -40,7 +40,7 @@ We want to give our children modern games they can play with on any computer. We
 * R03 - Save scores to database (MySQL)
 * R04 - Retrieve data from database
 * R05 - Contains 4 games - 2048, Snake, Tic-Tac-Toe, Mastermind
-* R06 - Tic-Tac-Toe has an AI or a 2 people version
+* R06 - Tic-Tac-Toe has an TicTacToe or a 2 people version
 
 ## Usage Instances
    <img src="img/Usage Instances.png"
@@ -133,7 +133,7 @@ We want to give our children modern games they can play with on any computer. We
 	* The user is redirected to a new page, which contains a description of the game's rules.
 	* By clicking on the "Back" button, the user is able to go back to the greeting page to choose from another game.
 	* By clicking on the "Play" button:
-		* The user is able to choose wether it wants to play against AI or another player.
+		* The user is able to choose wether it wants to play against TicTacToe or another player.
 			* After the mode is chosen, the user is able to start playing the game.
 		* The score of the player should be displayed while playing the rounds.
 		* The winner should be displayed at the end of the rounds.
@@ -141,7 +141,7 @@ We want to give our children modern games they can play with on any computer. We
 		* By clicking on the "Back" button the user is able to go back to the description of the game's rules.
 
 ## Function - Requirement Compliance
-The requirements are written in the Requirement Specification. The games should work properly with no lags, no crashing. Every children should easy to operate with the games with the child-friendly display. The scores should save to the database. The platform should contain four games: 2048, Snake, Tic-Tac-Toe, Mastermind. The Tic-Tac-Toe should contain a two-player version and an AI version. All four games should show the rules for the games.
+The requirements are written in the Requirement Specification. The games should work properly with no lags, no crashing. Every children should easy to operate with the games with the child-friendly display. The scores should save to the database. The platform should contain four games: 2048, Snake, Tic-Tac-Toe, Mastermind. The Tic-Tac-Toe should contain a two-player version and an TicTacToe version. All four games should show the rules for the games.
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
@@ -153,6 +153,6 @@ The requirements are written in the Requirement Specification. The games should 
 * GUI: Stands for graphical user interface that allows interaction between users and electronic devices by clicking on icons or through text navigation.
 * JavaFx: A software platform for creating desktop applications' GUI.
 * RDBMS: Relational Database Management System is a software that allows users to define, create, maintain, or control access to the database.
-* AI: Artificial intelligence is "intelligence" demonstrated by machines. Any device that observes its environment and takes actions that maximize the chance of achieving its goals successfully.
+* TicTacToe: Artificial intelligence is "intelligence" demonstrated by machines. Any device that observes its environment and takes actions that maximize the chance of achieving its goals successfully.
 * jpeg: A compression used in image file formats. Compression is lossy.
 * png: Stands for Portable Network Graphics. Image file format that supports lossless data compression.

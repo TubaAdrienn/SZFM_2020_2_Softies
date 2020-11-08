@@ -1,4 +1,4 @@
-package controller;
+package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,9 +13,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import mastermind.Color;
-import mastermind.Mastermind;
-import mastermind.PinStruct;
+import Mastermind.Color;
+import Mastermind.Mastermind;
+import Mastermind.PinStruct;
 
 import java.io.IOException;
 
