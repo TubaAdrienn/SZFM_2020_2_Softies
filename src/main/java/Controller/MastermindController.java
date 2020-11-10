@@ -41,11 +41,18 @@ public class MastermindController {
 
     private Mastermind mastermind;
 
+    /**
+     * Initialize the game.
+     */
     @FXML
     public void initialize() {
         mastermind = new Mastermind();
     }
 
+    /**
+     * Set Image view to the color image (that color what we pressed).
+     * @param event Event of the action.
+     */
     @FXML
     public void processColor(ActionEvent event) {
         if (mastermind.getGameState() == 1 && rowHelper != 4) {
@@ -87,6 +94,10 @@ public class MastermindController {
         }
     }
 
+    /**
+     * What to do when press the Back button.
+     * @param event Action event of the button.
+     */
     public void processBack(ActionEvent event) {
         if (lastStep > 0 && mastermind.getGameState() == 1 && rowHelper > 0) {
             errorLabel.setText("");
@@ -97,10 +108,19 @@ public class MastermindController {
         }
     }
 
+    /**
+     * Show us the secret colors, which had to be guessed.
+     * @param i Color position in integer (4 random color so 0, 1, 2 or 3).
+     * @param color Color value.
+     */
     public void setColor(int i, Image color) {
         ((ImageView)secretPane.getChildren().get(i)).setImage(color);
     }
 
+    /**
+     * What to do when press the Submit button.
+     * @param event Action event of the button.
+     */
     public void processSubmit(ActionEvent event) {
         errorLabel.setText("");
         if (lastStep % 4 == 0 && lastStep != 0 && lastStep != 40) {
@@ -139,6 +159,11 @@ public class MastermindController {
 
     }
 
+    /**
+     * Start a new game.
+     * @param actionEvent Event of the action.
+     * @throws IOException Error if file not found.
+     */
     public void processNewGame(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/mastermind.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -146,6 +171,11 @@ public class MastermindController {
         stage.show();
     }
 
+    /**
+     * Go back to main menu.
+     * @param actionEvent Event of the action.
+     * @throws IOException Error if file not found.
+     */
     public void processBackToMenu(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
