@@ -268,19 +268,19 @@
          <children>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@../img/secret.png" />
+               <Image url="@../images/secret.png" />
             </image></ImageView>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                <image>
-                  <Image url="@../img/secret.png" />
+                  <Image url="@../images/secret.png" />
                </image></ImageView>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                <image>
-                  <Image url="@../img/secret.png" />
+                  <Image url="@../images/secret.png" />
                </image></ImageView>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                <image>
-                  <Image url="@../img/secret.png" />
+                  <Image url="@../images/secret.png" />
                </image></ImageView>
          </children>
       </GridPane>
