@@ -108,3 +108,13 @@
   1. Created basic game logic to tic-tac-toe
   2. Implement fixes with AI
   3. No problem
+
+
+  ### 2020.11.09.
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
