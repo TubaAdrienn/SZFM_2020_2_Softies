@@ -23,6 +23,7 @@ public class MastermindController {
 
     private int lastStep;
     private int rowHelper;
+    private int score = 10;
 
     @FXML
     private GridPane leftPane;
@@ -34,7 +35,7 @@ public class MastermindController {
     private Label errorLabel;
 
     @FXML
-    private Pane mainPane;
+    private Label currentScore;
 
     @FXML
     private GridPane secretPane;
@@ -125,6 +126,7 @@ public class MastermindController {
      */
     public void processSubmit(ActionEvent event) {
         errorLabel.setText("");
+        currentScore.setText(String.valueOf(--score));
         //If we have 4 colors in a row we can submit our tips, otherwise we can't
         if (lastStep % 4 == 0 && lastStep != 0 && lastStep != 40) {
             PinStruct pins = mastermind.process(leftPane, lastStep);
