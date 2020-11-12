@@ -148,3 +148,20 @@
     1. Started plan to connect AI with UI elements.
     2. Implement the plan.
     3. No problem
+  ### 2020.11.11.
+* Anna
+    1. Displayed Initial Snake.
+    2. Write Snake movement.
+    3. No obstacles so far.
+* Csabi
+    1. Make a working current score in Mastermind.
+    2. Try to make better display for Mastermind (less backgorund-foreground blend).
+    3. No problems.
+* Matyi
+    1. Make Colors for 2048
+    2. Implement colors for 2048
+    3. There were some probelms in 2048.fxml
+* Adrienn
+    1. Implementing the connection.
+    2. Still implementing the connection.
+    3. No problem, I just had no time.
