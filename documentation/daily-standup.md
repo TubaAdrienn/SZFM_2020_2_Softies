@@ -133,9 +133,18 @@
 
   ### 2020.11.10.
 * Anna
-
+    1. Created Initial Snake.
+    2. Show Initial Snake.
+    3. No problems
 * Csabi
-
+    1. Add rest of javadoc and comment to Mastermind source code.
+    2. Make a working current score in Mastermind.
+    3. No problems.
 * Matyi
-
+    1. Make plan for how to implement it
+    2. Make Colors for 2048
+    3. No problem
 * Adrienn
+    1. Started plan to connect AI with UI elements.
+    2. Implement the plan.
+    3. No problem
