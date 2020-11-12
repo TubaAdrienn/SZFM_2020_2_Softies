@@ -112,9 +112,21 @@
 
   ### 2020.11.09.
 * Anna
+  1. FXML is fixed.
+  2. Create the Initial Snake.
+  3. No problem
 
 * Csabi
+  1. Fix Mastermind launch after mergeing issues.
+  2. Add rest of javadoc and comment to Mastermind source code.
+  3. No problems right now.
 
 * Matyi
+  1. Setup Controller
+  2. Make plan for how to implement it
+  3. No problems
 
 * Adrienn
+  1. I finished fxml files and basic controller.
+  2. I'm going to create a plan to implement AI with UI.
+  3. No problems.
