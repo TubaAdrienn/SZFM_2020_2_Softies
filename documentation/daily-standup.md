@@ -130,3 +130,12 @@
   1. I finished fxml files and basic controller.
   2. I'm going to create a plan to implement AI with UI.
   3. No problems.
+
+  ### 2020.11.10.
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
