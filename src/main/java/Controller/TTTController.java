@@ -4,9 +4,12 @@ import TicTacToe.GameState;
 import TicTacToe.Operator;
 import TicTacToe.StepAdvisor;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+
+import java.util.Locale;
 
 public class TTTController {
 
@@ -30,6 +33,11 @@ public class TTTController {
 
     private String id;
     private int row, column;
+    private Scene scene;
+
+    public void init(Scene scene) {
+        this.scene = scene;
+    }
 
     public void setTo1v1() {
         gameState = null;
@@ -113,7 +121,11 @@ public class TTTController {
     }
 
     public void displayAIMove(Operator op) {
-        // Displays AI move on the view
+        row = op.row + 1;
+        column = op.column + 1;
+        id = "b" + row + column;
+        button = (Button) scene.lookup("#" + id);
+        button.setText("X");
     }
 
     private void getRowAndColumn() {
