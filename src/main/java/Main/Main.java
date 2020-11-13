@@ -10,6 +10,5 @@ public class Main{
         GameState gameState = new GameState();
 
         gameState.moveSnake();
-        gameState.isOver();
     }
 }

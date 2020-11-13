@@ -14,6 +14,8 @@ public class GameState {
     private Scanner scanner = new Scanner(System.in);
     private int score;
     private int highScore;
+    boolean isOver;
+    Random rand = new Random();
 
     public GameState(){
         this.score = 0;
@@ -23,21 +25,24 @@ public class GameState {
         this.head = new int[2];
         this.tail = new int[2];
         this.foodPlace = new int[2];
-        Random rand = new Random();
-        for (int i = 0; i < 10; i++){
+        this.isOver=false;
+        for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 gameState[i][j] = 0;
             }
         }
-        int randomI = rand.nextInt(6);
-        int randomJ = rand.nextInt(6);
-        gameState[randomI][randomJ]= 3;
-        saveHead(randomI, randomJ);
-        gameState[++randomI][randomJ]=2;
-        gameState[++randomI][randomJ]=1;
-        this.generateFood();
+        generateSnake();
+        generateFood();
     }
 
+    public void generateSnake(){
+        int randomI = rand.nextInt(6);
+        int randomJ = rand.nextInt(6);
+        saveHead(randomI, randomJ);
+        gameState[randomI][randomJ]= 3;
+        gameState[++randomI][randomJ]=2;
+        gameState[++randomI][randomJ]=1;
+    }
 
     /*
      * Ez a metódus menti el a fejnek a koordinátáit.
@@ -71,8 +76,8 @@ public class GameState {
     public void generateFood(){
         boolean success=false;
         Random rand = new Random();
-        int foodCellI=-1;
-        int foodCellJ = -1;
+        int foodCellI;
+        int foodCellJ;
         while(success==false){
             foodCellI=rand.nextInt(9);
             foodCellJ=rand.nextInt(9);
@@ -86,21 +91,8 @@ public class GameState {
         }
     }
 
-    public boolean isOver(){
-        /*
-         * if(){
-         *
-         * this.highScore=this.score;
-         *return true;
-         * }
-         * else {*/
-        return false;
-
-        //ha kimegy a rácsokból, akkor dobjon vissza az isOver egy truet
-    }
-
     public void moveSnake(){
-        while(isOver()==false){
+        while(this.isOver==false){
             this.showState();
             this.direction = this.scanner.nextLine();
             switch(this.direction){
@@ -121,29 +113,30 @@ public class GameState {
                     makeStep();
                     break;
             }
-
             System.out.println();
-            //bekér egy a, s, d, w
-            //lemented a direction változóba
-            //változtatod switch-chel az irányt
         }
     }
 
     public void makeStep(){
-        //amikor eszik egy almát, akkor az alma helye lesz a feje
-
         if(this.foodPlace[0]==this.head[0] && this.foodPlace[1]==this.head[1]){
             ++this.snakeLength;
             saveHead(this.foodPlace[0],this.foodPlace[1]);
             putHead();
-            this.score+=5; //after eating the food increase score by 5
-            generateFood(); //after eating the food generate a new one
-
+            if(gameState!=null) {
+                this.score += 5; //after eating the food increase score by 5
+                generateFood(); //after eating the food generate a new one
+            } else{
+                isOver=true;
+                System.out.printf("Game Over.");
+            }
         } else {
             decreseCells();
             putHead();
+            if(gameState==null){
+                isOver=true;
+                System.out.printf("Game Over.");
+            }
         }
-
         // System.out.println("row " + foodPlace[0] + " col " + foodPlace[1]);
         // System.out.println("row " + head[0] + " col " + head[1]);
         // System.out.println(this.score);
@@ -151,12 +144,12 @@ public class GameState {
     }
 
     /*
-     * ahol nem nulla a cella értéke azt csökkenti eggyel
+     * ahol nem nulla vagy -1 a cella értéke azt csökkenti eggyel
      * */
     public void decreseCells(){
         for (int i = 0; i < 10; i++){
             for (int j = 0; j < 10; j++){
-                if(gameState[i][j]!=0){
+                if(gameState[i][j]!=0 && gameState[i][j]!=-1){
                     gameState[i][j]--;
                 }
             }
@@ -164,18 +157,23 @@ public class GameState {
     }
 
     public void putHead(){
+        Step step;
         switch (this.direction){
             case "up":
-                gameState[--head[0]][head[1]] = this.snakeLength;
+                step = new Step(--head[0],head[1], snakeLength);
+                gameState=step.applyMove(gameState);
                 break;
             case "down":
-                gameState[++head[0]][head[1]] = this.snakeLength;
+                step = new Step(++head[0],head[1], snakeLength);
+                gameState=step.applyMove(gameState);
                 break;
             case "left":
-                gameState[head[0]][--head[1]] = this.snakeLength;
+                step = new Step(head[0],--head[1], snakeLength);
+                gameState=step.applyMove(gameState);
                 break;
             case "right":
-                gameState[head[0]][++head[1]] = this.snakeLength;
+                step = new Step(head[0],++head[1], snakeLength);
+                gameState=step.applyMove(gameState);
                 break;
         }
     }
