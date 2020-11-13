@@ -85,10 +85,22 @@ public class TTTController {
     }
 
     private void manageGameState() {
-        setButton();
-        getRowAndColumn();
-        Operator op = new Operator(row, column);
-        gameState = op.applyMove(gameState);
+        if (AImode == true) {
+            getRowAndColumn();
+            Operator op = new Operator(row, column);
+            gameState = op.applyMove(gameState);
+            button.setText("O");
+            stateChecker();
+            if (isOver == false) {
+                AIMove();
+                this.currentPlayer = this.currentPlayer * (-1);
+            }
+        } else if (AImode == false) {
+            setButton();
+            getRowAndColumn();
+            Operator op = new Operator(row, column);
+            gameState = op.applyMove(gameState);
+        }
         stateChecker();
     }
 
