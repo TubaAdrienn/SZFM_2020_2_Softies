@@ -4,14 +4,12 @@ import TicTacToe.GameState;
 import TicTacToe.Operator;
 import TicTacToe.StepAdvisor;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-import java.util.Locale;
-
-public class TTTController {
+public class TTTController extends Controller {
 
     @FXML
     private Label winner_label;
@@ -21,23 +19,13 @@ public class TTTController {
             b21, b22, b23,
             b31, b32, b33;
 
-    private boolean isOver = false;
-
     private Button button;
-
+    private boolean isOver = false;
     private GameState gameState = new GameState();
-
     private boolean AImode = false;
-
     private int currentPlayer = 1;
-
     private String id;
     private int row, column;
-    private Scene scene;
-
-    public void init(Scene scene) {
-        this.scene = scene;
-    }
 
     public void setTo1v1() {
         gameState = null;
@@ -68,11 +56,12 @@ public class TTTController {
         currentPlayer = 1;
     }
 
-    public void choseCell(MouseEvent clickEvent) {
+    public void choseCell(MouseEvent clickEvent){
         try {
             button = (Button) clickEvent.getTarget();
             if (button.getText().isEmpty() && !isOver) {
-                manageGameState();
+                manageGameState(clickEvent);
+                gameState.showState();
                 this.currentPlayer = this.currentPlayer * (-1);
             }
         } catch (Exception exc) {
@@ -84,16 +73,14 @@ public class TTTController {
         switch (this.currentPlayer) {
             case 1:
                 button.setText("O");
-                System.out.println("Set Button O");
                 break;
             case -1:
                 button.setText("X");
-                System.out.println("Set Button X");
                 break;
         }
     }
 
-    private void manageGameState() {
+    private void manageGameState(MouseEvent clickEvent) {
         if (AImode == true) {
             getRowAndColumn();
             Operator op = new Operator(row, column);
@@ -101,7 +88,7 @@ public class TTTController {
             button.setText("O");
             stateChecker();
             if (isOver == false) {
-                AIMove();
+                AIMove(clickEvent);
                 this.currentPlayer = this.currentPlayer * (-1);
             }
         } else if (AImode == false) {
@@ -113,18 +100,18 @@ public class TTTController {
         stateChecker();
     }
 
-    private void AIMove() {
+    private void AIMove(MouseEvent clickEvent){
         Operator op = new Operator();
         op = StepAdvisor.offerMove(gameState, -1, 0, 6);
         gameState = op.applyMove(gameState);
-        displayAIMove(op);
+        displayAIMove(op, clickEvent);
     }
 
-    public void displayAIMove(Operator op) {
+    public void displayAIMove(Operator op, MouseEvent clickEvent) {
         row = op.row + 1;
         column = op.column + 1;
         id = "b" + row + column;
-        button = (Button) scene.lookup("#" + id);
+        button = (Button) ((Node) clickEvent.getSource()).getScene().lookup("#" + id);
         button.setText("X");
     }
 
