@@ -2,6 +2,7 @@ package Controller;
 
 import TicTacToe.GameState;
 import TicTacToe.Operator;
+import TicTacToe.StepAdvisor;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -105,10 +106,13 @@ public class TTTController {
     }
 
     private void AIMove() {
-        // AI move manager
+        Operator op = new Operator();
+        op = StepAdvisor.offerMove(gameState, -1, 0, 6);
+        gameState = op.applyMove(gameState);
+        displayAIMove(op);
     }
 
-    public void displayAIMove() {
+    public void displayAIMove(Operator op) {
         // Displays AI move on the view
     }
 
