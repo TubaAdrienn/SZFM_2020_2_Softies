@@ -1,5 +1,7 @@
 package Game2048;
 
+import javafx.scene.input.KeyCode;
+
 import java.util.Random;
 
 public class GameState {
@@ -165,18 +167,18 @@ public class GameState {
         if (moveHappened) generateNewCells();
     }
 
-    public void moveCells(String direction) {
-        switch (direction) {
-            case "a":
+    public void moveCells(KeyCode direction) {
+        switch (direction.toString()) {
+            case "A":
                 this.moveCellsLeft();
                 break;
-            case "s":
+            case "S":
                 this.moveCellsDown();
                 break;
-            case "d":
+            case "D":
                 this.moveCellsRight();
                 break;
-            case "w":
+            case "W":
                 this.moveCellsUp();
                 break;
         }

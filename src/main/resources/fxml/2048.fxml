@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: transparent; -fx-background-image: url('/images/backg.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: transparent; -fx-background-image: url('/images/backg.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller2048">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefWidth="920.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" onKeyPressed="#refreshPage" prefWidth="920.0" VBox.vgrow="ALWAYS">
       <children>
         <Label alignment="CENTER" layoutX="374.0" layoutY="33.0" prefHeight="68.0" prefWidth="157.0" text="2048 Game" textAlignment="CENTER" textOverrun="CLIP" wrapText="false">
           <font>
             <Font name="Arial" size="25.0" />
           </font>
         </Label>
-            <GridPane alignment="CENTER" layoutX="180.0" layoutY="134.0" prefHeight="464.0" prefWidth="544.0" style="-fx-background-color: #FFFFCC;">
+            <GridPane fx:id="grid" alignment="CENTER" layoutX="180.0" layoutY="134.0" onKeyPressed="#refreshPage" prefHeight="464.0" prefWidth="544.0" style="-fx-background-color: #FFFFCC;">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -33,82 +28,82 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label">
+                  <Label fx:id="id_00" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="1">
+                  <Label fx:id="id_01" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="1">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="2">
+                  <Label fx:id="id_02" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="2">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="3">
+                  <Label fx:id="id_03" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="3">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.rowIndex="1">
+                  <Label fx:id="id_10" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.rowIndex="1">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="id_11" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="id_12" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Label fx:id="id_13" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.rowIndex="2">
+                  <Label fx:id="id_20" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.rowIndex="2">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="id_21" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="id_22" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Label fx:id="id_23" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.rowIndex="3">
+                  <Label fx:id="id_30" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.rowIndex="3">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Label fx:id="id_31" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Label fx:id="id_32" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="131.0" prefWidth="136.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="138.0" prefWidth="135.0" style="-fx-border-color: #00FFFF;" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Label fx:id="id_33" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="138.0" prefWidth="135.0" style="-fx-border-color: #00FFFF;" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
                         <Font size="40.0" />
                      </font>
