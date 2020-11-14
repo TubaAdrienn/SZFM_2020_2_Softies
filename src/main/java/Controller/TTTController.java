@@ -3,11 +3,16 @@ package Controller;
 import TicTacToe.GameState;
 import TicTacToe.Operator;
 import TicTacToe.StepAdvisor;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 
 public class TTTController extends Controller {
 
@@ -56,7 +61,7 @@ public class TTTController extends Controller {
         currentPlayer = 1;
     }
 
-    public void choseCell(MouseEvent clickEvent){
+    public void choseCell(MouseEvent clickEvent) {
         try {
             button = (Button) clickEvent.getTarget();
             if (button.getText().isEmpty() && !isOver) {
@@ -87,10 +92,7 @@ public class TTTController extends Controller {
             gameState = op.applyMove(gameState);
             button.setText("O");
             stateChecker();
-            if (isOver == false) {
-                AIMove(clickEvent);
-                this.currentPlayer = this.currentPlayer * (-1);
-            }
+            AIMoveManager(clickEvent);
         } else if (AImode == false) {
             setButton();
             getRowAndColumn();
@@ -100,7 +102,27 @@ public class TTTController extends Controller {
         stateChecker();
     }
 
-    private void AIMove(MouseEvent clickEvent){
+    private void AIMoveManager(MouseEvent clickEvent) {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+
+            private int i = 1;
+
+            @Override
+            public void handle(ActionEvent event) {
+                if (isOver == false) {
+                    AIMove(clickEvent);
+                    stateChecker();
+                    currentPlayer = currentPlayer * (-1);
+                    System.out.printf(String.valueOf(currentPlayer));
+                }
+                i++;
+            }
+        }));
+        timeline.setCycleCount(1);
+        timeline.play();
+    }
+
+    private void AIMove(MouseEvent clickEvent) {
         Operator op = new Operator();
         op = StepAdvisor.offerMove(gameState, -1, 0, 6);
         gameState = op.applyMove(gameState);
