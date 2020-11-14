@@ -1,6 +1,8 @@
 package Snake;
 
 
+import javafx.scene.input.KeyCode;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,17 +19,17 @@ public class GameState {
     boolean isOver;
     Random rand = new Random();
 
-    public GameState(){
+    public GameState() {
         this.score = 0;
-        this.snakeLength=3;
-        this.direction="right";
-        this.gameState = new int[10][10];
+        this.snakeLength = 3;
+        this.direction = "right";
+        this.gameState = new int[15][15];
         this.head = new int[2];
         this.tail = new int[2];
         this.foodPlace = new int[2];
-        this.isOver=false;
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        this.isOver = false;
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
                 gameState[i][j] = 0;
             }
         }
@@ -35,115 +37,115 @@ public class GameState {
         generateFood();
     }
 
+    public boolean isOver(){
+        return this.isOver;
+    }
+
+    public int[][] getGameState() {
+        return this.gameState;
+    }
+
     /**
      * Generate snake with the length of 3 on a random place.
-     * */
-    public void generateSnake(){
+     */
+    public void generateSnake() {
         int randomI = rand.nextInt(6);
         int randomJ = rand.nextInt(6);
         saveHead(randomI, randomJ);
-        gameState[randomI][randomJ]= 3;
-        gameState[++randomI][randomJ]=2;
-        gameState[++randomI][randomJ]=1;
+        gameState[randomI][randomJ] = 3;
+        gameState[++randomI][randomJ] = 2;
+        gameState[++randomI][randomJ] = 1;
     }
 
     /**
-     *  Saves the coordinates of the snake's head.
-     * */
-    public void saveHead(int headI, int headJ){
-        this.head[0]=headI;
-        this.head[1]=headJ;
+     * Saves the coordinates of the snake's head.
+     */
+    public void saveHead(int headI, int headJ) {
+        this.head[0] = headI;
+        this.head[1] = headJ;
     }
 
     /**
-     *  Show the game board.
-     * */
-    public void showState(){
-        for (int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++){
+     * Show the game board.
+     */
+    public void showState() {
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
                 System.out.print("[ " + gameState[i][j] + " ]");
-                if (j == 9){
+                if (j == 14) {
                     System.out.println();
                 }
             }
         }
     }
 
-    public int[][] getGameState(){
-        return this.gameState;
-    }
-
     /**
-     *  Generates food on random place and turn the cell's value to -1.
-     *  Saves food's coordinates.
-     * */
-    public void generateFood(){
-        boolean success=false;
+     * Generates food on random place and turn the cell's value to -1.
+     * Saves food's coordinates.
+     */
+    public void generateFood() {
+        boolean success = false;
         Random rand = new Random();
         int foodCellI;
         int foodCellJ;
-        while(success==false){
-            foodCellI=rand.nextInt(9);
-            foodCellJ=rand.nextInt(9);
-            if(gameState[foodCellI][foodCellJ]==0){
-                gameState[foodCellI][foodCellJ]=-1;
-                success=true;
+        while (success == false) {
+            foodCellI = rand.nextInt(9);
+            foodCellJ = rand.nextInt(9);
+            if (gameState[foodCellI][foodCellJ] == 0) {
+                gameState[foodCellI][foodCellJ] = -1;
+                success = true;
             }
-            this.foodPlace[0]=foodCellI;
-            this.foodPlace[1]=foodCellJ;
+            this.foodPlace[0] = foodCellI;
+            this.foodPlace[1] = foodCellJ;
         }
     }
 
     /**
-     *  Move the snake depending on the user's input.
-     * */
-    public void moveSnake(){
-        while(this.isOver==false){
-            this.showState();
-            this.direction = this.scanner.nextLine();
-            switch(this.direction){
-                case "w":
-                    this.direction = "up";
-                    makeStep();
-                    break;
-                case "a":
-                    this.direction = "left";
-                    makeStep();
-                    break;
-                case "s":
-                    this.direction = "down";
-                    makeStep();
-                    break;
-                case "d":
-                    this.direction = "right";
-                    makeStep();
-                    break;
-            }
-            System.out.println();
+     * Move the snake depending on the user's input.
+     */
+    public void moveSnake(KeyCode code) {
+        switch (code.toString()) {
+            case "W":
+                this.direction = "up";
+                makeStep();
+                break;
+            case "A":
+                this.direction = "left";
+                makeStep();
+                break;
+            case "S":
+                this.direction = "down";
+                makeStep();
+                break;
+            case "D":
+                this.direction = "right";
+                makeStep();
+                break;
         }
+        System.out.println();
     }
 
     /**
      * Checks whether the snake's head and the food in the same cell then increase the length of the snake.
      * Increases score and generate food.
-     * */
-    public void makeStep(){
-        if(this.foodPlace[0]==this.head[0] && this.foodPlace[1]==this.head[1]){
+     */
+    public void makeStep() {
+        if (this.foodPlace[0] == this.head[0] && this.foodPlace[1] == this.head[1]) {
             ++this.snakeLength;
-            saveHead(this.foodPlace[0],this.foodPlace[1]);
+            saveHead(this.foodPlace[0], this.foodPlace[1]);
             putHead();
-            if(gameState!=null) {
+            if (gameState != null) {
                 this.score += 5;
                 generateFood();
-            } else{
-                isOver=true;
+            } else {
+                isOver = true;
                 System.out.printf("Game Over.");
             }
         } else {
             decreseCells();
             putHead();
-            if(gameState==null){
-                isOver=true;
+            if (gameState == null) {
+                isOver = true;
                 System.out.printf("Game Over.");
             }
         }
@@ -152,11 +154,11 @@ public class GameState {
 
     /**
      * Decreases cell's value where value is not 0 or -1 (food).
-     * */
-    public void decreseCells(){
-        for (int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++){
-                if(gameState[i][j]!=0 && gameState[i][j]!=-1){
+     */
+    public void decreseCells() {
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
+                if (gameState[i][j] != 0 && gameState[i][j] != -1) {
                     gameState[i][j]--;
                 }
             }
@@ -165,25 +167,25 @@ public class GameState {
 
     /**
      * Moves the head in a direction.
-     * */
-    public void putHead(){
+     */
+    public void putHead() {
         Step step;
-        switch (this.direction){
+        switch (this.direction) {
             case "up":
-                step = new Step(--head[0],head[1], snakeLength);
-                gameState=step.applyMove(gameState);
+                step = new Step(--head[0], head[1], snakeLength);
+                gameState = step.applyMove(gameState);
                 break;
             case "down":
-                step = new Step(++head[0],head[1], snakeLength);
-                gameState=step.applyMove(gameState);
+                step = new Step(++head[0], head[1], snakeLength);
+                gameState = step.applyMove(gameState);
                 break;
             case "left":
-                step = new Step(head[0],--head[1], snakeLength);
-                gameState=step.applyMove(gameState);
+                step = new Step(head[0], --head[1], snakeLength);
+                gameState = step.applyMove(gameState);
                 break;
             case "right":
-                step = new Step(head[0],++head[1], snakeLength);
-                gameState=step.applyMove(gameState);
+                step = new Step(head[0], ++head[1], snakeLength);
+                gameState = step.applyMove(gameState);
                 break;
         }
     }

@@ -1,21 +1,16 @@
 package Controller;
 
 import Helpers.PageLoader;
-import TicTacToe.GameState;
+import Snake.GameState;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.RowConstraints;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -36,6 +31,10 @@ public class SnakeController {
     @FXML
     public void initialize() {
         generateGridPane();
+    }
+
+    public void startGame(){
+        this.gameState = new GameState();
         renderSnake();
     }
 
@@ -51,14 +50,14 @@ public class SnakeController {
                 label.setPrefHeight(33.0);
                 label.setPrefWidth(46.7);
                 gridPane.addRow(i, label);
-                System.out.println(label.getId());
             }
         }
         grid.getChildren().add(gridPane);
+        System.out.println("GridPane finished.");
     }
 
-    public String createID(int i, int j) {
-        return String.valueOf(i) + "_" + String.valueOf(j);
+    public String createID(int col, int row) {
+        return String.valueOf(row) + "_" + String.valueOf(col);
     }
 
     public void backToRulePage(MouseEvent event) throws IOException {
@@ -66,7 +65,44 @@ public class SnakeController {
     }
 
     private void renderSnake() {
-        this.gameState = new GameState();
+        Node label;
+        String id;
+        int[][] state = gameState.getGameState();
+        clearCells();
+        try{
+            for (int i = 0; i < 15; i++) {
+                for (int j = 0; j < 15; j++) {
+                    if (state[i][j] != 0) {
+                        id = createID(i, j);
+                        String finalId = id;
+                        System.out.println("Final ID: " + finalId);
+                        label = (Label) gridPane.getChildren().stream()
+                                .filter(x -> x.getId() != null)
+                                .filter(x -> x.getId().equals(finalId))
+                                .findFirst()
+                                .get();
+                        if (state[i][j] != -1) label.setStyle("-fx-background-color: black;");
+                        else label.setStyle("-fx-background-color: red;");
+                    }
+                }
+            }
+        }
+        catch (Exception e){
+            System.out.println("Game Over.");
+        }
     }
 
+    public void snakeMove(KeyEvent keyEvent) {
+        System.out.println("Key Pressed");
+        KeyCode code = keyEvent.getCode();
+        System.out.println(code);
+        gameState.moveSnake(code);
+        renderSnake();
+    }
+
+    public void clearCells() {
+        for (Node label : gridPane.getChildren()) {
+            label.setStyle("");
+        }
+    }
 }
