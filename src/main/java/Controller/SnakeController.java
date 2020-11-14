@@ -2,15 +2,14 @@ package Controller;
 
 import Helpers.PageLoader;
 import Snake.GameState;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 
@@ -40,15 +39,16 @@ public class SnakeController {
 
     private void generateGridPane() {
         gridPane = new GridPane();
-        gridPane.setPrefWidth(700.5);
+        gridPane.setPrefWidth(700);
         gridPane.setPrefHeight(500);
         gridPane.setGridLinesVisible(true);
-        for (int i = 0; i < 15; i++) {
-            for (int j = 0; j < 15; j++) {
+        gridPane.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderStroke.THICK)));
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 26; j++) {
                 Label label = new Label();
                 label.setId(createID(i, j));
-                label.setPrefHeight(33.0);
-                label.setPrefWidth(46.7);
+                label.setPrefHeight(500/20.0);
+                label.setPrefWidth(700/26.0);
                 gridPane.addRow(i, label);
             }
         }
@@ -60,18 +60,14 @@ public class SnakeController {
         return String.valueOf(row) + "_" + String.valueOf(col);
     }
 
-    public void backToRulePage(MouseEvent event) throws IOException {
-        PageLoader.loadRules(event, "snake");
-    }
-
     private void renderSnake() {
         Node label;
         String id;
         int[][] state = gameState.getGameState();
         clearCells();
         try{
-            for (int i = 0; i < 15; i++) {
-                for (int j = 0; j < 15; j++) {
+            for (int i = 0; i < 20; i++) {
+                for (int j = 0; j < 26; j++) {
                     if (state[i][j] != 0) {
                         id = createID(i, j);
                         String finalId = id;
@@ -105,4 +101,9 @@ public class SnakeController {
             label.setStyle("");
         }
     }
+
+    public void backToRulePage(MouseEvent event) throws IOException {
+        PageLoader.loadRules(event, "snake");
+    }
+
 }

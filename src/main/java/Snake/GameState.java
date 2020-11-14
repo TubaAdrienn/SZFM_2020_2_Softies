@@ -23,13 +23,13 @@ public class GameState {
         this.score = 0;
         this.snakeLength = 3;
         this.direction = "right";
-        this.gameState = new int[15][15];
+        this.gameState = new int[20][26];
         this.head = new int[2];
         this.tail = new int[2];
         this.foodPlace = new int[2];
         this.isOver = false;
-        for (int i = 0; i < 15; i++) {
-            for (int j = 0; j < 15; j++) {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 26; j++) {
                 gameState[i][j] = 0;
             }
         }
@@ -49,8 +49,8 @@ public class GameState {
      * Generate snake with the length of 3 on a random place.
      */
     public void generateSnake() {
-        int randomI = rand.nextInt(6);
-        int randomJ = rand.nextInt(6);
+        int randomI = rand.nextInt(17);
+        int randomJ = rand.nextInt(26);
         saveHead(randomI, randomJ);
         gameState[randomI][randomJ] = 3;
         gameState[++randomI][randomJ] = 2;
@@ -69,10 +69,10 @@ public class GameState {
      * Show the game board.
      */
     public void showState() {
-        for (int i = 0; i < 15; i++) {
-            for (int j = 0; j < 15; j++) {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 26; j++) {
                 System.out.print("[ " + gameState[i][j] + " ]");
-                if (j == 14) {
+                if (j == 25) {
                     System.out.println();
                 }
             }
@@ -89,8 +89,8 @@ public class GameState {
         int foodCellI;
         int foodCellJ;
         while (success == false) {
-            foodCellI = rand.nextInt(9);
-            foodCellJ = rand.nextInt(9);
+            foodCellI = rand.nextInt(20);
+            foodCellJ = rand.nextInt(26);
             if (gameState[foodCellI][foodCellJ] == 0) {
                 gameState[foodCellI][foodCellJ] = -1;
                 success = true;
@@ -156,8 +156,8 @@ public class GameState {
      * Decreases cell's value where value is not 0 or -1 (food).
      */
     public void decreseCells() {
-        for (int i = 0; i < 15; i++) {
-            for (int j = 0; j < 15; j++) {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 26; j++) {
                 if (gameState[i][j] != 0 && gameState[i][j] != -1) {
                     gameState[i][j]--;
                 }

@@ -58,7 +58,7 @@ public class Step {
      * @return if cells are over or not
      */
     private boolean checkIfCellNotOver(){
-        if(row>=0 && row<10 && col >=0 && col<10 ){
+        if(row>=0 && row<20 && col >=0 && col<26 ){
             return true;
         }
         System.out.printf("Cells over.");
