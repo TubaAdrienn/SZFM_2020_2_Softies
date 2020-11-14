@@ -24,6 +24,9 @@ public class SnakeController {
     @FXML
     private Pane grid;
 
+    @FXML
+    private Label gameOver;
+
     private GridPane gridPane;
     private GameState gameState;
 
@@ -84,6 +87,7 @@ public class SnakeController {
             }
         }
         catch (Exception e){
+            gameOver.setVisible(true);
             System.out.println("Game Over.");
         }
     }
@@ -105,5 +109,6 @@ public class SnakeController {
     public void backToRulePage(MouseEvent event) throws IOException {
         PageLoader.loadRules(event, "snake");
     }
+
 
 }
