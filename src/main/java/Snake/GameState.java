@@ -189,4 +189,9 @@ public class GameState {
                 break;
         }
     }
+
+    public int getScore(){
+        return this.score;
+    }
+
 }

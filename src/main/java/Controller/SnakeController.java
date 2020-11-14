@@ -37,6 +37,7 @@ public class SnakeController {
 
     public void startGame(){
         this.gameState = new GameState();
+        gameOver.setVisible(false);
         renderSnake();
     }
 
@@ -64,6 +65,7 @@ public class SnakeController {
     }
 
     private void renderSnake() {
+        setScoreLabel();
         Node label;
         String id;
         int[][] state = gameState.getGameState();
@@ -110,5 +112,8 @@ public class SnakeController {
         PageLoader.loadRules(event, "snake");
     }
 
+    public void setScoreLabel(){
+        scoreLabel.setText(String.valueOf(gameState.getScore()));
+    }
 
 }
