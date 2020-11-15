@@ -1,5 +1,6 @@
 package Controller;
 
+import Helpers.PageLoader;
 import TicTacToe.GameState;
 import TicTacToe.Operator;
 import TicTacToe.StepAdvisor;
@@ -13,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class TTTController extends Controller {
 
@@ -158,5 +161,9 @@ public class TTTController extends Controller {
             winner_label.setText("Game Over.");
             isOver = true;
         }
+    }
+
+    public void backToRules(MouseEvent mouseEvent) throws IOException {
+        PageLoader.loadRules(mouseEvent, "tictactoe");
     }
 }

@@ -17,8 +17,6 @@ public class MyApp extends Application {
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        GameState gameState = new GameState();
-        gameState.showState();
     }
 
 }
