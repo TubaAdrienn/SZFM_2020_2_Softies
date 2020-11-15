@@ -57,15 +57,15 @@ public enum Color {
     public static void initColors(){
         if (!colors.isEmpty())
             return;
-        colors.put(Color.RED, new Image(Color.class.getResource("/img/red.png").toExternalForm()));
-        colors.put(Color.WHITE, new Image(Color.class.getResource("/img/white.png").toExternalForm()));
-        colors.put(Color.BLUE, new Image(Color.class.getResource("/img/blue.png").toExternalForm()));
-        colors.put(Color.PINK, new Image(Color.class.getResource("/img/pink.png").toExternalForm()));
-        colors.put(Color.ORANGE, new Image(Color.class.getResource("/img/orange.png").toExternalForm()));
-        colors.put(Color.PURPLE, new Image(Color.class.getResource("/img/purple.png").toExternalForm()));
-        colors.put(Color.YELLOW, new Image(Color.class.getResource("/img/yellow.png").toExternalForm()));
-        colors.put(Color.GREEN, new Image(Color.class.getResource("/img/green.png").toExternalForm()));
-        colors.put(Color.BLACK, new Image(Color.class.getResource("/img/black.png").toExternalForm()));
+        colors.put(Color.RED, new Image(Color.class.getResource("/images/red.png").toExternalForm()));
+        colors.put(Color.WHITE, new Image(Color.class.getResource("/images/white.png").toExternalForm()));
+        colors.put(Color.BLUE, new Image(Color.class.getResource("/images/blue.png").toExternalForm()));
+        colors.put(Color.PINK, new Image(Color.class.getResource("/images/pink.png").toExternalForm()));
+        colors.put(Color.ORANGE, new Image(Color.class.getResource("/images/orange.png").toExternalForm()));
+        colors.put(Color.PURPLE, new Image(Color.class.getResource("/images/purple.png").toExternalForm()));
+        colors.put(Color.YELLOW, new Image(Color.class.getResource("/images/yellow.png").toExternalForm()));
+        colors.put(Color.GREEN, new Image(Color.class.getResource("/images/green.png").toExternalForm()));
+        colors.put(Color.BLACK, new Image(Color.class.getResource("/images/black.png").toExternalForm()));
     }
 
 
