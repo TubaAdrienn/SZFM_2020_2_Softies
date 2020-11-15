@@ -165,3 +165,20 @@
     1. Implementing the connection.
     2. Still implementing the connection.
     3. No problem, I just had no time.
+    ### 2020.11.12.
+* Anna
+    1. Processed with game logic.
+    2. Finalize game state.
+    3. No problems
+* Csabi
+    1. Update doc files and start make better display for Mastermind.
+    2. Finish display fixies in Mastermind.
+    3. No problem appeared.
+* Matyi
+    1. Implement colors for 2048
+    2. Fixes 2048.fxml file
+    3. No problem
+* Adrienn
+    1. Working on controller
+    2. Helping other with arising issues
+    3. No problems
