@@ -29,7 +29,6 @@ public class Mastermind {
         this.gameState = 1;
         this.rand = new Random();
         this.guessColors = new int[4];
-
         for (int i = 0; i < 4; i++)
             this.guessColors[i] = this.rand.nextInt(8);
     }
@@ -61,29 +60,30 @@ public class Mastermind {
             getImage(i, leftPane, lastStep);
             if (color != null)
                 if (color.equals(Color.getByValue(guessColors[i]))) {
-                    blackPin++;
-                    whiteExt.add(i);
-                    whiteMyExt.add(i);
+                    blackPin++;         //If our color tip is correct we got a black pin for it and that position will be overlooked next time
+                    whiteExt.add(i);    //(i position) Will be overlooked secret side.
+                    whiteMyExt.add(i);  //(i position) Will be overlooked tips side.
                 }
         }
 
+        //After previous for loop we already know black pins, and which positions need to overlooked, so now we can start to count white pins
         for (int i = 0; i < 4; i++) {
             getImage(i, leftPane, lastStep);
             if (color != null) {
                 if (!color.equals(Color.getByValue(guessColors[i])) && !whiteMyExt.contains(i)) {
                     for (int j = 0; j < 4; j++) {
                         Color guess = Color.getByValue(guessColors[j]);
-                        if (!whiteExt.contains(j) && !whiteMyExt.contains(i)) {
-                            if (color.equals(guess)) {
-                                whitePin++;
-                                whiteExt.add(j);
-                                whiteMyExt.add(i);
+                        if (!whiteExt.contains(j) && !whiteMyExt.contains(i)) { //If we do not need to overlooked them then continue
+                            if (color.equals(guess)) { //If our tip is equal with the secret color then...
+                                whitePin++;         //we got a white pin for that and...
+                                whiteExt.add(j);    //we add to it to "overlooked" list in secret side and...
+                                whiteMyExt.add(i);  //we add to it to "overlooked" list in tips side too.
                             }
                         }
                     }
                 }
             }
         }
-        return new PinStruct(whitePin, blackPin);
+        return new PinStruct(whitePin, blackPin);   //Return the number of black and white pins.
     }
 }
