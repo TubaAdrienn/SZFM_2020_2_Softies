@@ -113,7 +113,7 @@
                   <Insets />
                </opaqueInsets>
             </GridPane>
-            <Button layoutX="752.0" layoutY="43.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #00FFFF;" text="New Game" />
+            <Button layoutX="752.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#newGame" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #00FFFF;" text="New Game" />
             <Label layoutX="41.0" layoutY="21.0" prefHeight="46.0" prefWidth="198.0" style="&#10;" text="Score: 0" textAlignment="CENTER" textOverrun="CLIP" wrapText="false">
                <font>
                   <Font name="Arial" size="25.0" />
@@ -124,7 +124,7 @@
                   <Font name="Arial" size="25.0" />
                </font>
             </Label>
-            <Button layoutX="752.0" layoutY="118.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #00FFFF;" text="Back to Menu" />
+            <Button layoutX="752.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#backToRules" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #00FFFF;" text="Back to Menu" />
       </children>
     </AnchorPane>
   </children>

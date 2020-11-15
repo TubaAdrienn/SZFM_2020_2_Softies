@@ -1,12 +1,16 @@
 package Controller;
 
 import Game2048.GameState;
+import Helpers.PageLoader;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+
+import java.io.IOException;
 
 public class Controller2048 {
 
@@ -17,8 +21,7 @@ public class Controller2048 {
 
     @FXML
     public void initialize() {
-        gameState = new GameState();
-        renderGame();
+        newGame();
     }
 
     private void renderGame(){
@@ -64,5 +67,14 @@ public class Controller2048 {
         System.out.println(code);
         gameState.moveCells(code);
         renderGame();
+    }
+
+    public void newGame(){
+        gameState = new GameState();
+        renderGame();
+    }
+
+    public void backToRules(MouseEvent event) throws IOException {
+        PageLoader.loadRules(event, "2048");
     }
 }
