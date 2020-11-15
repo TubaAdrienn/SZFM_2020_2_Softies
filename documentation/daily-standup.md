@@ -194,3 +194,23 @@
     2. Helping other with arising issues
     3. No problems
 
+    ### 2020.11.13.
+* Anna
+  1. Styled Snake-s game board.
+  2. Add score function and game over label.
+  3. No problems.
+
+* Csabi
+  1. Finished display fixies in Mastermind.
+  2. Do demo meeting arising tasks.
+  3. No problem.
+
+* Matyi
+  1. Fixes 2048.fxml file
+  2. Make 2048 movements
+  3. No problem
+
+* Adrienn
+  1. Helped others with game logic.
+  2. Fix further arising problems.
+  3. No problem of mine.
