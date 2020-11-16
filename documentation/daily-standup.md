@@ -8,9 +8,9 @@
 ## Daily Standup Meeting - 1.0
 ### 2020.11.02. - 1.1
 * Anna
-  1. I have looked for better styling design for Snake.
-  2. Building base design to Snake.
-  3. I am unsatisfied with my Snake desing.
+1. I have looked for better styling design for Snake.
+2. Building base design to Snake.
+3. I am unsatisfied with my Snake desing.
 
 * Csabi
   1. Installing and configuring the appropriate software.
