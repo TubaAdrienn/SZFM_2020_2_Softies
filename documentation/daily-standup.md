@@ -4,6 +4,8 @@
 2. What are you going to work on until the next meeting?
 3. What obstacles have you encoutered?
 
+
+## Daily Standup Meeting - 1.0
 ### 2020.11.02.
 * Anna
   1. I have looked for better styling design for Snake.
@@ -88,7 +90,7 @@
   2. Create game logic to tic-tac-toe
   3. No probs
 
-  ### 2020.11.06.
+### 2020.11.06.
 * Anna
   1. Started game logic
   2. Add fixes to the code according to code review advice.
@@ -110,7 +112,8 @@
   3. No problem
 
 
-  ### 2020.11.09.
+## Daily Standup Meeting - 2.0
+### 2020.11.09.
 * Anna
   1. FXML is fixed.
   2. Create the Initial Snake.
@@ -131,7 +134,7 @@
   2. I'm going to create a plan to implement AI with UI.
   3. No problems.
 
-  ### 2020.11.10.
+### 2020.11.10.
 * Anna
     1. Created Initial Snake.
     2. Show Initial Snake.
@@ -152,7 +155,7 @@
     2. Implement the plan.
     3. No problem
 
-  ### 2020.11.11.
+### 2020.11.11.
 * Anna
     1. Displayed Initial Snake.
     2. Write Snake movement.
@@ -173,7 +176,7 @@
     2. Still implementing the connection.
     3. No problem, I just had no time.
 
-    ### 2020.11.12.
+### 2020.11.12.
 * Anna
     1. Processed with game logic.
     2. Finalize game state.
@@ -194,7 +197,7 @@
     2. Helping other with arising issues
     3. No problems
 
-    ### 2020.11.13.
+### 2020.11.13.
 * Anna
   1. Styled Snake-s game board.
   2. Add score function and game over label.
@@ -214,3 +217,4 @@
   1. Helped others with game logic.
   2. Fix further arising problems.
   3. No problem of mine.
+
