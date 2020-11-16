@@ -218,3 +218,13 @@
   2. Fix further arising problems.
   3. No problem of mine.
 
+
+## Daily Standup Meeting - 3.0
+### 2020.11.16.
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
