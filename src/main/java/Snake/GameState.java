@@ -103,8 +103,8 @@ public class GameState {
     /**
      * Move the snake depending on the user's input.
      */
-    public void moveSnake(KeyCode code) {
-        switch (code.toString()) {
+    public void moveSnake(String code) {
+        switch (code) {
             case "W":
                 this.direction = "up";
                 makeStep();
@@ -118,6 +118,10 @@ public class GameState {
                 makeStep();
                 break;
             case "D":
+                this.direction = "right";
+                makeStep();
+                break;
+            default:
                 this.direction = "right";
                 makeStep();
                 break;

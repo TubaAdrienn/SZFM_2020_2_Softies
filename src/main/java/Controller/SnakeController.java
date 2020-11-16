@@ -2,6 +2,10 @@ package Controller;
 
 import Helpers.PageLoader;
 import Snake.GameState;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -10,6 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -29,17 +34,41 @@ public class SnakeController {
 
     private GridPane gridPane;
     private GameState gameState;
+    private String direction;
+
+
 
     @FXML
     public void initialize() {
         generateGridPane();
     }
 
-    public void startGame(){
+    public void startGame() throws InterruptedException {
         this.gameState = new GameState();
         gameOver.setVisible(false);
         renderSnake();
+        SnakeMoveManager();
+        direction="D";
     }
+
+    private void SnakeMoveManager() {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.15), new EventHandler<ActionEvent>() {
+
+            private int i = 1;
+
+            @Override
+            public void handle(ActionEvent event) {
+                if(gameState.isOver()==false) {
+                    gameState.moveSnake(direction);
+                    renderSnake();
+                }
+                i++;
+            }
+        }));
+        timeline.setCycleCount(50000000);
+        timeline.play();
+    }
+
 
     private void generateGridPane() {
         gridPane = new GridPane();
@@ -76,7 +105,6 @@ public class SnakeController {
                     if (state[i][j] != 0) {
                         id = createID(i, j);
                         String finalId = id;
-                        System.out.println("Final ID: " + finalId);
                         label = (Label) gridPane.getChildren().stream()
                                 .filter(x -> x.getId() != null)
                                 .filter(x -> x.getId().equals(finalId))
@@ -95,11 +123,8 @@ public class SnakeController {
     }
 
     public void snakeMove(KeyEvent keyEvent) {
-        System.out.println("Key Pressed");
         KeyCode code = keyEvent.getCode();
-        System.out.println(code);
-        gameState.moveSnake(code);
-        renderSnake();
+        direction=code.toString();
     }
 
     public void clearCells() {
