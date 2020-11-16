@@ -6,7 +6,7 @@
 
 
 ## Daily Standup Meeting - 1.0
-### 2020.11.02.
+### 2020.11.02. - 1.1
 * Anna
   1. I have looked for better styling design for Snake.
   2. Building base design to Snake.
@@ -27,7 +27,7 @@
   2. I want to create a basic view and connect to a controller
   3. So far, there has not been any problem.
 
-### 2020.11.03.
+### 2020.11.03. - 1.2
 * Anna
   1. Base files for design created.
   2. Update the design.
@@ -48,7 +48,7 @@
   2. I plan on creating the same for the rules and main page.
   3. No obstacles so far
   
-### 2020.11.04.
+### 2020.11.04. - 1.3
 * Anna
   1. Finalized snake design.
   2. Write the rules of snake.
@@ -69,7 +69,7 @@
   2. Finish the controller to main and rule page.
   3. No problems.
 
-### 2020.11.05.
+### 2020.11.05. - 1.4
 * Anna
   1. Rules of snake is written.
   2. Start game logci.
@@ -90,7 +90,7 @@
   2. Create game logic to tic-tac-toe
   3. No probs
 
-### 2020.11.06.
+### 2020.11.06. - 1.5
 * Anna
   1. Started game logic
   2. Add fixes to the code according to code review advice.
@@ -113,7 +113,7 @@
 
 
 ## Daily Standup Meeting - 2.0
-### 2020.11.09.
+### 2020.11.09. - 2.1
 * Anna
   1. FXML is fixed.
   2. Create the Initial Snake.
@@ -134,7 +134,7 @@
   2. I'm going to create a plan to implement AI with UI.
   3. No problems.
 
-### 2020.11.10.
+### 2020.11.10. - 2.2
 * Anna
     1. Created Initial Snake.
     2. Show Initial Snake.
@@ -155,7 +155,7 @@
     2. Implement the plan.
     3. No problem
 
-### 2020.11.11.
+### 2020.11.11. - 2.3
 * Anna
     1. Displayed Initial Snake.
     2. Write Snake movement.
@@ -176,7 +176,7 @@
     2. Still implementing the connection.
     3. No problem, I just had no time.
 
-### 2020.11.12.
+### 2020.11.12. - 2.4
 * Anna
     1. Processed with game logic.
     2. Finalize game state.
@@ -197,7 +197,7 @@
     2. Helping other with arising issues
     3. No problems
 
-### 2020.11.13.
+### 2020.11.13. - 2.5
 * Anna
   1. Styled Snake-s game board.
   2. Add score function and game over label.
@@ -220,7 +220,7 @@
 
 
 ## Daily Standup Meeting - 3.0
-### 2020.11.16.
+### 2020.11.16. - 3.1
 * Anna
 
 * Csabi
