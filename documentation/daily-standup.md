@@ -243,3 +243,12 @@
 * Matyi
 
 * Adrienn
+
+### 2020.11.18. - 3.3
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
