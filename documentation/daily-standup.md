@@ -226,8 +226,14 @@
 * Csabi
 
 * Matyi
+1. Finished previous sprint tasks
+2. Make colorblind friendly colors
+3. No problem
 
 * Adrienn
+1. Finished tasks with previous sprint.
+2. Make Snake go vroom.
+3. No problem.
 
 ### 2020.11.17. - 3.2
 * Anna
