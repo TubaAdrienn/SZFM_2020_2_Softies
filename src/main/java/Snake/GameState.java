@@ -1,3 +1,4 @@
+
 package Snake;
 
 
@@ -37,7 +38,7 @@ public class GameState {
         generateFood();
     }
 
-    public boolean isOver(){
+    public boolean isOver() {
         return this.isOver;
     }
 
@@ -121,10 +122,6 @@ public class GameState {
                 this.direction = "right";
                 makeStep();
                 break;
-            default:
-                this.direction = "right";
-                makeStep();
-                break;
         }
         System.out.println();
     }
@@ -194,8 +191,9 @@ public class GameState {
         }
     }
 
-    public int getScore(){
+    public int getScore() {
         return this.score;
     }
 
 }
+
