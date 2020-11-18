@@ -222,8 +222,15 @@
 ## Daily Standup Meeting - 3.0
 ### 2020.11.16. - 3.1
 * Anna
+1. Finished tasks with previous sprint.
+2. Accept help from Adrienn.
+3. Everything is fine.
 
 * Csabi
+1. Finished previous sprint tasks.
+2. Planning unified/cool display for games.
+3. No problem.
+
 
 * Matyi
 1. Finished previous sprint tasks
