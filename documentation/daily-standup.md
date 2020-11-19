@@ -265,9 +265,21 @@
 
 ### 2020.11.18. - 3.3
 * Anna
+1. Scanned Snake for bugs.
+2. List bugfixes.
+3. No problems.
 
 * Csabi
+1. Started implementing the display plans.
+2. Review other developers code and continue.
+3. No problem.
 
 * Matyi
+1. Make plan for collision for 2048
+2. Playing games for searching bugs
+3. No problem
 
 * Adrienn
+1. Organized tasks
+2. Create a plan to setup database.
+3. I was out of time to actually do that.
