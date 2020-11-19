@@ -244,12 +244,24 @@
 
 ### 2020.11.17. - 3.2
 * Anna
+1. Accepted help from Adrienn.
+2. Scan snake for bugs.
+3. No problems.
 
 * Csabi
+1. Planned unified, cool display for games.
+2. Start implementing the plans
+3. No problem.
 
 * Matyi
+1. Setup Colorblind friendly colors
+2. Make plan for collision for 2048
+3. No problem
 
 * Adrienn
+1. Created Sprint plan
+2. Organized tasks
+3. No problem
 
 ### 2020.11.18. - 3.3
 * Anna
