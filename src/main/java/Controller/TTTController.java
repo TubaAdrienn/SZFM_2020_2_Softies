@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -80,9 +81,11 @@ public class TTTController extends Controller {
     private void setButton() {
         switch (this.currentPlayer) {
             case 1:
+                button.setTextFill(Color.PURPLE);
                 button.setText("O");
                 break;
             case -1:
+                button.setTextFill(Color.DARKRED);
                 button.setText("X");
                 break;
         }
@@ -93,6 +96,7 @@ public class TTTController extends Controller {
             getRowAndColumn();
             Operator op = new Operator(row, column);
             gameState = op.applyMove(gameState);
+            button.setTextFill(Color.PURPLE);
             button.setText("O");
             stateChecker();
             AIMoveManager(clickEvent);
@@ -137,6 +141,7 @@ public class TTTController extends Controller {
         column = op.column + 1;
         id = "b" + row + column;
         button = (Button) ((Node) clickEvent.getSource()).getScene().lookup("#" + id);
+        button.setTextFill(Color.DARKRED);
         button.setText("X");
     }
 
