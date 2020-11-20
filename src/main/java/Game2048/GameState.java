@@ -8,9 +8,10 @@ import java.util.Random;
 public class GameState {
 
     private int[][] gameState;
-    private boolean moveHappened = false;
+    private int[][] prevGameState;
 
     public GameState() {
+        this.prevGameState = new int[4][4];
         this.gameState = new int[4][4];
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -55,13 +56,15 @@ public class GameState {
         }
     }
 
-    public void winner() {
+    public boolean isWinningState() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (gameState[i][j] == 2048) {
+                    return true;
                 }
             }
         }
+        return false;
     }
 
     public boolean isOver() {
@@ -70,15 +73,26 @@ public class GameState {
                 if (gameState[i][j] == 0) {
                     return false;
                 }
+                if (hasMergable()) return false;
             }
         }
         return true;
     }
 
-    public void showState() {
+    private boolean hasMergable() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(gameState[i][j]==gameState[i+1][j]) return true;
+                else if(gameState[i][j]==gameState[i][j+1]) return true;
+            }
+        }
+        return false;
+    }
+
+    public void showState(int[][] gameState) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                System.out.printf("[" + String.valueOf(gameState[i][j]) + "]");
+                System.out.printf("[" + gameState[i][j] + "]");
                 if (j == 3) {
                     System.out.println();
                 }
@@ -86,10 +100,21 @@ public class GameState {
         }
     }
 
-    private void setCell(int i, int k, int moveI, int moveJ) {
-        int cellToMerge = gameState[i][k];
-        gameState[i][k] = 0;
-        gameState[moveI][moveJ] += cellToMerge;
+    private boolean hasChanged() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (this.prevGameState[i][j] != this.gameState[i][j]) return true;
+            }
+        }
+        return false;
+    }
+
+    private void copy() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                prevGameState[i][j] = this.gameState[i][j];
+            }
+        }
     }
 
     private int[] getRow(int i) {
@@ -103,7 +128,7 @@ public class GameState {
     private int[] getCol(int j) {
         int[] col = new int[4];
         for (int i = 0; i < 4; i++) {
-            col[i]=gameState[i][j];
+            col[i] = gameState[i][j];
         }
         return col;
     }
@@ -136,13 +161,12 @@ public class GameState {
         }
         if (prev != -1) {
             newCol[j] = prev;
-            moveHappened = true;
         }
         return newCol;
     }
 
     public void moveCellsRight() {
-        moveHappened = false;
+        copy();
         int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
             row = getRow(i);
@@ -151,7 +175,8 @@ public class GameState {
                 gameState[i][j] = row[j];
             }
         }
-        if (moveHappened) generateNewCells();
+        showState(this.gameState);
+        if (hasChanged()) generateNewCells();
     }
 
     private int[] moveLeft(int[] col) {
@@ -182,13 +207,12 @@ public class GameState {
         }
         if (prev != -1) {
             newCol[j] = prev;
-            moveHappened = true;
         }
         return newCol;
     }
 
     public void moveCellsLeft() {
-        moveHappened = false;
+        copy();
         int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
             row = getRow(i);
@@ -197,33 +221,34 @@ public class GameState {
                 gameState[i][j] = row[j];
             }
         }
-        if (moveHappened) generateNewCells();
+
+        if (hasChanged()) generateNewCells();
     }
 
     public void moveCellsUp() {
-        moveHappened = false;
+        copy();
         int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
             row = getCol(i);
-            row=moveLeft(row);
+            row = moveLeft(row);
             for (int n = 0; n < 4; n++) {
                 gameState[n][i] = row[n];
             }
         }
-        if (moveHappened) generateNewCells();
+        if (hasChanged()) generateNewCells();
     }
 
     public void moveCellsDown() {
-        moveHappened = false;
+        copy();
         int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
             row = getCol(i);
-            row=moveRight(row);
+            row = moveRight(row);
             for (int n = 0; n < 4; n++) {
                 gameState[n][i] = row[n];
             }
         }
-        if (moveHappened) generateNewCells();
+        if (hasChanged()) generateNewCells();
     }
 
     public void moveCells(KeyCode direction) {

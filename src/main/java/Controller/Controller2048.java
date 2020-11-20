@@ -35,14 +35,12 @@ public class Controller2048 {
                     if (state[i][j] != 0) {
                         id = createID(i, j);
                         String finalId = id;
-                        System.out.println("Final ID: " + finalId);
                         label = (Label) grid.getChildren().stream()
                                 .filter(x -> x.getId() != null)
                                 .filter(x -> x.getId().equals(finalId))
                                 .findFirst()
                                 .get();
                         label.setText(String.valueOf(state[i][j]));
-
                     }
                 }
             }
@@ -63,10 +61,18 @@ public class Controller2048 {
     }
 
     public void refreshPage(KeyEvent keyEvent) {
-        KeyCode code = keyEvent.getCode();
-        System.out.println(code);
-        gameState.moveCells(code);
-        renderGame();
+        if(gameState.isOver()==false && gameState.isWinningState()==false){
+            KeyCode code = keyEvent.getCode();
+            System.out.println(code);
+            gameState.moveCells(code);
+            renderGame();
+        } else if(gameState.isWinningState()){
+            //Ide kéne egy label, hogy nyert a játékos
+            System.out.println("Winner won.");
+        }else {
+            //Ide meg hogy game over.
+            System.out.println("Game Over.");
+        }
     }
 
     public void newGame(){
