@@ -51,7 +51,7 @@ public class SnakeController {
     }
 
     private void SnakeMoveManager() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.3), new EventHandler<ActionEvent>() {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), new EventHandler<ActionEvent>() {
 
             private int i = 1;
 
@@ -140,7 +140,6 @@ public class SnakeController {
             }
             direction = new Direction(dir, opposite);
         }
-        gameState.moveSnake(direction.getDirection());
     }
 
     public void clearCells() {
