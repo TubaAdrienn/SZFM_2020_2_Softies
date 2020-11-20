@@ -35,6 +35,7 @@ public class TTTController extends Controller {
     private int currentPlayer = 1;
     private String id;
     private int row, column;
+    private boolean personBlocked=false;
 
     public void setTo1v1() {
         gameState = null;
@@ -47,6 +48,7 @@ public class TTTController extends Controller {
         gameState = null;
         gameState = new GameState();
         AImode = true;
+        personBlocked=false;
         clearCells();
     }
 
@@ -92,7 +94,8 @@ public class TTTController extends Controller {
     }
 
     private void manageGameState(MouseEvent clickEvent) {
-        if (AImode == true) {
+        if (AImode == true && personBlocked == false) {
+            personBlocked=true;
             getRowAndColumn();
             Operator op = new Operator(row, column);
             gameState = op.applyMove(gameState);
@@ -121,6 +124,7 @@ public class TTTController extends Controller {
                     stateChecker();
                     currentPlayer = currentPlayer * (-1);
                     System.out.printf(String.valueOf(currentPlayer));
+                    personBlocked=false;
                 }
                 i++;
             }
