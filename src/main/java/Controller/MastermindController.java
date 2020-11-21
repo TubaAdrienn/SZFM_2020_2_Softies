@@ -19,7 +19,7 @@ import Mastermind.PinStruct;
 
 import java.io.IOException;
 
-public class MastermindController {
+public class MastermindController extends Controller{
 
     private int lastStep;
     private int rowHelper;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rules>
+    <data>
+        <game>mastermind</game>
+        <desc>Description of the game Mastermind.</desc>
+    </data>
+    <data>
+        <game>2048</game>
+        <desc>Description of the game 2048.</desc>
+    </data>
+    <data>
+        <game>tictactoe</game>
+        <desc>Description of the game TicTacToe.</desc>
+    </data>
+    <data>
+        <game>snake</game>
+        <desc>Description of the game Snake.</desc>
+    </data>
+</rules>
