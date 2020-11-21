@@ -3,6 +3,7 @@ package Game2048;
 import javafx.scene.input.KeyCode;
 
 import java.awt.geom.GeneralPath;
+import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameState {
@@ -221,7 +222,7 @@ public class GameState {
                 gameState[i][j] = row[j];
             }
         }
-
+        showState(this.gameState);
         if (hasChanged()) generateNewCells();
     }
 
@@ -235,6 +236,7 @@ public class GameState {
                 gameState[n][i] = row[n];
             }
         }
+        showState(this.gameState);
         if (hasChanged()) generateNewCells();
     }
 
@@ -248,6 +250,7 @@ public class GameState {
                 gameState[n][i] = row[n];
             }
         }
+        showState(this.gameState);
         if (hasChanged()) generateNewCells();
     }
 
