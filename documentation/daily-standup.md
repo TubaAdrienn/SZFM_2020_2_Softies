@@ -325,3 +325,6 @@
 1. Bugfix discussion
 2. Database integration, bugfix
 3. No problem
+
+
+## Daily Standup Meeting - 4.0
