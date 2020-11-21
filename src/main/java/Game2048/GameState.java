@@ -3,7 +3,6 @@ package Game2048;
 import javafx.scene.input.KeyCode;
 
 import java.awt.geom.GeneralPath;
-import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameState {
