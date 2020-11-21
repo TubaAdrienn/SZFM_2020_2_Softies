@@ -283,3 +283,12 @@
 1. Organized tasks
 2. Create a plan to setup database.
 3. I was out of time to actually do that.
+
+### 2020.11.19. - 3.4
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
