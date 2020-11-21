@@ -15,16 +15,19 @@ public class GameState {
     private int[][] prevGameState;
 
     public GameState() {
+        int currentScore = 0;
         this.score = 0;
         this.prevGameState = new int[4][4];
         this.gameState = new int[4][4];
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
+                currentScore+=gameState[i][j];
                 gameState[i][j] = 0;
             }
         }
         generateNewCells();
         generateNewCells();
+        this.score+=currentScore;
     }
 
     public GameState(int[][] gameState, int current) {
@@ -49,9 +52,11 @@ public class GameState {
             switch (twoOrFour) {
                 case 1:
                     twoOrFour = 4;
+                    this.score+= 4;
                     break;
                 default:
                     twoOrFour = 2;
+                    this.score+= 2;
                     break;
             }
             if (this.gameState[row][col] == 0) {

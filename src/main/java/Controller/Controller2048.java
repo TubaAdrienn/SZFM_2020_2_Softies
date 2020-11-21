@@ -37,6 +37,7 @@ public class Controller2048 {
     }
 
     private void renderGame(){
+        setScore();
         gameOver.setVisible(false);
         gameWin.setVisible(false);
         Label label;
@@ -55,7 +56,6 @@ public class Controller2048 {
                                 .findFirst()
                                 .get();
                         label.setText(String.valueOf(state[i][j]));
-
                         switch (state[i][j]){
                             case 2:
                                 label.setStyle("-fx-background-color: #FFFF66;");
