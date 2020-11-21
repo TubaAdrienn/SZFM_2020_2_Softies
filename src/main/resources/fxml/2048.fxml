@@ -211,6 +211,18 @@
                   </DropShadow>
               </effect>
           </Label>
+          <Label fx:id="gameWin" alignment="CENTER" contentDisplay="CENTER" layoutX="238.0" layoutY="375.0" prefHeight="50.0" prefWidth="400.0" text="!!! YOU WON !!!" textAlignment="CENTER" textFill="RED" visible="false">
+              <font>
+                  <Font size="39.0" />
+              </font>
+              <effect>
+                  <DropShadow>
+                      <color>
+                          <Color red="1.0" green="1.0" blue="1.0" />
+                      </color>
+                  </DropShadow>
+              </effect>
+          </Label>
       </children>
     </AnchorPane>
   </children>
