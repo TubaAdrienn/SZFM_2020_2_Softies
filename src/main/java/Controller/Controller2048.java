@@ -46,7 +46,7 @@ public class Controller2048 {
             }
         }
         catch (Exception e){
-            System.out.println("Game Over.");
+            System.out.println("Game Over");
         }
     }
 
