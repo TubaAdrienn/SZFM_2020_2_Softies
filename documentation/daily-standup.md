@@ -328,3 +328,11 @@
 
 
 ## Daily Standup Meeting - 4.0
+### 2020.11.23 - 4.1
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
