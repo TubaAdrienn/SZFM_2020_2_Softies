@@ -286,9 +286,21 @@
 
 ### 2020.11.19. - 3.4
 * Anna
+1. Listed bugs.
+2. Try to fix the bugs
+3. No problems
 
 * Csabi
+1. Reviewed other developers code and continued implementing the display plans.
+2. Still implementing the displays.
+3. No prob.
 
 * Matyi
+1. Playing games for searching bugs
+2. Fixing bugs - in 2048 Game Over is not implemented
+3. No problem
 
 * Adrienn
+1. Nothing, i had no time.
+2. Discussions about bugfixing rules.
+3. No time.
