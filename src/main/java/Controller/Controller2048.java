@@ -138,6 +138,6 @@ public class Controller2048 {
     }
 
     public void setScore() {
-        score.setText(String.valueOf(gameState.getScore()));
+        score.setText("Score: " + String.valueOf(gameState.getScore()));
     }
 }
