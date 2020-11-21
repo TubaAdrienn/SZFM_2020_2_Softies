@@ -307,9 +307,21 @@
 
 ### 2020.11.20. - 3.5
 * Anna
+1. Tried to fix the bugs.
+2. Check bugless snake.
+3. No problems
 
 * Csabi
+1. Finished Tic-Tac-Toe dispaly, started 2048 display implementing.
+2. Finish changes in 2048 fxml file, and countinue the progress in snake.
+3. No problem.
 
 * Matyi
+1. Searching for bugs
+2. Trying to fix bugs
+3. No problem
 
 * Adrienn
+1. Bugfix discussion
+2. Database integration, bugfix
+3. No problem
