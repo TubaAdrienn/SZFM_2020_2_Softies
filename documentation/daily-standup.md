@@ -304,3 +304,12 @@
 1. Nothing, i had no time.
 2. Discussions about bugfixing rules.
 3. No time.
+
+### 2020.11.20. - 3.5
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
