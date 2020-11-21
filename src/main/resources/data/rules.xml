@@ -2,7 +2,22 @@
 <rules>
     <data>
         <game>mastermind</game>
-        <desc>Description of the game Mastermind.</desc>
+       	<desc>Mastermind is a color-finding single-player game 
+in which the player has ten steps to guess which 
+colors are hidden in what order.
+Gameplay: 
+There are four hidden colors at the beginning 
+of the game, you have to guess in ten steps, 
+with 8 color buttons. After each guess, 
+the pins show how successful the colors and 
+their order were.
+The number of hits that are in it and in the 
+right place are indicated in black color. 
+And with a white color, that are in it, 
+but not in the right place.
+You can submit your tip with Submit button 
+or you can change it with Back button.
+	</desc>
     </data>
     <data>
         <game>2048</game>
