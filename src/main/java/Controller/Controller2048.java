@@ -23,12 +23,16 @@ public class Controller2048 {
     private Label gameOver;
 
     @FXML
+    private Label gameWin;
+
+    @FXML
     public void initialize() {
         newGame();
     }
 
     private void renderGame(){
         gameOver.setVisible(false);
+        gameWin.setVisible(false);
         Label label;
         String id;
         int[][] state = gameState.getGameState();
@@ -72,7 +76,7 @@ public class Controller2048 {
             gameState.moveCells(code);
             renderGame();
         } else if(gameState.isWinningState()){
-            //Ide kéne egy label, hogy nyert a játékos
+            gameWin.setVisible(true);
             System.out.println("Winner won.");
         }else {
             gameOver.setVisible(true);
