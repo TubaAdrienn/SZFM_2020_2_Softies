@@ -41,7 +41,7 @@ public class Controller2048 {
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     if (state[i][j] != 0) {
-                        id = createID(i, j);
+                        id = createID(i , j);
                         String finalId = id;
                         label = (Label) grid.getChildren().stream()
                                 .filter(x -> x.getId() != null)
@@ -49,6 +49,41 @@ public class Controller2048 {
                                 .findFirst()
                                 .get();
                         label.setText(String.valueOf(state[i][j]));
+                        switch (state[i][j]){
+                            case 2:
+                                label.setStyle("-fx-background-color: #FFFF66;");
+                                break;
+                            case 4:
+                                label.setStyle("-fx-background-color: green;");
+                                break;
+                            case 8:
+                                label.setStyle("-fx-background-color: brown;");
+                                break;
+                            case 16:
+                                label.setStyle("-fx-background-color: yellow;");
+                                break;
+                            case 32:
+                                label.setStyle("-fx-background-color: orange;");
+                                break;
+                            case 64:
+                                label.setStyle("-fx-background-color: grey;");
+                                break;
+                            case 128:
+                                label.setStyle("-fx-background-color: red;");
+                                break;
+                            case 256:
+                                label.setStyle("-fx-background-color: pink;");
+                                break;
+                            case 512:
+                                label.setStyle("-fx-background-color: purple;");
+                                break;
+                            case 1024:
+                                label.setStyle("-fx-background-color: white;");
+                                break;
+                            case 2048:
+                                label.setStyle("-fx-background-color: aqua;");
+                                break;
+                        }
                     }
                 }
             }
@@ -66,6 +101,8 @@ public class Controller2048 {
     private void clearCells(){
         for (Node label : grid.getChildren()) {
             ((Label) label).setText("");
+            //default color cell
+            label.setStyle("-fx-background-color: #E1EFA2;");
         }
     }
 
