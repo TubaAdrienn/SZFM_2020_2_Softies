@@ -1,0 +1,2 @@
+2048 is played on a 4*4 grid, with numbered tiles that slide when a player moves them using W(up), S(down), A(left), D(right) keys.
+Every turn, a new tle will randomly appear in an empty spot on the board with a value of either 2 or 4.
