@@ -55,6 +55,7 @@ public class Controller2048 {
                                 .findFirst()
                                 .get();
                         label.setText(String.valueOf(state[i][j]));
+
                         switch (state[i][j]){
                             case 2:
                                 label.setStyle("-fx-background-color: #FFFF66;");
@@ -134,5 +135,9 @@ public class Controller2048 {
 
     public void backToRules(MouseEvent event) throws IOException {
         PageLoader.loadRules(event, "2048");
+    }
+
+    public void setScore() {
+        score.setText(String.valueOf(gameState.getScore()));
     }
 }

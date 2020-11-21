@@ -1,5 +1,6 @@
 package Game2048;
 
+import Controller.Controller2048;
 import javafx.scene.input.KeyCode;
 
 import java.awt.geom.GeneralPath;
@@ -7,10 +8,14 @@ import java.util.Random;
 
 public class GameState {
 
+    private int score;
+    private int highScore;
+
     private int[][] gameState;
     private int[][] prevGameState;
 
     public GameState() {
+        this.score = 0;
         this.prevGameState = new int[4][4];
         this.gameState = new int[4][4];
         for (int i = 0; i < 4; i++) {
@@ -268,5 +273,9 @@ public class GameState {
                 this.moveCellsUp();
                 break;
         }
+    }
+
+    public int getScore() {
+        return this.score;
     }
 }
