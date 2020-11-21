@@ -20,6 +20,12 @@ public class Controller2048 {
     private GameState gameState;
 
     @FXML
+    private Label score;
+
+    @FXML
+    private Label highscore;
+
+    @FXML
     private Label gameOver;
 
     @FXML
