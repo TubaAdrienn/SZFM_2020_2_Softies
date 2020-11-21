@@ -71,7 +71,7 @@ public class Controller2048 {
             System.out.println("Winner won.");
         }else {
             //Ide meg hogy game over.
-            System.out.println("Game Over.");
+            System.out.println("Game Over");
         }
     }
 
