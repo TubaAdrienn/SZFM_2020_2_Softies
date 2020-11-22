@@ -1,22 +1,33 @@
 package Game2048;
 
+import Controller.Controller2048;
 import javafx.scene.input.KeyCode;
 
+import java.awt.geom.GeneralPath;
 import java.util.Random;
 
 public class GameState {
 
+    private int score;
+    private int highScore;
+
     private int[][] gameState;
+    private int[][] prevGameState;
 
     public GameState() {
+        int currentScore = 0;
+        this.score = 0;
+        this.prevGameState = new int[4][4];
         this.gameState = new int[4][4];
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
+                currentScore+=gameState[i][j];
                 gameState[i][j] = 0;
             }
         }
         generateNewCells();
         generateNewCells();
+        this.score+=currentScore;
     }
 
     public GameState(int[][] gameState, int current) {
@@ -41,9 +52,11 @@ public class GameState {
             switch (twoOrFour) {
                 case 1:
                     twoOrFour = 4;
+                    this.score+= 4;
                     break;
                 default:
                     twoOrFour = 2;
+                    this.score+= 2;
                     break;
             }
             if (this.gameState[row][col] == 0) {
@@ -53,14 +66,15 @@ public class GameState {
         }
     }
 
-    public void winner() {
+    public boolean isWinningState() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (gameState[i][j] == 2048) {
-                    System.out.println("You won");
+                    return true;
                 }
             }
         }
+        return false;
     }
 
     public boolean isOver() {
@@ -69,15 +83,26 @@ public class GameState {
                 if (gameState[i][j] == 0) {
                     return false;
                 }
+                if (hasMergable()) return false;
             }
         }
         return true;
     }
 
-    public void showState() {
+    private boolean hasMergable() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(gameState[i][j]==gameState[i+1][j]) return true;
+                else if(gameState[i][j]==gameState[i][j+1]) return true;
+            }
+        }
+        return false;
+    }
+
+    public void showState(int[][] gameState) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                System.out.printf("[" + String.valueOf(gameState[i][j]) + "]");
+                System.out.printf("[" + gameState[i][j] + "]");
                 if (j == 3) {
                     System.out.println();
                 }
@@ -85,86 +110,157 @@ public class GameState {
         }
     }
 
-    private void setCell(int i, int k, int moveI, int moveJ) {
-        int originalCell = gameState[i][k];
-        gameState[i][k] = 0;
-        gameState[moveI][moveJ] += originalCell;
+    private boolean hasChanged() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (this.prevGameState[i][j] != this.gameState[i][j]) return true;
+            }
+        }
+        return false;
+    }
+
+    private void copy() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                prevGameState[i][j] = this.gameState[i][j];
+            }
+        }
+    }
+
+    private int[] getRow(int i) {
+        int[] row = new int[4];
+        for (int j = 0; j < 4; j++) {
+            row[j] = gameState[i][j];
+        }
+        return row;
+    }
+
+    private int[] getCol(int j) {
+        int[] col = new int[4];
+        for (int i = 0; i < 4; i++) {
+            col[i] = gameState[i][j];
+        }
+        return col;
+    }
+
+    private int[] moveRight(int[] row) {
+        int[] newCol = new int[4];
+        int prev = -1;
+        int j = 3;
+        for (int i = 0; i < 4; i++) {
+            newCol[i] = 0;
+        }
+
+        for (int i = 3; i >= 0; i--) {
+            if (row[i] != 0) {
+                if (prev == -1) {
+                    prev = row[i];
+                } else {
+                    if (prev == row[i]) {
+                        newCol[j] = 2 * row[i];
+                        j -= 1;
+                        prev = -1;
+                    } else {
+                        newCol[j] = prev;
+                        j -= 1;
+                        prev = row[i];
+                    }
+
+                }
+            }
+        }
+        if (prev != -1) {
+            newCol[j] = prev;
+        }
+        return newCol;
     }
 
     public void moveCellsRight() {
-        boolean moveHappened = false;
+        copy();
+        int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
-            for (int j = 2; j >= 0; j--) {
-                for (int k = j; k < 3; k++) {
-                    if ( gameState[i][k] == gameState[i][k + 1] && gameState[i][k] != 0 ){
-                        setCell(i, k, i, k + 1);
-                        moveHappened = true;
+            row = getRow(i);
+            row = moveRight(row);
+            for (int j = 0; j < 4; j++) {
+                gameState[i][j] = row[j];
+            }
+        }
+        showState(this.gameState);
+        if (hasChanged()) generateNewCells();
+    }
+
+    private int[] moveLeft(int[] col) {
+        int[] newCol = new int[4];
+        int prev = -1;
+        int j = 0;
+        for (int i = 0; i < 4; i++) {
+            newCol[i] = 0;
+        }
+
+        for (int i = 0; i < 4; i++) {
+            if (col[i] != 0) {
+                if (prev == -1) {
+                    prev = col[i];
+                } else {
+                    if (prev == col[i]) {
+                        newCol[j] = 2 * col[i];
+                        j += 1;
+                        prev = -1;
+                    } else {
+                        newCol[j] = prev;
+                        j += 1;
+                        prev = col[i];
                     }
-                    if (gameState[i][k + 1] == 0 && gameState[i][k] != 0) {
-                        setCell(i, k, i, k + 1);
-                        moveHappened = true;
-                    }
+
                 }
             }
         }
-        if (moveHappened) generateNewCells();
+        if (prev != -1) {
+            newCol[j] = prev;
+        }
+        return newCol;
     }
 
     public void moveCellsLeft() {
-        boolean moveHappened = false;
+        copy();
+        int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
-            for (int j = 1; j < 4; j++) {
-                for (int k = j; k > 0; k--) {
-                    if (gameState[i][k] == gameState[i][k - 1] && gameState[i][k] != 0 ) {
-                        setCell(i, k, i, k - 1);
-                        moveHappened = true;
-                    }
-                    if (gameState[i][k - 1] == 0 && gameState[i][k] != 0) {
-                        setCell(i, k, i, k - 1);
-                        moveHappened = true;
-                    }
-                }
+            row = getRow(i);
+            row = moveLeft(row);
+            for (int j = 0; j < 4; j++) {
+                gameState[i][j] = row[j];
             }
         }
-        if (moveHappened) generateNewCells();
+        showState(this.gameState);
+        if (hasChanged()) generateNewCells();
     }
 
     public void moveCellsUp() {
-        boolean moveHappened = false;
+        copy();
+        int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
-            for (int j = 1; j < 4; j++) {
-                for (int k = j; k > 0; k--) {
-                    if (gameState[k][i] == gameState[k - 1][i] && gameState[k][i] != 0 ) {
-                        setCell(k, i, k - 1, i);
-                        moveHappened = true;
-                    }
-                    if (gameState[k - 1][i] == 0 && gameState[k][i] != 0) {
-                        setCell(k, i, k - 1, i);
-                        moveHappened = true;
-                    }
-                }
+            row = getCol(i);
+            row = moveLeft(row);
+            for (int n = 0; n < 4; n++) {
+                gameState[n][i] = row[n];
             }
         }
-        if (moveHappened) generateNewCells();
+        showState(this.gameState);
+        if (hasChanged()) generateNewCells();
     }
 
     public void moveCellsDown() {
-        boolean moveHappened = false;
+        copy();
+        int row[] = new int[4];
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                for (int k = j; k < 3; k++) {
-                    if (gameState[k][i] == gameState[k + 1][i] && gameState[k][i] != 0 ) {
-                        setCell(k, i, k + 1, i);
-                        moveHappened = true;
-                    }
-                    if (gameState[k + 1][i] == 0 && gameState[k][i] != 0) {
-                        setCell(k, i, k + 1, i);
-                        moveHappened = true;
-                    }
-                }
+            row = getCol(i);
+            row = moveRight(row);
+            for (int n = 0; n < 4; n++) {
+                gameState[n][i] = row[n];
             }
         }
-        if (moveHappened) generateNewCells();
+        showState(this.gameState);
+        if (hasChanged()) generateNewCells();
     }
 
     public void moveCells(KeyCode direction) {
@@ -182,5 +278,9 @@ public class GameState {
                 this.moveCellsUp();
                 break;
         }
+    }
+
+    public int getScore() {
+        return this.score;
     }
 }
