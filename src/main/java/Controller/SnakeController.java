@@ -1,7 +1,12 @@
 package Controller;
 
 import Helpers.PageLoader;
+import Snake.Direction;
 import Snake.GameState;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -10,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -29,16 +35,46 @@ public class SnakeController {
 
     private GridPane gridPane;
     private GameState gameState;
+    private Direction direction;
+    private Timeline timeline;
 
     @FXML
     public void initialize() {
         generateGridPane();
     }
 
-    public void startGame(){
+    public void startGame() throws InterruptedException {
+        clearSnakeSpeed();
         this.gameState = new GameState();
         gameOver.setVisible(false);
         renderSnake();
+        SnakeMoveManager();
+        direction = new Direction("D", "A");
+    }
+
+    private void SnakeMoveManager() {
+        this.timeline = new Timeline(new KeyFrame(Duration.millis(130), new EventHandler<ActionEvent>() {
+
+            private int i = 1;
+
+            @Override
+            public void handle(ActionEvent event) {
+                if (gameState.isOver() == false) {
+                    gameState.moveSnake(direction.getDirection());
+                    renderSnake();
+                }
+            }
+        }));
+        this.timeline.setCycleCount(Timeline.INDEFINITE);
+        this.timeline.play();
+    }
+
+    private void clearSnakeSpeed() {
+        if (this.timeline != null) {
+            this.timeline.stop();
+            this.timeline.getKeyFrames().clear();
+            this.timeline = null;
+        }
     }
 
     private void generateGridPane() {
@@ -46,13 +82,13 @@ public class SnakeController {
         gridPane.setPrefWidth(700);
         gridPane.setPrefHeight(500);
         gridPane.setGridLinesVisible(true);
-        gridPane.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderStroke.THICK)));
+        gridPane.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderStroke.THICK)));
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 26; j++) {
                 Label label = new Label();
                 label.setId(createID(i, j));
-                label.setPrefHeight(500/20.0);
-                label.setPrefWidth(700/26.0);
+                label.setPrefHeight(500 / 20.0);
+                label.setPrefWidth(700 / 26.0);
                 gridPane.addRow(i, label);
             }
         }
@@ -70,13 +106,12 @@ public class SnakeController {
         String id;
         int[][] state = gameState.getGameState();
         clearCells();
-        try{
+        try {
             for (int i = 0; i < 20; i++) {
                 for (int j = 0; j < 26; j++) {
                     if (state[i][j] != 0) {
                         id = createID(i, j);
                         String finalId = id;
-                        System.out.println("Final ID: " + finalId);
                         label = (Label) gridPane.getChildren().stream()
                                 .filter(x -> x.getId() != null)
                                 .filter(x -> x.getId().equals(finalId))
@@ -87,19 +122,33 @@ public class SnakeController {
                     }
                 }
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             gameOver.setVisible(true);
             System.out.println("Game Over.");
         }
     }
 
     public void snakeMove(KeyEvent keyEvent) {
-        System.out.println("Key Pressed");
         KeyCode code = keyEvent.getCode();
-        System.out.println(code);
-        gameState.moveSnake(code);
-        renderSnake();
+        String opposite = null;
+        String dir = code.toString();
+        if(direction.getOpposite()!=dir){
+            switch (dir) {
+                case "W":
+                    opposite="S";
+                    break;
+                case "A":
+                    opposite="D";
+                    break;
+                case "S":
+                    opposite="W";
+                    break;
+                case "D":
+                    opposite="A";
+                    break;
+            }
+            direction = new Direction(dir, opposite);
+        }
     }
 
     public void clearCells() {
@@ -112,7 +161,7 @@ public class SnakeController {
         PageLoader.loadRules(event, "snake");
     }
 
-    public void setScoreLabel(){
+    public void setScoreLabel() {
         scoreLabel.setText(String.valueOf(gameState.getScore()));
     }
 
