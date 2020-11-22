@@ -28,7 +28,7 @@ We want to give our children modern games they can play with on any computer. We
 * Mastermind game
 * Saving students scores, querying by highscore
 * Child-friendly display
-* Tic-Tac-Toe with AI
+* Tic-Tac-Toe with TicTacToe
 * Low system requirements
 * Showing rules for the game
 
@@ -44,7 +44,7 @@ We want to give our children modern games they can play with on any computer. We
 * R03 - Save scores to database (MySQL)
 * R04 - Retrieve data from database
 * R05 - Contains 4 games - 2048, Snake, Tic-Tac-Toe, Mastermind
-* R06 - Tic-Tac-Toe has an AI or a 2 people version
+* R06 - Tic-Tac-Toe has an TicTacToe or a 2 people version
 
 ## Glossary
 * Desktop game: It is a type of video game played on personal computers rather than on video game consoles or arcade machine.
@@ -56,6 +56,6 @@ We want to give our children modern games they can play with on any computer. We
 * GUI: Stands for graphical user interface that allows interaction between users and electronic devices by clicking on icons or through text navigation.
 * JavaFx: A software platform for creating desktop applications' GUI.
 * RDBMS: Relational Database Management System is a software that allows users to define, create, maintain, or control access to the database.
-* AI: Artificial intelligence is "intelligence" demonstrated by machines. Any device that observes its environment and takes actions that maximize the chance of achieving its goals successfully.
+* TicTacToe: Artificial intelligence is "intelligence" demonstrated by machines. Any device that observes its environment and takes actions that maximize the chance of achieving its goals successfully.
 * jpeg: A compression used in image file formats. Compression is lossy.
 * png: Stands for Portable Network Graphics. Image file format that supports lossless data compression.

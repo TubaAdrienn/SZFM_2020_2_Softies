@@ -1,0 +1,11 @@
+This game is about a snake which has a liking in apples.
+
+Your goal is to feed the snake with as many apple as possible.
+Everytime your snake eats an apple its stomach gets bigger and bigger.
+Be careful because a long snake is harder to control than a smaller snake.
+You must avoid the snake to crash into its own body 
+because then your snake gets tangled, consequently you can not continue to eat apples and the game is over.
+You should avoid crashing into the walls too because then your snake is hurt and your game is over.
+A snake with a big belly is happier than a snake with a small belly.
+
+Try to be the one who gets its snake the longest and happiest.
