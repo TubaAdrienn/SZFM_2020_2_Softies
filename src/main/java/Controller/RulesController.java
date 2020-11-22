@@ -1,5 +1,7 @@
 package Controller;
 
+import Database.DatabaseXML;
+import Database.Rules;
 import Helpers.PageLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -12,30 +14,20 @@ public class RulesController extends Controller {
     @FXML
     private Label rulesLabel;
 
-    protected String rules;
+    private String rulesText;
 
-    public RulesController(String game) {
+    private Rules rules;
+
+    public RulesController(String game) throws Exception {
+        rules = DatabaseXML.loadRules();
         this.game=game;
-        switch (game) {
-            case "tictactoe":
-                this.rules = "TicTacToe rules.";
-                break;
-            case "mastermind":
-                this.rules = "Mastermind rules.";
-                break;
-            case "2048":
-                this.rules = "2048 rules.";
-                break;
-            case "snake":
-                this.rules = "Snake rules.";
-                break;
-        }
+        rulesText = rules.getRuleByName(game).getDesc();
     }
 
     @FXML
     private void initialize(){
         System.out.println("InitData");
-        rulesLabel.setText(rules);
+        rulesLabel.setText(rulesText);
     }
 
     public void playClick (MouseEvent mouseEvent) throws IOException {

@@ -1,3 +1,4 @@
+
 package Snake;
 
 
@@ -37,7 +38,7 @@ public class GameState {
         generateFood();
     }
 
-    public boolean isOver(){
+    public boolean isOver() {
         return this.isOver;
     }
 
@@ -50,7 +51,7 @@ public class GameState {
      */
     public void generateSnake() {
         int randomI = rand.nextInt(17);
-        int randomJ = rand.nextInt(26);
+        int randomJ = rand.nextInt(20);
         saveHead(randomI, randomJ);
         gameState[randomI][randomJ] = 3;
         gameState[++randomI][randomJ] = 2;
@@ -103,8 +104,8 @@ public class GameState {
     /**
      * Move the snake depending on the user's input.
      */
-    public void moveSnake(KeyCode code) {
-        switch (code.toString()) {
+    public void moveSnake(String code) {
+        switch (code) {
             case "W":
                 this.direction = "up";
                 makeStep();
@@ -190,8 +191,9 @@ public class GameState {
         }
     }
 
-    public int getScore(){
+    public int getScore() {
         return this.score;
     }
 
 }
+

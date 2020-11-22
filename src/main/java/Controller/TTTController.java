@@ -1,5 +1,7 @@
 package Controller;
 
+import Database.HighScore;
+import Database.HighScoreDao;
 import Helpers.PageLoader;
 import TicTacToe.GameState;
 import TicTacToe.Operator;
@@ -13,6 +15,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -34,6 +37,7 @@ public class TTTController extends Controller {
     private int currentPlayer = 1;
     private String id;
     private int row, column;
+    private boolean personBlocked=false;
 
     public void setTo1v1() {
         gameState = null;
@@ -46,7 +50,24 @@ public class TTTController extends Controller {
         gameState = null;
         gameState = new GameState();
         AImode = true;
+        personBlocked=false;
         clearCells();
+        /* Usage Example
+
+        //Create the highscore
+        HighScore score=new HighScore("tictactoe", "Adrienn", "3456");
+
+        //Create the dao
+        HighScoreDao dao=HighScoreDao.getInstance();
+
+        //Save the score to the database if its non-existant
+        dao.persist(score);
+        System.out.println(dao.findScoreByName("tictactoe"));
+
+        //Updating the highscore
+        dao.update(score,"3453453");
+        System.out.println(dao.findScoreByName("tictactoe"));
+        */
     }
 
     public void clearCells() {
@@ -80,19 +101,23 @@ public class TTTController extends Controller {
     private void setButton() {
         switch (this.currentPlayer) {
             case 1:
+                button.setTextFill(Color.PURPLE);
                 button.setText("O");
                 break;
             case -1:
+                button.setTextFill(Color.DARKRED);
                 button.setText("X");
                 break;
         }
     }
 
     private void manageGameState(MouseEvent clickEvent) {
-        if (AImode == true) {
+        if (AImode == true && personBlocked == false) {
+            personBlocked=true;
             getRowAndColumn();
             Operator op = new Operator(row, column);
             gameState = op.applyMove(gameState);
+            button.setTextFill(Color.PURPLE);
             button.setText("O");
             stateChecker();
             AIMoveManager(clickEvent);
@@ -117,6 +142,7 @@ public class TTTController extends Controller {
                     stateChecker();
                     currentPlayer = currentPlayer * (-1);
                     System.out.printf(String.valueOf(currentPlayer));
+                    personBlocked=false;
                 }
                 i++;
             }
@@ -137,6 +163,7 @@ public class TTTController extends Controller {
         column = op.column + 1;
         id = "b" + row + column;
         button = (Button) ((Node) clickEvent.getSource()).getScene().lookup("#" + id);
+        button.setTextFill(Color.DARKRED);
         button.setText("X");
     }
 
@@ -163,7 +190,7 @@ public class TTTController extends Controller {
         }
     }
 
-    public void backToRules(MouseEvent mouseEvent) throws IOException {
+    public void backToRules(MouseEvent mouseEvent) throws Exception {
         PageLoader.loadRules(mouseEvent, "tictactoe");
     }
 }

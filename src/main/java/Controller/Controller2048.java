@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 
-public class Controller2048 {
+public class Controller2048 extends Controller {
 
     @FXML
     private GridPane grid;
@@ -20,11 +20,26 @@ public class Controller2048 {
     private GameState gameState;
 
     @FXML
+    private Label score;
+
+    @FXML
+    private Label highscore;
+
+    @FXML
+    private Label gameOver;
+
+    @FXML
+    private Label gameWin;
+
+    @FXML
     public void initialize() {
         newGame();
     }
 
     private void renderGame(){
+        setScore();
+        gameOver.setVisible(false);
+        gameWin.setVisible(false);
         Label label;
         String id;
         int[][] state = gameState.getGameState();
@@ -33,22 +48,56 @@ public class Controller2048 {
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     if (state[i][j] != 0) {
-                        id = createID(i, j);
+                        id = createID(i , j);
                         String finalId = id;
-                        System.out.println("Final ID: " + finalId);
                         label = (Label) grid.getChildren().stream()
                                 .filter(x -> x.getId() != null)
                                 .filter(x -> x.getId().equals(finalId))
                                 .findFirst()
                                 .get();
                         label.setText(String.valueOf(state[i][j]));
-
+                        switch (state[i][j]){
+                            case 2:
+                                label.setStyle("-fx-background-color: #FFFF66;");
+                                break;
+                            case 4:
+                                label.setStyle("-fx-background-color: green;");
+                                break;
+                            case 8:
+                                label.setStyle("-fx-background-color: brown;");
+                                break;
+                            case 16:
+                                label.setStyle("-fx-background-color: yellow;");
+                                break;
+                            case 32:
+                                label.setStyle("-fx-background-color: orange;");
+                                break;
+                            case 64:
+                                label.setStyle("-fx-background-color: grey;");
+                                break;
+                            case 128:
+                                label.setStyle("-fx-background-color: red;");
+                                break;
+                            case 256:
+                                label.setStyle("-fx-background-color: pink;");
+                                break;
+                            case 512:
+                                label.setStyle("-fx-background-color: purple;");
+                                break;
+                            case 1024:
+                                label.setStyle("-fx-background-color: white;");
+                                break;
+                            case 2048:
+                                label.setStyle("-fx-background-color: aqua;");
+                                break;
+                        }
                     }
                 }
             }
         }
         catch (Exception e){
-            System.out.println("Game Over.");
+            gameOver.setVisible(true);
+            System.out.println("Game Over");
         }
     }
 
@@ -59,14 +108,24 @@ public class Controller2048 {
     private void clearCells(){
         for (Node label : grid.getChildren()) {
             ((Label) label).setText("");
+            //default color cell
+            label.setStyle("-fx-background-color: #E1EFA2;");
         }
     }
 
     public void refreshPage(KeyEvent keyEvent) {
-        KeyCode code = keyEvent.getCode();
-        System.out.println(code);
-        gameState.moveCells(code);
-        renderGame();
+        if(gameState.isOver()==false && gameState.isWinningState()==false){
+            KeyCode code = keyEvent.getCode();
+            System.out.println(code);
+            gameState.moveCells(code);
+            renderGame();
+        } else if(gameState.isWinningState()){
+            gameWin.setVisible(true);
+            System.out.println("Winner won.");
+        }else {
+            gameOver.setVisible(true);
+            System.out.println("Game Over");
+        }
     }
 
     public void newGame(){
@@ -74,7 +133,11 @@ public class Controller2048 {
         renderGame();
     }
 
-    public void backToRules(MouseEvent event) throws IOException {
+    public void backToRules(MouseEvent event) throws Exception {
         PageLoader.loadRules(event, "2048");
+    }
+
+    public void setScore() {
+        score.setText("Score: " + String.valueOf(gameState.getScore()));
     }
 }
