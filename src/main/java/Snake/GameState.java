@@ -51,7 +51,7 @@ public class GameState {
      */
     public void generateSnake() {
         int randomI = rand.nextInt(17);
-        int randomJ = rand.nextInt(26);
+        int randomJ = rand.nextInt(20);
         saveHead(randomI, randomJ);
         gameState[randomI][randomJ] = 3;
         gameState[++randomI][randomJ] = 2;
