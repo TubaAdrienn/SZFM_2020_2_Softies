@@ -36,6 +36,7 @@ public class SnakeController {
     private GridPane gridPane;
     private GameState gameState;
     private Direction direction;
+    private Timeline timeline;
 
     @FXML
     public void initialize() {
@@ -43,6 +44,7 @@ public class SnakeController {
     }
 
     public void startGame() throws InterruptedException {
+        clearSnakeSpeed();
         this.gameState = new GameState();
         gameOver.setVisible(false);
         renderSnake();
@@ -51,7 +53,7 @@ public class SnakeController {
     }
 
     private void SnakeMoveManager() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), new EventHandler<ActionEvent>() {
+        this.timeline = new Timeline(new KeyFrame(Duration.millis(130), new EventHandler<ActionEvent>() {
 
             private int i = 1;
 
@@ -63,10 +65,17 @@ public class SnakeController {
                 }
             }
         }));
-        timeline.setCycleCount(50000000);
-        timeline.play();
+        this.timeline.setCycleCount(Timeline.INDEFINITE);
+        this.timeline.play();
     }
 
+    private void clearSnakeSpeed() {
+        if (this.timeline != null) {
+            this.timeline.stop();
+            this.timeline.getKeyFrames().clear();
+            this.timeline = null;
+        }
+    }
 
     private void generateGridPane() {
         gridPane = new GridPane();
