@@ -19,7 +19,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class SnakeController {
+public class SnakeController extends Controller {
 
     @FXML
     private Label scoreLabel;
@@ -157,7 +157,7 @@ public class SnakeController {
         }
     }
 
-    public void backToRulePage(MouseEvent event) throws IOException {
+    public void backToRulePage(MouseEvent event) throws Exception {
         PageLoader.loadRules(event, "snake");
     }
 

@@ -21,7 +21,7 @@ public class PageLoader {
         stage.show();
     }
 
-    public static void loadRules(MouseEvent mouseEvent, String game) throws IOException{
+    public static void loadRules(MouseEvent mouseEvent, String game) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(PageLoader.class.getResource("/fxml/rules.fxml"));
         RulesController controller = new RulesController(game);
         fxmlLoader.setController(controller);

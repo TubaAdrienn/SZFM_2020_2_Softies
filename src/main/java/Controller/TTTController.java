@@ -1,5 +1,7 @@
 package Controller;
 
+import Database.HighScore;
+import Database.HighScoreDao;
 import Helpers.PageLoader;
 import TicTacToe.GameState;
 import TicTacToe.Operator;
@@ -50,6 +52,22 @@ public class TTTController extends Controller {
         AImode = true;
         personBlocked=false;
         clearCells();
+        /* Usage Example
+
+        //Create the highscore
+        HighScore score=new HighScore("tictactoe", "Adrienn", "3456");
+
+        //Create the dao
+        HighScoreDao dao=HighScoreDao.getInstance();
+
+        //Save the score to the database if its non-existant
+        dao.persist(score);
+        System.out.println(dao.findScoreByName("tictactoe"));
+
+        //Updating the highscore
+        dao.update(score,"3453453");
+        System.out.println(dao.findScoreByName("tictactoe"));
+        */
     }
 
     public void clearCells() {
@@ -172,7 +190,7 @@ public class TTTController extends Controller {
         }
     }
 
-    public void backToRules(MouseEvent mouseEvent) throws IOException {
+    public void backToRules(MouseEvent mouseEvent) throws Exception {
         PageLoader.loadRules(mouseEvent, "tictactoe");
     }
 }

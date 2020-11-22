@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 
-public class Controller2048 {
+public class Controller2048 extends Controller {
 
     @FXML
     private GridPane grid;
@@ -74,7 +74,7 @@ public class Controller2048 {
         renderGame();
     }
 
-    public void backToRules(MouseEvent event) throws IOException {
+    public void backToRules(MouseEvent event) throws Exception {
         PageLoader.loadRules(event, "2048");
     }
 }
