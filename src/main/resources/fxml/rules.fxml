@@ -74,8 +74,7 @@
                 <Image url="@../images/placeholder2.png" />
             </image>
         </ImageView>
-        <TextField layoutX="129.0" layoutY="523.0" promptText="Player 2" style="-fx-background-color: antiquewhite;" />
-        <TextField layoutX="129.0" layoutY="483.0" promptText="Player 1" style="-fx-background-color: antiquewhite;" />
+        <TextField fx:id="nameField" layoutX="129.0" layoutY="483.0" promptText="Player 1" style="-fx-background-color: antiquewhite;" />
         <Button layoutX="154.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#playClick" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: crimson; -fx-border-color: black; -fx-border-width: 2px;" text="PLAY" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font size="18.0" />

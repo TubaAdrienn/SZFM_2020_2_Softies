@@ -1,5 +1,6 @@
 package Helpers;
 
+import Controller.Controller;
 import Controller.RulesController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,10 +13,11 @@ import java.io.IOException;
 
 public class PageLoader {
 
-    public static void loadGame(MouseEvent mouseEvent, String game, String name1, String name2) throws IOException {
+    public static void loadGame(MouseEvent mouseEvent, String game, String name) throws IOException {
         System.out.println("/"+game+".fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(PageLoader.class.getResource("/fxml/"+game+".fxml"));
         Parent root = fxmlLoader.load();
+        fxmlLoader.<Controller>getController().initdata(game,name);
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
