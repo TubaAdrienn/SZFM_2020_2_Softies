@@ -23,7 +23,7 @@ public class MastermindController extends Controller{
 
     private int lastStep;
     private int rowHelper;
-    private int score = 10;
+    private int score;
 
     @FXML
     private GridPane leftPane;
@@ -126,7 +126,6 @@ public class MastermindController extends Controller{
      */
     public void processSubmit(ActionEvent event) {
         errorLabel.setText("");
-        currentScore.setText(String.valueOf(--score));
         //If we have 4 colors in a row we can submit our tips, otherwise we can't
         if (lastStep % 4 == 0 && lastStep != 0 && lastStep != 40) {
             PinStruct pins = mastermind.process(leftPane, lastStep);
@@ -154,6 +153,8 @@ public class MastermindController extends Controller{
                     setColor(i, Color.get(Color.getByValue(mastermind.getGuessColors()[i])));
                 }
             }
+            score = ((pins.getBlack()*30)+(pins.getWhite()*10))-lastStep;
+            currentScore.setText(String.valueOf(score));
         } else if(lastStep < 40 ){ //If we have not 4 colors in a row write this error message in infobox
             errorLabel.setText("You must select 4 colors to check!" + "\n" +
                     "Use Color buttons");
