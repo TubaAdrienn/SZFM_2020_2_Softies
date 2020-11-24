@@ -127,7 +127,7 @@ public class MastermindController extends Controller{
     public void processSubmit(ActionEvent event) {
         errorLabel.setText("");
         //If we have 4 colors in a row we can submit our tips, otherwise we can't
-        if (lastStep % 4 == 0 && lastStep != 0 && lastStep != 40) {
+        if (lastStep % 4 == 0 && lastStep != 0 && lastStep <= 40) {
             PinStruct pins = mastermind.process(leftPane, lastStep);
             //With this for loop, we write out pins
             for (int i = 0; i < pins.getBlack() + pins.getWhite(); i++) {
