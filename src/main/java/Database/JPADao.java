@@ -31,11 +31,12 @@ public abstract class JPADao<T> {
         entityManager.getTransaction().commit();
     }
 
-    public void update(HighScore hs, int score){
+    public void update(HighScore hs, int score, String name){
         entityManager.getTransaction().begin();
 
         hs = entityManager.find(HighScore.class, hs.getGame());
         hs.setScore(score);
+        hs.setUsername(name);
 
         entityManager.getTransaction().commit();
     }

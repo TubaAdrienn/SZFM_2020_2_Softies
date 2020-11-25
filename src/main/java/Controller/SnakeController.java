@@ -136,7 +136,7 @@ public class SnakeController extends Controller {
                 highScoreLabel.setText(String.valueOf(gameState.getScore()));
             }
             else if (gameState.getScore() > score.getScore()) {
-                database.update(score, gameState.getScore());
+                database.update(score, gameState.getScore(), this.name1);
                 highScoreLabel.setText(String.valueOf(gameState.getScore()));
             }
 
