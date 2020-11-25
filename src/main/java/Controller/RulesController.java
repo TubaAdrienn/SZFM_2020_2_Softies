@@ -6,6 +6,8 @@ import Helpers.PageLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -17,6 +19,9 @@ public class RulesController extends Controller {
 
     @FXML
     private TextField nameField;
+  
+    @FXML
+    private ImageView iconimage;
 
     private String rulesText;
 
@@ -30,6 +35,20 @@ public class RulesController extends Controller {
 
     @FXML
     private void initialize(){
+        switch (game){
+            case "2048":
+                iconimage.setImage(new Image(RulesController.class.getResource("/images/icon2048.png").toExternalForm()));
+                break;
+            case "mastermind":
+                iconimage.setImage(new Image(RulesController.class.getResource("/images/iconmm.png").toExternalForm()));
+                break;
+            case "snake":
+                iconimage.setImage(new Image(RulesController.class.getResource("/images/iconsnake.png").toExternalForm()));
+                break;
+            case "tictactoe":
+                iconimage.setImage(new Image(RulesController.class.getResource("/images/iconttt.png").toExternalForm()));
+                break;
+        }
         System.out.println("InitData");
         rulesLabel.setText(rulesText);
     }
