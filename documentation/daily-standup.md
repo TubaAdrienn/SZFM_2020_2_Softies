@@ -330,6 +330,9 @@
 ## Daily Standup Meeting - 4.0
 ### 2020.11.23 - 4.1
 * Anna
+1. Checked, snake is bugless.
+2. Create Snake branch.
+3. No problems.
 
 * Csabi
 1. Finished all display rework.
@@ -355,5 +358,14 @@
 1. Fixing bugs for score and high score
 2. Playing games and searching for bugs
 3. No problem
+
+* Adrienn
+
+### 2020.11.25. - 4.3
+* Anna
+
+* Csabi
+
+* Matyi
 
 * Adrienn
