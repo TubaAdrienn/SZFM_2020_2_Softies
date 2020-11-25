@@ -330,6 +330,39 @@
 ## Daily Standup Meeting - 4.0
 ### 2020.11.23 - 4.1
 * Anna
+1. Checked, snake is bugless.
+2. Create Snake branch.
+3. No problems.
+
+* Csabi
+1. Finished all display rework.
+2. Starting write tests and make up for missing parts.
+3. No problem.
+
+* Matyi
+1. Summarize previous week Daily-standup meeting
+2. Fixing bugs for score and high score
+3. Score not working properly
+
+* Adrienn
+1. Merged verything, ended previous sprint.
+2. Create sprint plan and set name field.
+3. No problem.
+
+### 2020.11.24. - 4.2
+* Anna
+
+* Csabi
+
+* Matyi
+1. Fixing bugs for score and high score
+2. Playing games and searching for bugs
+3. No problem
+
+* Adrienn
+
+### 2020.11.25. - 4.3
+* Anna
 
 * Csabi
 
