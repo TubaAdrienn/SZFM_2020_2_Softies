@@ -1,5 +1,7 @@
 package Controller;
 
+import Database.HighScore;
+import Database.HighScoreDao;
 import Helpers.PageLoader;
 import Snake.Direction;
 import Snake.GameState;
@@ -50,6 +52,9 @@ public class SnakeController extends Controller {
         renderSnake();
         SnakeMoveManager();
         direction = new Direction("D", "A");
+        if(this.score!=null){
+            highScoreLabel.setText(String.valueOf(score.getScore()));
+        }
     }
 
     private void SnakeMoveManager() {
@@ -125,6 +130,16 @@ public class SnakeController extends Controller {
         } catch (Exception e) {
             gameOver.setVisible(true);
             System.out.println("Game Over.");
+            if(score == null){
+                HighScore newScore=new HighScore(this.game, this.name1, gameState.getScore());
+                database.persist(newScore);
+                highScoreLabel.setText(String.valueOf(gameState.getScore()));
+            }
+            else if (gameState.getScore() > score.getScore()) {
+                database.update(score, gameState.getScore());
+                highScoreLabel.setText(String.valueOf(gameState.getScore()));
+            }
+
         }
     }
 
@@ -132,19 +147,19 @@ public class SnakeController extends Controller {
         KeyCode code = keyEvent.getCode();
         String opposite = null;
         String dir = code.toString();
-        if(direction.getOpposite()!=dir){
+        if (direction.getOpposite() != dir) {
             switch (dir) {
                 case "W":
-                    opposite="S";
+                    opposite = "S";
                     break;
                 case "A":
-                    opposite="D";
+                    opposite = "D";
                     break;
                 case "S":
-                    opposite="W";
+                    opposite = "W";
                     break;
                 case "D":
-                    opposite="A";
+                    opposite = "A";
                     break;
             }
             direction = new Direction(dir, opposite);

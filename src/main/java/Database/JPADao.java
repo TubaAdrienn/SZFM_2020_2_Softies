@@ -31,7 +31,7 @@ public abstract class JPADao<T> {
         entityManager.getTransaction().commit();
     }
 
-    public void update(HighScore hs, String score){
+    public void update(HighScore hs, int score){
         entityManager.getTransaction().begin();
 
         hs = entityManager.find(HighScore.class, hs.getGame());

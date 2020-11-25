@@ -62,7 +62,7 @@ public class RulesController extends Controller {
                 PageLoader.loadGame(mouseEvent, this.game, "Anonymus");
             }
         } catch (Exception e){
-            System.out.println("Game not implemented yet.");
+           throw e;
         }
     }
 
