@@ -71,22 +71,22 @@
         </Label>
         <ImageView fx:id="game_mastermind" fitHeight="150.0" fitWidth="200.0" layoutX="240.0" layoutY="460.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images/placeholder.png" />
+                <Image url="@../images/iconmm.png" />
             </image>
         </ImageView>
         <ImageView fx:id="game_2048" fitHeight="150.0" fitWidth="200.0" layoutX="240.0" layoutY="267.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images/placeholder.png" />
+                <Image url="@../images/icon2048.png" />
             </image>
         </ImageView>
         <ImageView fx:id="game_tictactoe" fitHeight="150.0" fitWidth="200.0" layoutX="473.0" layoutY="460.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images/placeholder.png" />
+                <Image url="@../images/iconttt.png" />
             </image>
         </ImageView>
         <ImageView fx:id="game_snake" fitHeight="150.0" fitWidth="200.0" layoutX="473.0" layoutY="267.0" onMouseClicked="#gameChosing" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../images/placeholder.png" />
+                <Image url="@../images/iconsnake.png" />
             </image>
         </ImageView>
     </children>
