@@ -14,7 +14,7 @@ public class MainController extends Controller{
         try{
             image=(ImageView)mouseEvent.getTarget();
             getGameFromID();
-            PageLoader.loadRules(mouseEvent,this.game);
+            PageLoader.loadRules(mouseEvent,game);
             System.out.println(game);
         } catch (Exception e){
             throw e;

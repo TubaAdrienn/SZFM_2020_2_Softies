@@ -1,5 +1,6 @@
 package Controller;
 
+import Helpers.PageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import Mastermind.Color;
 import Mastermind.Mastermind;
@@ -173,11 +174,8 @@ public class MastermindController extends Controller{
      * @param actionEvent Event of the action.
      * @throws IOException Error if file not found.
      */
-    public void processNewGame(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/mastermind.fxml"));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+    public void processNewGame(MouseEvent actionEvent) throws IOException {
+        PageLoader.loadGame(actionEvent, "mastermind", this.name1);
     }
 
     /**
@@ -185,10 +183,7 @@ public class MastermindController extends Controller{
      * @param actionEvent Event of the action.
      * @throws IOException Error if file not found.
      */
-    public void processBackToMenu(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+    public void processBackToMenu(MouseEvent actionEvent) throws IOException {
+        PageLoader.loadGame(actionEvent, "main", null);
     }
 }

@@ -5,6 +5,7 @@ import Database.Rules;
 import Helpers.PageLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -16,6 +17,9 @@ public class RulesController extends Controller {
     @FXML
     private Label rulesLabel;
 
+    @FXML
+    private TextField nameField;
+  
     @FXML
     private ImageView iconimage;
 
@@ -51,13 +55,18 @@ public class RulesController extends Controller {
 
     public void playClick (MouseEvent mouseEvent) throws IOException {
         try{
-            PageLoader.loadGame(mouseEvent, this.game, name1, name2);
+            name1=nameField.getText();
+            if(!name1.isEmpty()){
+                PageLoader.loadGame(mouseEvent, this.game, name1);
+            } else{
+                PageLoader.loadGame(mouseEvent, this.game, "Anonymus");
+            }
         } catch (Exception e){
-            System.out.println("Game not implemented yet.");
+           throw e;
         }
     }
 
     public void backClick(MouseEvent mouseEvent) throws IOException {
-        PageLoader.loadGame(mouseEvent, "main", name1, name2);
+        PageLoader.loadGame(mouseEvent, "main", null);
     }
 }

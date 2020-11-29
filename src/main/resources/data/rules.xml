@@ -21,7 +21,20 @@ or you can change it with Back button.
     </data>
     <data>
         <game>2048</game>
-        <desc>Description of the game 2048.</desc>
+        <desc>2048 is played on a 4*4 grid, with numbered
+tiles that slide when a player moves them
+using W(up), S(down), A(left), D(right) keys.
+Every turn, a new tile will randomly appear
+in an empty spot on the board with a
+value of either 2 or 4. If two tiles
+of the same number collide while moving,
+they will merge into a tile with the
+total value of the two tiles that collided.
+The game is won when a tile with a
+value of 2048 appears on the board,
+hence the name of the game. When the
+player has no legal moves the game ends.
+        </desc>
     </data>
     <data>
         <game>tictactoe</game>
