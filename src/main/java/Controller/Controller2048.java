@@ -121,8 +121,8 @@ public class Controller2048 extends Controller {
             renderGame();
         } else if(gameState.isWinningState()){
             gameWin.setVisible(true);
-            System.out.println("Winner won.");
-        }else {
+            System.out.println("Winner won");
+        } else {
             gameOver.setVisible(true);
             System.out.println("Game Over");
         }
