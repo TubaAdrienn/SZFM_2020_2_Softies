@@ -477,7 +477,7 @@
          <effect>
             <DropShadow color="#0000007e" />
          </effect></Label>
-      <Label layoutX="462.0" layoutY="150.0" prefHeight="62.0" prefWidth="156.0" text="High score:" textFill="#4d00c4">
+      <Label fx:id="highScore" layoutX="462.0" layoutY="150.0" prefHeight="62.0" prefWidth="156.0" text="High score:" textFill="#4d00c4">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>

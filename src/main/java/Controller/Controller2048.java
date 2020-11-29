@@ -1,5 +1,7 @@
 package Controller;
 
+import Database.HighScore;
+import Database.HighScoreDao;
 import Game2048.GameState;
 import Helpers.PageLoader;
 import javafx.fxml.FXML;
@@ -10,7 +12,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
-import java.io.IOException;
+import javax.persistence.NoResultException;
 
 public class Controller2048 extends Controller {
 
@@ -20,10 +22,10 @@ public class Controller2048 extends Controller {
     private GameState gameState;
 
     @FXML
-    private Label score;
+    private Label gameScore;
 
     @FXML
-    private Label highscore;
+    private Label highScore;
 
     @FXML
     private Label gameOver;
@@ -31,12 +33,14 @@ public class Controller2048 extends Controller {
     @FXML
     private Label gameWin;
 
+    HighScoreDao database = HighScoreDao.getInstance();
+
     @FXML
     public void initialize() {
         newGame();
     }
 
-    private void renderGame(){
+    private void renderGame() {
         setScore();
         gameOver.setVisible(false);
         gameWin.setVisible(false);
@@ -44,68 +48,69 @@ public class Controller2048 extends Controller {
         String id;
         int[][] state = gameState.getGameState();
         clearCells();
-        try{
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 4; j++) {
-                    if (state[i][j] != 0) {
-                        id = createID(i , j);
-                        String finalId = id;
-                        label = (Label) grid.getChildren().stream()
-                                .filter(x -> x.getId() != null)
-                                .filter(x -> x.getId().equals(finalId))
-                                .findFirst()
-                                .get();
-                        label.setText(String.valueOf(state[i][j]));
-                        switch (state[i][j]){
-                            case 2:
-                                label.setStyle("-fx-background-color: #FFFF66;");
-                                break;
-                            case 4:
-                                label.setStyle("-fx-background-color: green;");
-                                break;
-                            case 8:
-                                label.setStyle("-fx-background-color: brown;");
-                                break;
-                            case 16:
-                                label.setStyle("-fx-background-color: yellow;");
-                                break;
-                            case 32:
-                                label.setStyle("-fx-background-color: orange;");
-                                break;
-                            case 64:
-                                label.setStyle("-fx-background-color: grey;");
-                                break;
-                            case 128:
-                                label.setStyle("-fx-background-color: red;");
-                                break;
-                            case 256:
-                                label.setStyle("-fx-background-color: pink;");
-                                break;
-                            case 512:
-                                label.setStyle("-fx-background-color: purple;");
-                                break;
-                            case 1024:
-                                label.setStyle("-fx-background-color: white;");
-                                break;
-                            case 2048:
-                                label.setStyle("-fx-background-color: aqua;");
-                                break;
+        try {
+            if (gameState.isOver() == false) {
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        if (state[i][j] != 0) {
+                            id = createID(i, j);
+                            String finalId = id;
+                            label = (Label) grid.getChildren().stream()
+                                    .filter(x -> x.getId() != null)
+                                    .filter(x -> x.getId().equals(finalId))
+                                    .findFirst()
+                                    .get();
+                            label.setText(String.valueOf(state[i][j]));
+                            switch (state[i][j]) {
+                                case 2:
+                                    label.setStyle("-fx-background-color: #FFFF66;");
+                                    break;
+                                case 4:
+                                    label.setStyle("-fx-background-color: green;");
+                                    break;
+                                case 8:
+                                    label.setStyle("-fx-background-color: brown;");
+                                    break;
+                                case 16:
+                                    label.setStyle("-fx-background-color: yellow;");
+                                    break;
+                                case 32:
+                                    label.setStyle("-fx-background-color: orange;");
+                                    break;
+                                case 64:
+                                    label.setStyle("-fx-background-color: grey;");
+                                    break;
+                                case 128:
+                                    label.setStyle("-fx-background-color: red;");
+                                    break;
+                                case 256:
+                                    label.setStyle("-fx-background-color: pink;");
+                                    break;
+                                case 512:
+                                    label.setStyle("-fx-background-color: purple;");
+                                    break;
+                                case 1024:
+                                    label.setStyle("-fx-background-color: white;");
+                                    break;
+                                case 2048:
+                                    label.setStyle("-fx-background-color: aqua;");
+                                    break;
+                            }
                         }
                     }
                 }
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             gameOver.setVisible(true);
             System.out.println("Game Over");
         }
     }
 
-    private String createID(int i,int j){
-        return "id_"+String.valueOf(i)+String.valueOf(j);
+    private String createID(int i, int j) {
+        return "id_" + String.valueOf(i) + String.valueOf(j);
     }
 
-    private void clearCells(){
+    private void clearCells() {
         for (Node label : grid.getChildren()) {
             ((Label) label).setText("");
             //default color cell
@@ -114,21 +119,29 @@ public class Controller2048 extends Controller {
     }
 
     public void refreshPage(KeyEvent keyEvent) {
-        if(gameState.isOver()==false && gameState.isWinningState()==false){
+        if (gameState.isOver() == false && gameState.isWinningState() == false) {
             KeyCode code = keyEvent.getCode();
             System.out.println(code);
             gameState.moveCells(code);
             renderGame();
-        } else if(gameState.isWinningState()){
+        } else if (gameState.isWinningState()) {
             gameWin.setVisible(true);
             System.out.println("Winner won");
         } else {
             gameOver.setVisible(true);
             System.out.println("Game Over");
         }
+        if (gameState.isOver() == true) {
+            if (score == null) {
+                database.persist(new HighScore(this.game, this.name1, gameState.getScore()));
+            } else if (gameState.getScore() > score.getScore()) {
+                database.update(score, gameState.getScore(), this.name1);
+                highScore.setText("Highscore: "+String.valueOf(gameState.getScore()));
+            }
+        }
     }
 
-    public void newGame(){
+    public void newGame() {
         gameState = new GameState();
         renderGame();
     }
@@ -138,6 +151,11 @@ public class Controller2048 extends Controller {
     }
 
     public void setScore() {
-        score.setText("Score: " + String.valueOf(gameState.getScore()));
+        gameScore.setText("Score: " + String.valueOf(gameState.getScore()));
+        try {
+            highScore.setText("Highscore: " + String.valueOf(database.findScoreByName("2048").getScore()));
+        } catch (NoResultException e) {
+            System.out.println("No result found.");
+        }
     }
 }

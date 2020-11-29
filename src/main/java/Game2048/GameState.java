@@ -1,9 +1,6 @@
 package Game2048;
 
-import Controller.Controller2048;
 import javafx.scene.input.KeyCode;
-
-import java.awt.geom.GeneralPath;
 import java.util.Random;
 
 public class GameState {

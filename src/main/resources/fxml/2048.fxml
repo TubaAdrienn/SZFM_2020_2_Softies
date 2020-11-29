@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
@@ -176,7 +176,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Label fx:id="score" layoutX="41.0" layoutY="21.0" prefHeight="46.0" prefWidth="198.0" style="&#10;" text="Score: 0" textAlignment="CENTER" textFill="#0b00dd" textOverrun="CLIP" wrapText="false">
+            <Label fx:id="gameScore" layoutX="41.0" layoutY="21.0" prefHeight="46.0" prefWidth="198.0" style="&#10;" text="Score: 0" textAlignment="CENTER" textFill="#0b00dd" textOverrun="CLIP" wrapText="false">
                <font>
                   <Font name="Berlin Sans FB Demi Bold" size="31.0" />
                </font>
@@ -184,7 +184,7 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000b2" />
                </effect>
             </Label>
-            <Label fx:id="highScore" layoutX="41.0" layoutY="66.0" prefHeight="46.0" prefWidth="206.0" style="&#10;" text="High Score: 0" textAlignment="CENTER" textFill="#0b00dd" textOverrun="CLIP" wrapText="false">
+            <Label fx:id="highScore" layoutX="41.0" layoutY="66.0" prefHeight="46.0" prefWidth="301.0" style="&#10;" text="High Score: 0" textAlignment="CENTER" textFill="#0b00dd" textOverrun="CLIP" wrapText="false">
                <font>
                   <Font name="Berlin Sans FB Demi Bold" size="31.0" />
                </font>

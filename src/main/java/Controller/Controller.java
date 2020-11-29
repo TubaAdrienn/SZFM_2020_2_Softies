@@ -11,7 +11,7 @@ public class Controller {
     protected String game;
     protected String name1;
     protected Scene scene;
-    protected HighScore score;
+    protected HighScore score = new HighScore(game,name1,0);;
     HighScoreDao database = HighScoreDao.getInstance();
 
     public void initdata(String game, String name1) {
@@ -20,8 +20,8 @@ public class Controller {
         try {
             this.score = database.findScoreByName(game);
         } catch (NoResultException e) {
+            score=null;
             System.out.println("No result found.");
-            score = null;
         }
         System.out.println("Data initalized. Name: " + name1 + ", game: " + game);
     }
