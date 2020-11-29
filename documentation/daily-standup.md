@@ -330,6 +330,72 @@
 ## Daily Standup Meeting - 4.0
 ### 2020.11.23 - 4.1
 * Anna
+1. Checked, snake is bugless.
+2. Create Snake branch.
+3. No problems.
+
+* Csabi
+1. Finished all display rework.
+2. Starting write tests and make up for missing parts.
+3. No problem.
+
+* Matyi
+1. Summarize previous week Daily-standup meeting
+2. Fixing bugs for score and high score
+3. Score not working properly
+
+* Adrienn
+1. Merged verything, ended previous sprint.
+2. Create sprint plan and set name field.
+3. No problem.
+
+### 2020.11.24. - 4.2
+* Anna
+
+* Csabi
+1. Score system upgraded and bugs were fixed in Mastermind.
+2. Write unit tests in Mastermind.
+3. No problems.
+
+* Matyi
+1. Fixing bugs for score and high score
+2. Playing games and searching for bugs
+3. No problem
+
+* Adrienn
+1. Created sprint plan and set name initialization to games.
+2. Test report plan creation, fixing minor problems.
+3. No problem
+
+### 2020.11.25. - 4.3
+* Anna
+
+* Csabi
+1. Today I don't have a time, so today's task go to next day.
+2. Write JUnit tests in Mastermind.
+3. No problem.
+
+* Matyi
+1. Playing games and searching for bugs
+2. Writing JUnit tests
+3. No bugs found yet
+
+* Adrienn
+1. Created test protocol
+2. Create icons for games, start testing
+3. No problem
+
+### 2020.11.26. - 4.4
+* Anna
+
+* Csabi
+
+* Matyi
+
+* Adrienn
+
+### 2020.11.27. - 4.5
+* Anna
 
 * Csabi
 
