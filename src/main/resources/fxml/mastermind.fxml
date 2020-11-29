@@ -579,7 +579,7 @@
                </effect></ImageView>
          </children>
       </GridPane>
-      <Label fx:id="currentScore" layoutX="656.0" layoutY="213.0" prefHeight="62.0" prefWidth="213.0" text="10" textFill="#4d00c4">
+      <Label fx:id="currentScore" layoutX="656.0" layoutY="213.0" prefHeight="62.0" prefWidth="213.0" text="0" textFill="#4d00c4">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>

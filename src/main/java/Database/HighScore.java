@@ -19,9 +19,9 @@ public class HighScore {
 
     private String username;
 
-    private String score;
+    private int score;
 
-    public HighScore(String game, String username, String score){
+    public HighScore(String game, String username, int score){
         this.game=game;
         this.username=username;
         this.score=score;
