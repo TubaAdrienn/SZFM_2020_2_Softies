@@ -46,6 +46,7 @@ public class RulesController extends Controller {
                 iconimage.setImage(new Image(RulesController.class.getResource("/images/iconsnake.png").toExternalForm()));
                 break;
             case "tictactoe":
+                nameField.setVisible(false);
                 iconimage.setImage(new Image(RulesController.class.getResource("/images/iconttt.png").toExternalForm()));
                 break;
         }
