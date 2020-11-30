@@ -3,10 +3,31 @@
 ## Main page
 
 ### **Manual Tests**
+* Test 1: 
+  * Tests whether the Mastermind image leads to the right Rules page
+  * Test successful
+* Test 2: 
+  * Tests whether the 2048 image leads to the right Rules page
+  * Test successful
+* Test 3: 
+  * Tests whether the Tic-Tac-Toe image leads to the right Rules page
+  * Test successful
+* Test 4: 
+  * Tests whether the Snake image leads to the right Rules page
+  * Test successful
 
 ## Rules page
 
 ### **Manual Tests**
+* Test 1:
+  * Tests whether every rule belongs to the right game
+  * Test successful
+* Test 2: 
+  * Tests whether play button reacts to click and starts game
+  * Test successful
+* Test 3:
+  * Tests whether textfield accepts name and saves it
+  * Test successful
 
 ## Tic-Tac-Toe
 
