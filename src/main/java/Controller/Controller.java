@@ -10,7 +10,6 @@ public class Controller {
 
     protected String game;
     protected String name1;
-    protected Scene scene;
     protected HighScore score = new HighScore(game,name1,0);;
     HighScoreDao database = HighScoreDao.getInstance();
 
