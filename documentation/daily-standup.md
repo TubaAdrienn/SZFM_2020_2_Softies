@@ -369,6 +369,9 @@
 
 ### 2020.11.25. - 4.3
 * Anna
+1. Checked methods waiting for testing.
+2. Decide testing method.
+3. No problems.
 
 * Csabi
 1. Today I don't have a time, so today's task go to next day.
@@ -387,18 +390,42 @@
 
 ### 2020.11.26. - 4.4
 * Anna
+1. Decided on testing methods.
+2. Start writing test methods.
+3. No time, no problems.
 
 * Csabi
+1. Started write JUnit tests in Mastermind.
+2. Continue write JUint tests in Mastermind.
+3. No problem.
 
 * Matyi
+1. Writing JUnit tests in 2048
+2. Fixing highscore
+3. No problems
 
 * Adrienn
+1. Created icons
+2. Nothing planned.
+3. No problem.
 
 ### 2020.11.27. - 4.5
 * Anna
+1. Started writing test methods.
+2. Continue testing.
+3. No problems.
 
 * Csabi
+1. Continued writing JUnit tests in Mastermind.
+2. Make more test, yay!
+3. No problem at all.
 
 * Matyi
+1. Fixing Highscore
+2. Searching for bugs
+3. No problem
 
 * Adrienn
+1. Nothing planned.
+2. Write JUnit tests.
+3. No problem.
