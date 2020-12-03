@@ -59,3 +59,25 @@
 * Test 4: 
   * Tests whether 1v1 button reacts to click and sets new game
   * Test successful
+  
+## Tic-Tac-Toe
+
+### **Junit Tests**
+//Adding content
+
+### **Manual Tests**
+* Test 1:
+  * Tests whether every cell display the right character and right color
+  * Test successful
+* Test 2:
+  * Tests whether back button reacts to click and goes back to rules page
+  * Test successful
+* Test 3:
+  * Tests whether New Game button reacts to click and restart the game
+  * Test successful
+* Test 4:
+  * Tests whether generate new cells with the arrow keys
+  * Test successful
+* Test 5:
+  * Tests whether cells collapse in the specified way
+  * Test successful
