@@ -149,4 +149,9 @@
 ### **Manual Tests**
 
 * Test 1: 
+    * Tests when clicking on start button game is starting.
+    * Test successful.
+    
 * Test 2:
+    * Tests when clicking on back button user is redirected to rules page.
+    * Test successful.
