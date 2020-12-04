@@ -119,6 +119,9 @@
     * Test successful.
 
 * Test moveSnakeUPTest():
+    * Test whether the snake moves to the direction "up".
+    * Test successful.
+
 * Test moveSnakeDOWNTest():
 * Test moveSnakeLEFTTest():
 * Test moveSnakeRIGHTTest():
