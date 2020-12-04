@@ -159,7 +159,18 @@
 ## Mastermind - Szilágyi Csaba
 
 ### **Junit Tests**
-//Adding content
+
+* Test gameState():
+    * Test setGameState and getGameState methods work well, give/give back the right value.
+    * Test successful.
+
+* Test guessedColor():
+    * Tests whether guessedColor's are made, when the game started.
+    * Test successful.
+
+* Test process():
+    * Tests whether the game calculate pins well.
+    * Test successful.
 
 ### **Manual Tests**
 //Adding content
