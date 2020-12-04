@@ -141,7 +141,10 @@
 * Test isOverSelfCollapsedTest():
     * Tests whether the game is over when snake collapsed itself.
     * Test successful.
+    
 * Test isOverOutOfBoardTest():
+    * Tests whether the game is over when snake collapsed into wall.
+    * Test successful.
 
 ### **Manual Tests**
 
