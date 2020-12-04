@@ -60,7 +60,7 @@
   * Tests whether 1v1 button reacts to click and sets new game
   * Test successful
   
-## Tic-Tac-Toe - Adrienn Tuba
+## 2048 - Fenyvesi Mátyás
 
 ### **Junit Tests**
 //Adding content
@@ -155,3 +155,11 @@
 * Test 2:
     * Tests when clicking on back button user is redirected to rules page.
     * Test successful.
+
+## Mastermind - Szilágyi Csaba
+
+### **Junit Tests**
+//Adding content
+
+### **Manual Tests**
+//Adding content
