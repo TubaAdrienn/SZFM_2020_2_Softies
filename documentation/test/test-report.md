@@ -94,6 +94,12 @@
   * Test successful.
 
 * Test checkIfNotSelfTest():
+  * Tests whether the next cell is itself.
+  * Test successful.
+* Test checkIfNotSelfTest():  
+  * Tests whether the next cell is not itself.
+  * Test successful.
+  
 * Test canMakeStepTest():
 * Test generateSnakeTest():
 * Test generateFoodTest():
