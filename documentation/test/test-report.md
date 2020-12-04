@@ -87,6 +87,12 @@
 ### **Junit Tests**
 
 * Test checkIfCellNotOver():
+  * Tests whether there is cell to step.
+  * Test successful.
+* Test checkIfCellNotOver():
+  * Tests whether there is no cell to step.
+  * Test successful.
+
 * Test checkIfNotSelfTest():
 * Test canMakeStepTest():
 * Test generateSnakeTest():
