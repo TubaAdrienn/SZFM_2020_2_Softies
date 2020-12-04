@@ -123,6 +123,8 @@
     * Test successful.
 
 * Test moveSnakeDOWNTest():
+    * Test whether the snake moves to the direction "down".
+    * Test successful.
 * Test moveSnakeLEFTTest():
 * Test moveSnakeRIGHTTest():
 * Test decreseCellsTest():
