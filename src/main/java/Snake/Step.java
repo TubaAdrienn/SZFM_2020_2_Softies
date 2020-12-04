@@ -1,5 +1,8 @@
 package Snake;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 public class Step {
     private int row;
     private int col;
@@ -49,7 +52,7 @@ public class Step {
         if(gameState[row][col]==0 || gameState[row][col]==-1){
             return true;
         }
-        System.out.printf("Its you, buddy.");
+        log.info("Game Over. Snake collapsed.");
         return false;
     }
 
@@ -61,7 +64,7 @@ public class Step {
         if(row>=0 && row<20 && col >=0 && col<26 ){
             return true;
         }
-        System.out.printf("Cells over.");
+        log.info("Game Over.Cells over.");
         return false;
     }
 }

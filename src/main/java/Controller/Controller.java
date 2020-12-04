@@ -3,9 +3,10 @@ package Controller;
 import Database.HighScore;
 import Database.HighScoreDao;
 import javafx.scene.Scene;
+import lombok.extern.log4j.Log4j2;
 
 import javax.persistence.NoResultException;
-
+@Log4j2
 public class Controller {
 
     protected String game;
@@ -20,9 +21,9 @@ public class Controller {
             this.score = database.findScoreByName(game);
         } catch (NoResultException e) {
             score=null;
-            System.out.println("No result found.");
+            //log.error("No result.");
         }
-        System.out.println("Data initalized. Name: " + name1 + ", game: " + game);
+
     }
 
 }

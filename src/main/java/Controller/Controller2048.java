@@ -11,9 +11,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import lombok.extern.log4j.Log4j2;
 
 import javax.persistence.NoResultException;
-
+@Log4j2
 public class Controller2048 extends Controller {
 
     @FXML
@@ -102,7 +103,7 @@ public class Controller2048 extends Controller {
             }
         } catch (Exception e) {
             gameOver.setVisible(true);
-            System.out.println("Game Over");
+
         }
     }
 
@@ -121,33 +122,36 @@ public class Controller2048 extends Controller {
     public void refreshPage(KeyEvent keyEvent) {
         if (gameState.isOver() == false && gameState.isWinningState() == false) {
             KeyCode code = keyEvent.getCode();
-            System.out.println(code);
             gameState.moveCells(code);
             renderGame();
+            log.info("{} key is pressed. Score :{}",code,gameState.getScore());
         } else if (gameState.isWinningState()) {
             gameWin.setVisible(true);
-            System.out.println("Winner won");
+            log.info("Winner won.");
         } else {
             gameOver.setVisible(true);
-            System.out.println("Game Over");
+            log.info("Game Over.");
         }
         if (gameState.isOver() == true) {
             if (score == null) {
                 database.persist(new HighScore(this.game, this.name1, gameState.getScore()));
             } else if (gameState.getScore() > score.getScore()) {
                 database.update(score, gameState.getScore(), this.name1);
+                log.info("Highscore saved. {}",gameState.getScore());
                 highScore.setText("Highscore: "+String.valueOf(gameState.getScore()));
             }
         }
     }
 
     public void newGame() {
+        log.info("New game is started.");
         gameState = new GameState();
         renderGame();
     }
 
     public void backToRules(MouseEvent event) throws Exception {
         PageLoader.loadRules(event, "2048");
+        log.info("Back button is clicked.");
     }
 
     public void setScore() {
@@ -155,7 +159,7 @@ public class Controller2048 extends Controller {
         try {
             highScore.setText("Highscore: " + String.valueOf(database.findScoreByName("2048").getScore()));
         } catch (NoResultException e) {
-            System.out.println("No result found.");
+            log.error("No result found.");
         }
     }
 }

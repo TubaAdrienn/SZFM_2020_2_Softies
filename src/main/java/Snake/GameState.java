@@ -2,11 +2,12 @@
 package Snake;
 
 
-import javafx.scene.input.KeyCode;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.Random;
 import java.util.Scanner;
 
+@Log4j2
 public class GameState {
     private int[][] gameState;
     private int snakeLength;
@@ -123,7 +124,6 @@ public class GameState {
                 makeStep();
                 break;
         }
-        System.out.println();
     }
 
     /**
@@ -137,17 +137,16 @@ public class GameState {
             putHead();
             if (gameState != null) {
                 this.score += 5;
+                log.info("Apple eaten: {}  Score: {}",snakeLength-3,score);
                 generateFood();
             } else {
                 isOver = true;
-                System.out.printf("Game Over.");
             }
         } else {
             decreseCells();
             putHead();
             if (gameState == null) {
                 isOver = true;
-                System.out.printf("Game Over.");
             }
         }
 
