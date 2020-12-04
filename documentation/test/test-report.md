@@ -1,6 +1,6 @@
 # Test Report
 
-## Main page
+## Main page - Adrienn Tuba
 
 ### **Manual Tests**
 * Test 1: 
@@ -16,7 +16,7 @@
   * Tests whether the Snake image leads to the right Rules page
   * Test successful
 
-## Rules page
+## Rules page - Adrienn Tuba
 
 ### **Manual Tests**
 * Test 1:
@@ -29,7 +29,7 @@
   * Tests whether textfield accepts name and saves it
   * Test successful
 
-## Tic-Tac-Toe
+## Tic-Tac-Toe - Adrienn Tuba
 
 ### **Junit Tests**
 
@@ -60,7 +60,7 @@
   * Tests whether 1v1 button reacts to click and sets new game
   * Test successful
   
-## Tic-Tac-Toe
+## Tic-Tac-Toe - Adrienn Tuba
 
 ### **Junit Tests**
 //Adding content
@@ -81,3 +81,25 @@
 * Test 5:
   * Tests whether cells collapse in the specified way
   * Test successful
+  
+### Snake - Anna Egyed
+
+### **Junit Tests**
+
+* Test checkIfCellNotOver():
+* Test checkIfNotSelfTest():
+* Test canMakeStepTest():
+* Test generateSnakeTest():
+* Test generateFoodTest():
+* Test moveSnakeUPTest():
+* Test moveSnakeDOWNTest():
+* Test moveSnakeLEFTTest():
+* Test moveSnakeRIGHTTest():
+* Test decreseCellsTest():
+* Test isOverSelfCollapsedTest():
+* Test isOverOutOfBoardTest():
+
+### **Manual Tests**
+
+* Test 1: 
+* Test 2:
