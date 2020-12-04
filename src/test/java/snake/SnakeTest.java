@@ -114,4 +114,20 @@ public class SnakeTest {
         assertEquals(false,step3.canMakeStep(gameState));
     }
 
+
+    @Test
+    public void generateSnakeTest(){
+        gameState = new GameState();
+        int[][] board = gameState.getGameState();
+        int count = 0;
+        for (int i = 0;i<20;i++){
+            for(int j=0; j<26;j++){
+                if(board[i][j] != 0 && board[i][j] != -1){
+                    count++;
+                }
+            }
+        }
+        //check not null cell's number, then snake is generated
+        assertEquals(3,count);
+    }
 }
