@@ -173,4 +173,27 @@
     * Test successful.
 
 ### **Manual Tests**
-//Adding content
+
+* Test 1: 
+    * Tests whether every color button reacts to click, and display the right color on the panel.
+    * Test successful.
+    
+* Test 2:
+    * Tests when clicking on back button user last tip will be deleted.
+    * Test successful.
+
+* Test 3:
+    * Tests when clicking on submit button, the user tips will be submitted.
+    * Test successful.
+
+* Test 4:
+    * Tests whether infobox display the right warning/info message.
+    * Test successful.
+
+* Test 5: 
+    * Tests when clicking on new game button the game is starting again.
+    * Test successful.
+    
+* Test 6:
+    * Tests when clicking on back to menu button the user is redirected to menu page.
+    * Test successful.
