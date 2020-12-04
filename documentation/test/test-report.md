@@ -119,26 +119,28 @@
     * Test successful.
 
 * Test moveSnakeUPTest():
-    * Test whether the snake moves to the direction "up".
+    * Tests whether the snake moves to the direction "up".
     * Test successful.
 
 * Test moveSnakeDOWNTest():
-    * Test whether the snake moves to the direction "down".
+    * Tests whether the snake moves to the direction "down".
     * Test successful.
 
 * Test moveSnakeLEFTTest():
-    * Test whether the snake moves to the direction "down".
+    * Tests whether the snake moves to the direction "down".
     * Test successful.
     
 * Test moveSnakeRIGHTTest():
-    * Test whether the snake moves to the direction "down".
+    * Tests whether the snake moves to the direction "down".
     * Test successful.
     
 * Test decreseCellsTest():
-    * Test whether the cells' values are decreased.
+    * Tests whether the cells' values are decreased.
     * Test successful.
     
 * Test isOverSelfCollapsedTest():
+    * Tests whether the game is over when snake collapsed itself.
+    * Test successful.
 * Test isOverOutOfBoardTest():
 
 ### **Manual Tests**
