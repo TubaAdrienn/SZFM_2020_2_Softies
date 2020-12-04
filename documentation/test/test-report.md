@@ -125,7 +125,10 @@
 * Test moveSnakeDOWNTest():
     * Test whether the snake moves to the direction "down".
     * Test successful.
+
 * Test moveSnakeLEFTTest():
+    * Test whether the snake moves to the direction "down".
+    * Test successful.
 * Test moveSnakeRIGHTTest():
 * Test decreseCellsTest():
 * Test isOverSelfCollapsedTest():
