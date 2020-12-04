@@ -115,6 +115,9 @@
     * Test successful.
 
 * Test generateFoodTest():
+    * Tests whether food is generated.
+    * Test successful.
+
 * Test moveSnakeUPTest():
 * Test moveSnakeDOWNTest():
 * Test moveSnakeLEFTTest():
