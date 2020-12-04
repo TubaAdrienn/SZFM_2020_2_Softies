@@ -127,7 +127,24 @@ public class SnakeTest {
                 }
             }
         }
-        //check not null cell's number, then snake is generated
+        //check not null and not -1 cell's number, if there are 3 then snake is generated
         assertEquals(3,count);
+    }
+
+    @Test
+    public void generateFoodTest(){
+        gameState = new GameState();
+        int[][] board = gameState.getGameState();
+
+        int count = 0;
+        for (int i = 0;i<20;i++){
+            for(int j=0; j<26;j++){
+                if(board[i][j] == -1){
+                    count++;
+                }
+            }
+        }
+        //check -1 cell's number, if there is one then food is generated
+        assertEquals(1,count);
     }
 }
