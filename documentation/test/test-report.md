@@ -86,22 +86,32 @@
 
 ### **Junit Tests**
 
-* Test checkIfCellNotOver():
+* Test checkIfCellNotOver(): (1)
   * Tests whether there is cell to step.
   * Test successful.
-* Test checkIfCellNotOver():
+* Test checkIfCellNotOver(): (2)
   * Tests whether there is no cell to step.
   * Test successful.
 
-* Test checkIfNotSelfTest():
+* Test checkIfNotSelfTest(): (1)
   * Tests whether the next cell is itself.
   * Test successful.
-* Test checkIfNotSelfTest():  
+* Test checkIfNotSelfTest():  (2)
   * Tests whether the next cell is not itself.
   * Test successful.
   
-* Test canMakeStepTest():
+* Test canMakeStepTest(): (1)
+    * Tests whether snake is able to mak a step out of the gamestate.
+    * Test successful.
+* Test canMakeStepTest(): (2)    
+    * Tests whether snake is able turn right, where move is appliable.
+    * Test successful.
+* Test canMakeStepTest(): (3) 
+    * Tests whether the snake can make a step where its body is.
+    * Test successful.
+
 * Test generateSnakeTest():
+
 * Test generateFoodTest():
 * Test moveSnakeUPTest():
 * Test moveSnakeDOWNTest():
