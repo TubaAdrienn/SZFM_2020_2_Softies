@@ -133,7 +133,11 @@
 * Test moveSnakeRIGHTTest():
     * Test whether the snake moves to the direction "down".
     * Test successful.
+    
 * Test decreseCellsTest():
+    * Test whether the cells' values are decreased.
+    * Test successful.
+    
 * Test isOverSelfCollapsedTest():
 * Test isOverOutOfBoardTest():
 
