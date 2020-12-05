@@ -86,7 +86,7 @@ public class GameState {
         return true;
     }
 
-    private boolean hasMergable() {
+    public boolean hasMergable() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if(gameState[i][j]==gameState[i+1][j]) return true;
