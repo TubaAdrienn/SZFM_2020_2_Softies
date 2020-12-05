@@ -152,7 +152,7 @@ public class Controller2048 extends Controller {
         try {
             highScore.setText("Highscore: " + String.valueOf(database.findScoreByName("2048").getScore()));
         } catch (NoResultException e) {
-            System.out.println("No result found.");
+
         }
     }
 }

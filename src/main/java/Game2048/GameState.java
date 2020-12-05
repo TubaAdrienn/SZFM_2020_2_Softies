@@ -91,6 +91,8 @@ public class GameState {
             for (int j = 0; j < 3; j++) {
                 if(gameState[i][j]==gameState[i+1][j]) return true;
                 else if(gameState[i][j]==gameState[i][j+1]) return true;
+                else if (gameState[i+1][j+1]==gameState[i][j+1]) return true;
+                else if (gameState[i+1][j+1]==gameState[i+1][j]) return true;
             }
         }
         return false;
