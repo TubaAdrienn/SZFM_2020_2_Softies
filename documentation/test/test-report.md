@@ -63,21 +63,39 @@
 ## 2048 - Fenyvesi Mátyás
 
 ### **Junit Tests**
-//Adding content
+* Test generateNewCellTest():
+  * Tests whether the method gives the right boolean if new cell is generated
+  * Successful test
+
+* Test isWinningStateTest():
+  * Tests whether the method gives the right boolean if the game is in winning state
+  * Successful test
+
+* Test isOverTest():
+  * Tests whether the games is over (no available moves)
+  * Successful test
+
+* Test hasMergableTest():
+  * Tests whether the method gives the right boolean if the merge is available
+  * Successful test
 
 ### **Manual Tests**
 * Test 1:
   * Tests whether every cell display the right character and right color
   * Test successful
+
 * Test 2:
   * Tests whether back button reacts to click and goes back to rules page
   * Test successful
+
 * Test 3:
   * Tests whether New Game button reacts to click and restart the game
   * Test successful
+
 * Test 4:
   * Tests whether generate new cells with the arrow keys
   * Test successful
+  
 * Test 5:
   * Tests whether cells collapse in the specified way
   * Test successful
