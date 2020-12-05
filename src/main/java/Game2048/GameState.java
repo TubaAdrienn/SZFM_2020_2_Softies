@@ -280,4 +280,8 @@ public class GameState {
     public int getScore() {
         return this.score;
     }
+
+    public void setGameState(int[][] gameState) {
+        this.gameState = gameState;
+    }
 }
