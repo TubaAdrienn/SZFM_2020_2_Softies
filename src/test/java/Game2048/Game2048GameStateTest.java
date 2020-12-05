@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Game2048GameStateTest {
 
-    private GameState game;
 
 
 //    @BeforeEach
@@ -25,16 +24,19 @@ public class Game2048GameStateTest {
 
     @Test
     public void generateNewCellTest(){
+        GameState game;
         game = new GameState();
-        game = null;
         int[][] gameState = new int[4][4];
+        game.setGameState(gameState);
         int newCell=0;
         for (int i=0; i<4; i++){
             for (int j=0; j<4; j++){
                 gameState[i][j]=0;
             }
         }
-//        game.generateNewCells();
+
+        game.generateNewCells();
+
         for (int i=0; i<4; i++){
             for (int j=0; j<4; j++){
                 if (gameState[i][j]!=0){
@@ -42,6 +44,6 @@ public class Game2048GameStateTest {
                 }
             }
         }
-        assertEquals(0,newCell);
+        assertEquals(1,newCell);
     }
 }
