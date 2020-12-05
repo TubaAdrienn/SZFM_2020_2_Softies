@@ -63,37 +63,37 @@ public class Controller2048 extends Controller {
                             label.setText(String.valueOf(state[i][j]));
                             switch (state[i][j]) {
                                 case 2:
-                                    label.setStyle("-fx-background-color: #FFFF66;");
+                                    label.setStyle("-fx-background-color: #AED6F1;");
                                     break;
                                 case 4:
-                                    label.setStyle("-fx-background-color: green;");
+                                    label.setStyle("-fx-background-color: #0E6251;");
                                     break;
                                 case 8:
-                                    label.setStyle("-fx-background-color: brown;");
+                                    label.setStyle("-fx-background-color: #48C9B0;");
                                     break;
                                 case 16:
-                                    label.setStyle("-fx-background-color: yellow;");
+                                    label.setStyle("-fx-background-color: #78281F;");
                                     break;
                                 case 32:
-                                    label.setStyle("-fx-background-color: orange;");
+                                    label.setStyle("-fx-background-color: #A569BD;");
                                     break;
                                 case 64:
-                                    label.setStyle("-fx-background-color: grey;");
+                                    label.setStyle("-fx-background-color: #F8C471;");
                                     break;
                                 case 128:
-                                    label.setStyle("-fx-background-color: red;");
+                                    label.setStyle("-fx-background-color: #154360;");
                                     break;
                                 case 256:
-                                    label.setStyle("-fx-background-color: pink;");
+                                    label.setStyle("-fx-background-color: #DC7633;");
                                     break;
                                 case 512:
-                                    label.setStyle("-fx-background-color: purple;");
+                                    label.setStyle("-fx-background-color: #A2D9CE;");
                                     break;
                                 case 1024:
-                                    label.setStyle("-fx-background-color: white;");
+                                    label.setStyle("-fx-background-color: #186A3B;");
                                     break;
                                 case 2048:
-                                    label.setStyle("-fx-background-color: aqua;");
+                                    label.setStyle("-fx-background-color: #D35400;");
                                     break;
                             }
                         }
@@ -102,7 +102,6 @@ public class Controller2048 extends Controller {
             }
         } catch (Exception e) {
             gameOver.setVisible(true);
-            System.out.println("Game Over");
         }
     }
 
@@ -126,10 +125,8 @@ public class Controller2048 extends Controller {
             renderGame();
         } else if (gameState.isWinningState()) {
             gameWin.setVisible(true);
-            System.out.println("Winner won");
         } else {
             gameOver.setVisible(true);
-            System.out.println("Game Over");
         }
         if (gameState.isOver() == true) {
             if (score == null) {
