@@ -17,9 +17,10 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;
-
+@Log4j2
 public class TTTController extends Controller {
 
     @FXML
@@ -40,6 +41,7 @@ public class TTTController extends Controller {
     private boolean personBlocked=false;
 
     public void setTo1v1() {
+        log.info("1v1 mode is on.");
         gameState = null;
         gameState = new GameState();
         AImode = false;
@@ -47,6 +49,7 @@ public class TTTController extends Controller {
     }
 
     public void setTo1vAI() {
+        log.info("AI mode is on.");
         gameState = null;
         gameState = new GameState();
         AImode = true;
@@ -90,7 +93,7 @@ public class TTTController extends Controller {
             button = (Button) clickEvent.getTarget();
             if (button.getText().isEmpty() && !isOver) {
                 manageGameState(clickEvent);
-                gameState.showState();
+                //gameState.showState();
                 this.currentPlayer = this.currentPlayer * (-1);
             }
         } catch (Exception exc) {
@@ -119,6 +122,7 @@ public class TTTController extends Controller {
             gameState = op.applyMove(gameState);
             button.setTextFill(Color.PURPLE);
             button.setText("O");
+            log.info("'{}' row: {} column: {} ",button.getText(),row+1,column+1);
             stateChecker();
             AIMoveManager(clickEvent);
         } else if (AImode == false) {
@@ -126,6 +130,8 @@ public class TTTController extends Controller {
             getRowAndColumn();
             Operator op = new Operator(row, column);
             gameState = op.applyMove(gameState);
+            log.info("'{}' row: {} column: {} ",button.getText(),row+1,column+1);
+
         }
         stateChecker();
     }
@@ -141,7 +147,7 @@ public class TTTController extends Controller {
                     AIMove(clickEvent);
                     stateChecker();
                     currentPlayer = currentPlayer * (-1);
-                    System.out.printf(String.valueOf(currentPlayer));
+                    //System.out.printf(String.valueOf(currentPlayer));
                     personBlocked=false;
                 }
                 i++;
@@ -165,12 +171,14 @@ public class TTTController extends Controller {
         button = (Button) ((Node) clickEvent.getSource()).getScene().lookup("#" + id);
         button.setTextFill(Color.DARKRED);
         button.setText("X");
+        log.info("AI: 'X' row: {} column: {} ",row,column);
     }
 
     private void getRowAndColumn() {
         id = button.getId();
         row = Character.getNumericValue(id.charAt(1)) - 1;
         column = Character.getNumericValue(id.charAt(2)) - 1;
+
     }
 
     private void stateChecker() {
@@ -178,19 +186,23 @@ public class TTTController extends Controller {
             switch (this.currentPlayer) {
                 case -1:
                     winner_label.setText("Winner is X.");
+                    log.info("'X' won the game.");
                     break;
                 case 1:
                     winner_label.setText("Winner is O.");
+                    log.info("'O' won the game.");
                     break;
             }
             isOver = true;
         } else if (gameState.isOver()) {
             winner_label.setText("Game Over.");
+            log.info("There is no winner. Game Over.");
             isOver = true;
         }
     }
 
     public void backToRules(MouseEvent mouseEvent) throws Exception {
         PageLoader.loadRules(mouseEvent, "tictactoe");
+        log.info("Back button is clicked.");
     }
 }

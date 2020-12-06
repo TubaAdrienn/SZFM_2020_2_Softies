@@ -4,11 +4,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+@Log4j2
 public class Mastermind {
 
     @Getter @Setter
@@ -25,14 +26,15 @@ public class Mastermind {
     /**
      * Make 4 random secret color. And set active(1) status for game state.
      */
-    public Mastermind(){
+    public Mastermind() {
         this.gameState = 1;
         this.rand = new Random();
         this.guessColors = new int[4];
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++) {
             this.guessColors[i] = this.rand.nextInt(8);
+            log.info("{}. color is: {}", i,Color.getByValue(guessColors[i]));
+        }
     }
-
     /**
      * Get the image which we need
      * @param gridNumber Index of image which we need.
@@ -60,7 +62,8 @@ public class Mastermind {
             getImage(i, leftPane, lastStep);
             if (color != null)
                 if (color.equals(Color.getByValue(guessColors[i]))) {
-                    blackPin++;         //If our color tip is correct we got a black pin for it and that position will be overlooked next time
+                    blackPin++;//If our color tip is correct we got a black pin for it and that position will be overlooked next time
+                    log.info("Black pin: {}  Position: {}  Color: {}",blackPin,i+1,Color.getByValue(guessColors[i]));
                     whiteExt.add(i);    //(i position) Will be overlooked secret side.
                     whiteMyExt.add(i);  //(i position) Will be overlooked tips side.
                 }
@@ -76,6 +79,7 @@ public class Mastermind {
                         if (!whiteExt.contains(j) && !whiteMyExt.contains(i)) { //If we do not need to overlooked them then continue
                             if (color.equals(guess)) { //If our tip is equal with the secret color then...
                                 whitePin++;         //we got a white pin for that and...
+                                log.info("White pin: {}  Color: {}  Wrong position: {} Correct position: {} ",whitePin,Color.getByValue(guessColors[j]),i+1,j+1);
                                 whiteExt.add(j);    //we add to it to "overlooked" list in secret side and...
                                 whiteMyExt.add(i);  //we add to it to "overlooked" list in tips side too.
                             }

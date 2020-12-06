@@ -18,8 +18,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import lombok.extern.log4j.Log4j2;
 
-import java.io.IOException;
+@Log4j2
 
 public class SnakeController extends Controller {
 
@@ -55,6 +56,7 @@ public class SnakeController extends Controller {
         if(this.score!=null){
             highScoreLabel.setText(String.valueOf(score.getScore()));
         }
+        log.info("Start button is clicked.");
     }
 
     private void SnakeMoveManager() {
@@ -98,7 +100,6 @@ public class SnakeController extends Controller {
             }
         }
         grid.getChildren().add(gridPane);
-        System.out.println("GridPane finished.");
     }
 
     public String createID(int col, int row) {
@@ -129,7 +130,6 @@ public class SnakeController extends Controller {
             }
         } catch (Exception e) {
             gameOver.setVisible(true);
-            System.out.println("Game Over.");
             if(score == null){
                 HighScore newScore=new HighScore(this.game, this.name1, gameState.getScore());
                 database.persist(newScore);
@@ -137,6 +137,7 @@ public class SnakeController extends Controller {
             }
             else if (gameState.getScore() > score.getScore()) {
                 database.update(score, gameState.getScore(), this.name1);
+                log.info("Highscore saved. {}",gameState.getScore());
                 highScoreLabel.setText(String.valueOf(gameState.getScore()));
             }
 
@@ -174,6 +175,7 @@ public class SnakeController extends Controller {
 
     public void backToRulePage(MouseEvent event) throws Exception {
         PageLoader.loadRules(event, "snake");
+        log.info("Back button is clicked.");
     }
 
     public void setScoreLabel() {

@@ -185,7 +185,7 @@ public class GameState {
             }
         }
         if (hasChanged()) generateNewCells();
-        showState(this.gameState);
+        //showState(this.gameState);
     }
 
     private int[] moveLeft(int[] col) {
@@ -231,7 +231,7 @@ public class GameState {
             }
         }
         if (hasChanged()) generateNewCells();
-        showState(this.gameState);
+        //showState(this.gameState);
     }
 
     public void moveCellsUp() {
@@ -245,7 +245,7 @@ public class GameState {
             }
         }
         if (hasChanged()) generateNewCells();
-        showState(this.gameState);
+        //showState(this.gameState);
     }
 
     public void moveCellsDown() {
@@ -259,7 +259,7 @@ public class GameState {
             }
         }
         if (hasChanged()) generateNewCells();
-        showState(this.gameState);
+        //showState(this.gameState);
     }
 
     public void moveCells(KeyCode direction) {
