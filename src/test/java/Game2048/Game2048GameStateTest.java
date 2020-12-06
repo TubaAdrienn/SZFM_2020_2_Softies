@@ -11,18 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Game2048GameStateTest {
 
-
-
-//    @BeforeEach
-//    public void setUp() {
-//        gameState = new GameState();
-//    }
-//
-//    @AfterEach
-//    public void tearDown() {
-//        gameState = null;
-//    }
-
     @Test
     public void generateNewCellTest(){
         GameState game;
@@ -138,41 +126,4 @@ public class Game2048GameStateTest {
         game.setGameState(gameState);
         assertFalse(game.hasMergable());
     }
-
-//    @Test
-//    public void moveCellsTest(){
-//        GameState game;
-//        game = new GameState();
-//        boolean valider = true;
-//
-//        int[][] validGameState = new int[][]
-//                        {{2,4,8,16},
-//                        {4,8,16,32},
-//                        {4,64,2,8},
-//                        {2,8,4,2}};
-//
-//        int[][] gameState = new int[][]
-//                        {{2,4,8,16},
-//                        {4,8,16,32},
-//                        {2,64,2,8},
-//                        {2,8,4,2}};
-//
-//
-//        game.setGameState(gameState);
-//        game.moveCells(KeyCode.W);
-//
-//        for (int i=0; i<4; i++){
-//            for (int j=0; j<4; j++){
-//                if (gameState[i][j]!=validGameState[i][j]){
-//                    valider=false;
-//                }
-//            }
-//        }
-//
-//        assertTrue(valider);
-//
-//        game.moveCells(KeyCode.A);
-//        game.moveCells(KeyCode.S);
-//        game.moveCells(KeyCode.D);
-//    }
 }
