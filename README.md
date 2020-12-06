@@ -23,8 +23,8 @@ This repository contains a simple game arcade containing four games: mastermind,
 * Windows 10
 
 ### Other technologies :mag_right:
-* [Maven] (https://maven.apache.org/)
-* [JavaFX] (https://openjfx.io/)
+* [Maven](https://maven.apache.org/)
+* [JavaFX](https://openjfx.io/)
 * [H2 Database](https://www.h2database.com/html/main.html)
 
 ### Usage
