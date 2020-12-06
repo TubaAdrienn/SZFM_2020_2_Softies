@@ -57,7 +57,7 @@
         </Label>
         <Label fx:id="highScoreLabel" layoutX="237.0" layoutY="109.0" prefHeight="35.0" prefWidth="200.0" style=" -fx-text-fill: black;">
             <font>
-                <Font size="24.0" />
+                <Font name ="System Bold" size="24.0" />
             </font>
             <effect>
                 <DropShadow spread="0.3">
