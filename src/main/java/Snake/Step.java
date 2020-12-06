@@ -34,7 +34,7 @@ public class Step {
      * @param gameState current gamestate
      * @return whether move is appliable
      */
-    private boolean canMakeStep(int[][] gameState){
+    public boolean canMakeStep(int[][] gameState){
         boolean canApplyMove=false;
         canApplyMove=checkIfCellNotOver();
         if(canApplyMove){
@@ -48,7 +48,7 @@ public class Step {
      * @param gameState current gamestate
      * @return if self or not
      */
-    private boolean checkIfNotSelf(int[][] gameState){
+    public boolean checkIfNotSelf(int[][] gameState){
         if(gameState[row][col]==0 || gameState[row][col]==-1){
             return true;
         }
@@ -60,7 +60,7 @@ public class Step {
      * Checks if cell is over or not
      * @return if cells are over or not
      */
-    private boolean checkIfCellNotOver(){
+    public boolean checkIfCellNotOver(){
         if(row>=0 && row<20 && col >=0 && col<26 ){
             return true;
         }

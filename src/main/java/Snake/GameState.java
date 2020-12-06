@@ -39,6 +39,10 @@ public class GameState {
         generateFood();
     }
 
+    public void setGameState(int[][] gameState) {
+        this.gameState = gameState;
+    }
+
     public boolean isOver() {
         return this.isOver;
     }
@@ -166,7 +170,7 @@ public class GameState {
     }
 
     /**
-     * Moves the head in a direction.
+     * Moves the head in a direction and update the gamestate.
      */
     public void putHead() {
         Step step;

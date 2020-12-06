@@ -29,7 +29,7 @@ public class MastermindController extends Controller {
 
     private int lastStep;
     private int rowHelper;
-    private int gameScore = 10;
+    private int gameScore;
 
     @FXML
     private GridPane leftPane;
@@ -158,9 +158,8 @@ public class MastermindController extends Controller {
         log.info("Submit button is clicked.");
 
         errorLabel.setText("");
-        currentScore.setText(String.valueOf(--gameScore));
         //If we have 4 colors in a row we can submit our tips, otherwise we can't
-        if (lastStep % 4 == 0 && lastStep != 0 && lastStep != 40) {
+        if (lastStep % 4 == 0 && lastStep != 0 && lastStep <= 40) {
             PinStruct pins = mastermind.process(leftPane, lastStep);
             //With this for loop, we write out pins
             for (int i = 0; i < pins.getBlack() + pins.getWhite(); i++) {
@@ -172,6 +171,8 @@ public class MastermindController extends Controller {
                 } else
                     rightView.setImage(Color.get(Color.WHITE));
             }
+            gameScore = ((pins.getBlack()*30)+(pins.getWhite()*10))-lastStep;
+            currentScore.setText(String.valueOf(gameScore));
             rowHelper = 0;
 
             //Write out in infobox if none of our tip is good
@@ -192,7 +193,12 @@ public class MastermindController extends Controller {
                 for (int i = 0; i < 4; i++) { //...show the secret colors!
                     setColor(i, Color.get(Color.getByValue(mastermind.getGuessColors()[i])));
                 }
-
+                if (score == null) {
+                    database.persist(new HighScore(this.game, this.name1, gameScore));
+                } else if (gameScore > this.score.getScore()) {
+                    database.update(score, gameScore, this.game);
+                    highScore.setText("Highscore: " + String.valueOf(gameScore));
+                }
             }
         } else if (lastStep < 40) { //If we have not 4 colors in a row write this error message in infobox
             errorLabel.setText("You must select 4 colors to check!" + "\n" +
