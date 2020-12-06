@@ -9,9 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;
-
+@Log4j2
 public class RulesController extends Controller {
 
     @FXML
@@ -50,17 +51,19 @@ public class RulesController extends Controller {
                 iconimage.setImage(new Image(RulesController.class.getResource("/images/iconttt.png").toExternalForm()));
                 break;
         }
-        System.out.println("InitData");
         rulesLabel.setText(rulesText);
     }
 
     public void playClick (MouseEvent mouseEvent) throws IOException {
         try{
+            log.info("Play button is clicked.");
             name1=nameField.getText();
             if(!name1.isEmpty()){
                 PageLoader.loadGame(mouseEvent, this.game, name1);
+                log.info("Username is set to {}, loading {} scene.", name1,game);
             } else{
                 PageLoader.loadGame(mouseEvent, this.game, "Anonymus");
+                log.info("Username is set to {}, loading {} scene.","Anonymus",game);
             }
         } catch (Exception e){
            throw e;
@@ -69,5 +72,6 @@ public class RulesController extends Controller {
 
     public void backClick(MouseEvent mouseEvent) throws IOException {
         PageLoader.loadGame(mouseEvent, "main", null);
+        log.info("Back button is clicked.");
     }
 }

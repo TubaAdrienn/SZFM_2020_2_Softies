@@ -8,13 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;
-
+@Log4j2
 public class PageLoader {
 
     public static void loadGame(MouseEvent mouseEvent, String game, String name) throws IOException {
-        System.out.println("/"+game+".fxml");
+        //log.info("{}.fxml is loaded.",game);
         FXMLLoader fxmlLoader = new FXMLLoader(PageLoader.class.getResource("/fxml/"+game+".fxml"));
         Parent root = fxmlLoader.load();
         fxmlLoader.<Controller>getController().initdata(game,name);
